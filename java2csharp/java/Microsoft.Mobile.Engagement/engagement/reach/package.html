@@ -1,0 +1,32 @@
+<html>
+<body>
+Reach module.
+<br/>
+Here are the steps to integrate Reach in your application:
+<br/>
+<ul>
+	<li>Integrate the Reach activities:
+	<ul>
+		<li>{@link com.microsoft.azure.engagement.reach.activity.EngagementTextAnnouncementActivity}</li>
+		<li>{@link com.microsoft.azure.engagement.reach.activity.EngagementWebAnnouncementActivity}</li>
+		<li>{@link com.microsoft.azure.engagement.reach.activity.EngagementPollActivity}</li>
+	</ul>
+	</li>
+	<li>Integrate the Reach broadcast receiver: {@link com.microsoft.azure.engagement.reach.EngagementReachReceiver}</li>
+	<li>Copy the files in the <tt>res/reach/layout</tt> folder delivered with the SDK into the <tt>res/layout</tt> folder of your application.</li>
+    <li>Copy the files in the <tt>res/reach/drawable</tt> folder delivered with the SDK into the <tt>res/drawable</tt> folder of your application.</li>
+</ul>
+Some configuration is done in the AndroidManifest.xml file thanks to meta-data section to put as a child of the <tt>application</tt> tag:
+<ul>
+    <li><b>Mandatory: </b>System notification ticker icon (25*25 pixels) {@code <meta-data android:name="engagement:reach:ticker:icon" android:value="<icon_resource_name>"/>}</li>
+    <li><b>Mandatory: </b>System notification ticker blank icon (used to simulate ticker hiding) {@code <meta-data android:name="engagement:reach:ticker:icon:blank" android:value="engagement_blank"/>}</li>
+	<li>Notification icon (48*48 pixels): {@code <meta-data android:name="engagement:reach:notification:icon" android:value="<icon_resource_name>"/>}</li>
+</ul>
+If you want to enable sound or vibration for system notifications you need the following permission: {@code <uses-permission android:name="android.permission.VIBRATE" />}.<br/>
+For notifications with big picture, you also need:
+<ul>
+    <li>{@code <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>}.</li>
+    <li>{@code <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>}.</li>
+</ul>
+</body>
+</html>
