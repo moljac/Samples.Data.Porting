@@ -1,0 +1,164 @@
+﻿using System;
+
+/*
+ * Copyright (c) Microsoft Corporation. All rights reserved.
+ */
+
+namespace com.microsoft.azure.engagement
+{
+
+
+	using Context = android.content.Context;
+
+	/// <summary>
+	/// Crash identifier </summary>
+	internal class EngagementCrashId
+	{
+	  /// <summary>
+	  /// Packages that are not considered the origin of an exception in the stack traces </summary>
+	  /* @formatter:off */
+	  private static readonly string[] STACK_TRACE_PACKAGE_SKIP_LIST = new string[] {"android", "com.android", "dalvik", "java.lang.reflect"};
+	  /* @formatter:on */
+
+	  /// <summary>
+	  /// Crash type </summary>
+	  private readonly Type type;
+
+	  /// <summary>
+	  /// Crash location class </summary>
+	  private readonly string locationClass;
+
+	  /// <summary>
+	  /// Crash location method </summary>
+	  private readonly string locationMethod;
+
+	  /// <summary>
+	  /// Init crash identifier. </summary>
+	  /// <param name="type"> crash type. </param>
+	  /// <param name="location"> crash location (origin of the crash in the stack trace). </param>
+	  private EngagementCrashId(Type type, StackTraceElement location) : this(type, location.ClassName, location.MethodName)
+	  {
+	  }
+
+	  /// <summary>
+	  /// Init crash identifier. </summary>
+	  /// <param name="type"> crash type. </param>
+	  /// <param name="locationClass"> origin class of the crash. </param>
+	  /// <param name="locationMethod"> origin method of the crash. </param>
+	  private EngagementCrashId(Type type, string locationClass, string locationMethod)
+	  {
+		this.type = type;
+		this.locationClass = locationClass;
+		this.locationMethod = locationMethod;
+	  }
+
+	  /// <summary>
+	  /// Get crash type. </summary>
+	  /// <returns> crash type. </returns>
+	  public virtual string Type
+	  {
+		  get
+		  {
+	//JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
+			return type.FullName;
+		  }
+	  }
+
+	  /// <summary>
+	  /// Get crash location as a string. </summary>
+	  /// <returns> crash location as a string. </returns>
+	  public virtual string Location
+	  {
+		  get
+		  {
+			/*
+			 * We don't use line number because it can be variable for the same semantic crash: different
+			 * Android versions, different application versions with the same crash not being fixed (but
+			 * with origin source file being modified).
+			 */
+			if (locationClass == null)
+			{
+			  return null;
+			}
+			else
+			{
+			  return locationClass + "." + locationMethod;
+			}
+		  }
+	  }
+
+	  /// <summary>
+	  /// Get crash identifier from the specified throwable. </summary>
+	  /// <param name="ex"> throwable. </param>
+	  /// <returns> crash identifier. </returns>
+	  public static EngagementCrashId from(Context context, Exception ex)
+	  {
+		/*
+		 * Loop on causes to determine exception type to use and class/method to use for crashid
+		 * computation. The class.method used as the location of a crash (the origin of the crash) is
+		 * never considered to be an Android method, try to find an application method as being the
+		 * origin of the crash. If we don't find one, use the first method as origin. OutOfMemoryError
+		 * is special: it can happen pretty much everywhere, use no origin for this one: aggregate all
+		 * OutOfMemoryError into one crash identifier (whatever its position in the causal chain).
+		 */
+//JAVA TO C# CONVERTER TODO TASK: Java wildcard generics are not converted to .NET:
+//ORIGINAL LINE: Class<? extends Throwable> topClassName = ex.getClass();
+		Type<?> topClassName = ex.GetType();
+		for (Exception cause = ex; cause != null; cause = cause.InnerException)
+		{
+		  if (cause.GetType().Equals(typeof(System.OutOfMemoryException)))
+		  {
+			return new EngagementCrashId(typeof(System.OutOfMemoryException), null, null);
+		  }
+		  else
+		  {
+			foreach (StackTraceElement line in cause.StackTrace)
+			{
+			  if (!isAndroidLine(line))
+			  {
+				return new EngagementCrashId(topClassName, line);
+			  }
+			}
+		  }
+		}
+
+		/*
+		 * Very specific case: RuntimeException thrown by ActivityThread. There is no hint of
+		 * application code in the stack trace lines, only the message can be parsed. Keep original
+		 * method name but change ActivityThread by the application class name found in the message.
+		 */
+		StackTraceElement firstLine = ex.StackTrace[0];
+		if (ex is Exception && "android.app.ActivityThread".Equals(firstLine.ClassName))
+		{
+		  /* Try parsing message for class name */
+		  Pattern pattern = Pattern.compile("\\{" + context.PackageName + "/([^\\}]+)");
+		  Matcher matcher = pattern.matcher(ex.Message);
+		  if (matcher.find())
+		  {
+			return new EngagementCrashId(topClassName, matcher.group(1), firstLine.MethodName);
+		  }
+		}
+
+		/* Fail over first type and line if no smart origin could be found */
+		return new EngagementCrashId(topClassName, firstLine);
+	  }
+
+	  /// <summary>
+	  /// Check whether a stack trace line is part of the Android source code, or generated by Android
+	  /// source code. </summary>
+	  /// <param name="line"> stack trace line. </param>
+	  /// <returns> true if part of Android source code, false otherwise. </returns>
+	  private static bool isAndroidLine(StackTraceElement line)
+	  {
+		foreach (string prefix in STACK_TRACE_PACKAGE_SKIP_LIST)
+		{
+		  if (line.ClassName.startsWith(prefix + "."))
+		  {
+			return true;
+		  }
+		}
+		return false;
+	  }
+	}
+
+}
