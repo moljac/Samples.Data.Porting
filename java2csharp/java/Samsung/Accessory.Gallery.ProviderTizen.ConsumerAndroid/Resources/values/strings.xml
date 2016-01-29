@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gallery(C)</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="device_attached">Peer device attached</string>
+    <string name="ConnectionEstablishedMsg">Service Connection established with GalleryProvider</string>
+    <string name="ConnectionLostMsg">Service Connection Lost with GalleryProvider</string>
+    <string name="NoPeersFound">No peers found !!</string>
+    <string name="action_fetch">Fetch</string>
+    <string name="action_next">Next</string>
+    <string name="action_close">Close</string>
+    <string name="action_connect">Connect</string>
+
+</resources>
