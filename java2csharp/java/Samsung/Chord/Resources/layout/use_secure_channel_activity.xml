@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/Layout_mw_horizontal" >
+
+        <TextView
+            android:id="@+id/wifi_state_view"
+            style="@style/Layout_interface_state"
+            android:text="@string/wifi_off" />
+
+        <TextView
+            android:id="@+id/wifiDirect_state_view"
+            style="@style/Layout_interface_state"
+            android:text="@string/wifi_direct_off" />
+
+        <TextView
+            android:id="@+id/mobileAP_state_view"
+            style="@style/Layout_interface_state"
+            android:text="@string/mobile_ap_off" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/Layout_mw_horizontal" >
+
+        <Button
+            android:id="@+id/wifi_channel_btn"
+            style="@style/Layout_joinLeave_btn" />
+
+        <Button
+            android:id="@+id/wifiDirect_channel_btn"
+            style="@style/Layout_joinLeave_btn" />
+
+        <Button
+            android:id="@+id/mobileAP_channel_btn"
+            style="@style/Layout_joinLeave_btn" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/myNodeName_textView"
+        style="@style/Layout_myNodeName_textView" />
+
+    <TextView
+        android:id="@+id/joinedNodeList_textView"
+        style="@style/Layout_subTitle_textView"
+        android:text="@string/joined_node_list" />
+
+    <ExpandableListView
+        android:id="@+id/secure_peer_list"
+        style="@style/Layout_node_listView"
+        android:layout_weight="2" >
+    </ExpandableListView>
+
+    <LinearLayout
+        style="@style/Layout_equalDivision_vertical"
+        android:layout_weight="5" >
+
+        <TextView
+            style="@style/Layout_subTitle_textView"
+            android:text="@string/log_viewer" />
+
+        <LinearLayout style="@style/Layout_equalDivision_vertical" >
+
+            <com.samsung.android.sdk.chord.example.ChordLogView
+                android:id="@+id/log_textView"
+                style="@style/Layout_log_viewer" />
+
+            <com.samsung.android.sdk.chord.example.ChordLogView
+                android:id="@+id/wifiDirect_log_textView"
+                style="@style/Layout_log_viewer"
+                android:visibility="gone" />
+
+            <com.samsung.android.sdk.chord.example.ChordLogView
+                android:id="@+id/mobileAP_log_textView"
+                style="@style/Layout_log_viewer"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

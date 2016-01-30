@@ -1,0 +1,106 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="Layout_mw">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Layout_ww">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Layout_mw_horizontal" parent="Layout_mw">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Layout_ww_horizontal" parent="Layout_ww">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Layout_equalDivision_horizontal">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Layout_equalDivision_vertical">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="Layout_interface_state" parent="Layout_equalDivision_horizontal">
+        <item name="android:gravity">center</item>
+        <item name="android:drawableLeft">@drawable/ic_network_disconnected</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="Layout_subTitle_textView" parent="Layout_mw">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Layout_joinLeave_btn" parent="Layout_equalDivision_horizontal">
+        <item name="android:text">@string/join_channel</item>
+        <item name="android:enabled">false</item>
+    </style>
+
+    <style name="Layout_myNodeName_textView" parent="Layout_subTitle_textView">
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+    </style>
+
+    <style name="Layout_node_listView" parent="Layout_equalDivision_vertical">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/stroke</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <style name="Layout_logviewer" parent="Layout_equalDivision_vertical">
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:background">@drawable/stroke</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <!-- Only for UdpFramework -->
+    <style name="Layout_udpMsgSize_editText">
+        <item name="android:layout_width">85dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Layout_udpMode_radioBtn" parent="Layout_ww">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:button">@drawable/radio_button</item>
+        <item name="android:checked">true</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Layout_grid_view" parent="Layout_mw">
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:columnWidth">20dp</item>
+        <item name="android:numColumns">auto_fit</item>
+        <item name="android:stretchMode">none</item>
+    </style>
+
+</resources>
