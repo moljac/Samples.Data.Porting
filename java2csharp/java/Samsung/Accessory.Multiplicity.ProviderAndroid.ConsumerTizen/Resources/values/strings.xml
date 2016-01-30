@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Multiplicity(P)</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello Accessory!</string>
+    <string name="ConnectionAcceptedMsg1">Service Connection from Multiplicity(C1) has been accepted by Provider1.</string>
+    <string name="ConnectionAcceptedMsg2">Service Connection from Multiplicity(C2) has been accepted by Provider2.</string>
+    <string name="ConnectionTerminateddMsg">Service Connection with Multiplicity(C1)has been terminated.</string>
+    <string name="ConnectionTerminateddMsg2">Service Connection with Multiplicity(C2) has been terminated.</string>
+</resources>
