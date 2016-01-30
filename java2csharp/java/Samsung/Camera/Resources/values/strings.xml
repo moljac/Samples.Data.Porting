@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">CameraSDK Sample</string>
+    <string name="title_activity_camera_sdk_sample">CameraSDK Sample</string>
+    <string name="title_activity_sample_single">Sample Single</string>
+    <string name="title_activity_sample_effect">Sample Effect</string>
+    <string name="title_activity_sample_lowlight">Sample Low Light</string>
+    <string name="title_activity_sample_panorama">Sample Panorama</string>
+    <string name="title_activity_sample_ipx">Sample Image Processing Accelerator</string>
+    <string name="title_activity_sample_filter">Sample Filter</string>
+    <string name="title_activity_sample_hdr">Sample High Dynamic Range</string>
+    <string name="title_activity_sample_dof">Sample Depth of Field</string>
+    <string name="title_activity_sample_torch">Sample Torch</string>
+    <string name="title_activity_sample_zsl">Sample Opaque Reprocessing</string>
+    <string name="title_activity_sample_yuv">Sample YUV Reprocessing</string>
+    <string name="title_activity_sample_constrained_highspeedvideo">Sample Constrained High Speed Video Recording</string>
+    <string name="title_activity_sample_highspeedvideo">Sample High Speed Video Recording via Scene Mode</string>
+
+    <string name="button_title_picture">PICTURE</string>
+    <string name="button_title_record">RECORD</string>
+    <string name="button_title_stop">STOP</string>
+    <string name="button_title_select_image">SELECT IMAGE</string>
+    <string name="button_title_select_filter">SELECT FILTER</string>
+    <string name="button_title_process_bitmap">PROCESS(BITMAP)</string>
+    <string name="button_title_process_file">PROCESS(FILE)</string>
+    <string name="button_title_setting">SETTING</string>
+    <string name="button_title_info">INFO</string>
+
+    <!-- Low Light -->
+    <string name="title_result_image">Result Image</string>
+    <string name="title_crop_input">Center crop of Input</string>
+    <string name="title_crop_result">Center crop of Result</string>
+
+    <!-- Image Processing Accelerator -->
+    <string name="menu_item_text_sobel">Sobel</string>
+    <string name="menu_item_text_media">Median</string>
+    <string name="menu_item_text_enhance_contrast">Enhance Contrast</string>
+    <string name="menu_item_text_equalize_histogram">Equalize Histogram</string>
+    <string name="menu_item_text_warp_affine">Warp Affine</string>
+    <string name="menu_item_text_spatial_filter">Spatial Filter</string>
+    <string name="menu_item_text_save_jpeg">Save as Jpeg</string>
+    <string name="menu_item_text_save_raw">Save as Raw</string>
+    <string name="string_gallery">Gallery</string>
+
+    <!-- Depth of field -->
+    <string name="depth_of_field_error_af">Unable to apply Focus contrast effect. Select area to focus on and try again.</string>
+    <string name="depth_of_field_error_inf">Unable to apply Focus contrast effect. Subject too far away.</string>
+    <string name="depth_of_field_error_segmentation">Unable to apply Focus contrast effect. Subject not detected.</string>
+    <string name="depth_of_field_af_input_msg">Auto Focus Input Image</string>
+    <string name="depth_of_field_inf_input_msg">Infinity Focus Input Image</string>
+    <string name="depth_of_field_dof_result_msg">Result DOF Result Image</string>
+
+    <!-- High Dynamic Range -->
+    <string name="high_dynamic_range_short_exp_msg">Short Exposure</string>
+    <string name="high_dynamic_range_medium_exp_msg">Medium Exposure</string>
+    <string name="high_dynamic_range_long_exp_msg">Long Exposure</string>
+    <string name="high_dynamic_range_hdr_result_msg">Result HDR Image</string>
+
+    <!-- Filter -->
+    <string name="string_inform_textview">selected:</string>
+    <string name="torch_string">Camera Id=</string>
+</resources>

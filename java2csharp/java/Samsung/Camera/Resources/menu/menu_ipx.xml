@@ -1,0 +1,46 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.samsung.android.sdk.camera.sample.cases.Sample_IPX">
+
+    <item
+        android:id="@+id/Sobel"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_item_text_sobel" />
+    <item
+        android:id="@+id/Median"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_item_text_media" />
+    <item
+        android:id="@+id/Enhance_Contrast"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_item_text_enhance_contrast" />
+    <item
+        android:id="@+id/Equalize_Histogram"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_item_text_equalize_histogram" />
+    <item
+        android:id="@+id/Warp_Affine"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_item_text_warp_affine" />
+    <item
+        android:id="@+id/Spatial_Filter"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_item_text_spatial_filter" />
+    <item
+        android:id="@+id/Save_as_Jpeg"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_item_text_save_jpeg" />
+    <item
+        android:id="@+id/Save_as_Raw"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_item_text_save_raw" />
+
+</menu>
