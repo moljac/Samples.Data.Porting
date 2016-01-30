@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Secured Provider</string>
+    <string name="hello_world">Hello Accessory!</string>
+    <string name="ConnectionAcceptedMsg">Service Connection from Secured Consumer has been accepted.</string>
+    <string name="ConnectionEstablishedMsg">Service Connection with Secured Consumer has been established.</string>
+    <string name="ConnectionTerminatedMsg">Service Connection with Secured Consumer has been terminated.</string>
+    <string name="ConnectionAlreadyExist">Service Connection has already been existed!!!</string>
+    <string name="ConnectionAlreadyDisconnected">Service Connection has already been disconnected!!!</string>
+    <string name="Aunthenticated">Secured Consumer has been authenticated!!!</string>
+    
+</resources>
