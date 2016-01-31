@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:weightSum="2" >
+
+    <ImageView
+        android:id="@+id/coverImage"
+        android:layout_width="15dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:contentDescription="@string/cover_art"
+        android:src="@drawable/ic_launcher" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:padding="8dp" >
+
+        <SeekBar
+            android:id="@+id/musicPosition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/positionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/musicPosition"
+            android:paddingLeft="16dp"
+            android:text="@string/empty_time" />
+
+        <TextView
+            android:id="@+id/durationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/musicPosition"
+            android:paddingRight="16dp"
+            android:text="@string/empty_time" />
+
+        <TextView
+            android:id="@+id/titleLabel"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/musicPosition"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="26dp"
+            android:text="@string/title_label" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/titleLabel"
+            android:layout_toRightOf="@+id/titleLabel" />
+
+        <TextView
+            android:id="@+id/artistLabel"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/titleLabel"
+            android:layout_alignParentLeft="true"
+            android:text="@string/artist_label" />
+
+        <TextView
+            android:id="@+id/artistText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/artistLabel"
+            android:layout_toRightOf="@+id/artistLabel" />
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/positionText"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal" >
+
+            <ImageButton
+                android:id="@+id/playPause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/play_pause"
+                android:src="@drawable/ic_media_play" />
+
+            <ImageButton
+                android:id="@+id/stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/stop"
+                android:src="@drawable/ic_media_stop" />
+        </LinearLayout>
+
+        <fragment
+            android:id="@+id/playerPicker"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            class="com.samsung.android.sdk.sample.musicplayer.devicepicker.DevicePicker" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/volume_on"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            android:id="@+id/mute"
+            android:contentDescription="@string/mute"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

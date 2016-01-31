@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageButton xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:id="@+id/devicePickerIcon"
+             android:src="@drawable/allshare_icons_inactive"
+             android:background="?android:attr/selectableItemBackground"
+             android:gravity="center"
+             android:scaleType="centerInside"
+             android:contentDescription="@string/device_picker_icon"
+        />
