@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Video Player</string>
+    <string name="title_label">Title:</string>
+    <string name="unable_to_load_asset">Unable to load applications assets, aplication will quit.</string>
+    <string name="allshare_disconnected">Disconnected from AllShare device</string>
+    <string name="allshare_connecting">Connecting to AllShare device</string>
+    <string name="select_player">Select Player</string>
+    <string name="play_pause">Play/Pause</string>
+    <string name="stop">Stop</string>
+    <string name="empty_time">00:00</string>
+    <string name="mute">Mute</string>
+
+
+</resources>
