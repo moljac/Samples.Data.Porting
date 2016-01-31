@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:drawable="@drawable/kit_btn_empty_pres"/>
+    <item>
+        <selector>
+            <item
+                android:drawable="@drawable/kit_btn_back_arrow_def_rev"
+                android:state_activated="true"/>
+            <item android:drawable="@drawable/kit_btn_back_arrow_def"/>
+        </selector>
+    </item>
+
+</layer-list>

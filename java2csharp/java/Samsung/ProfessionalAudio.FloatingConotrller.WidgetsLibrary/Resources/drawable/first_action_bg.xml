@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Drawable use level lists for handling different orientations
+  0 horizontal left to right
+  1 horizontal right to left
+  2 vertical left to right
+  3 vertical right to left (used as bottom to top)-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item>
+        <level-list>
+            <item
+                android:drawable="@drawable/bg_floating_controller_left"
+                android:maxLevel="0"
+                android:minLevel="0"/>
+            <item
+                android:drawable="@drawable/bg_floating_controller_right"
+                android:maxLevel="1"
+                android:minLevel="1"/>
+            <item
+                android:drawable="@drawable/bg_floating_controller_top"
+                android:maxLevel="2"
+                android:minLevel="2"/>
+            <item
+                android:drawable="@drawable/bg_floating_controller_bottom"
+                android:maxLevel="3"
+                android:minLevel="3"/>
+        </level-list>
+    </item>
+
+</layer-list>

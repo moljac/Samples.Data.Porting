@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_controlbar_thickness">64dp</dimen>
+    <dimen name="default_controlbar_widget">64dp</dimen>
+
+    <dimen name="max_app_ic_size">56dp</dimen>
+
+    <dimen name="main_app_btn_length">62dp</dimen>
+    <dimen name="app_btn_length">49dp</dimen>
+    <item name="button_width" type="dimen">62dp</item>
+    <dimen name="max_floating_controller_length">510dp</dimen>
+    
+</resources>

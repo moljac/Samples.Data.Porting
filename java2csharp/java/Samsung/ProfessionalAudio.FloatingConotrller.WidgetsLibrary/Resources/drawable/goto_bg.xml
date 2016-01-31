@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Drawable use level lists for handling different orientations
+  0 horizontal left to right
+  1 horizontal right to left
+  2 vertical left to right
+  3 vertical right to left (used as bottom to top)
+-->
+<level-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:maxLevel="1"
+        android:minLevel="0">
+        <layer-list>
+            <item android:bottom="1dp">
+                <shape android:shape="rectangle" >
+                    <size
+                        android:height="44dp"
+                        android:width="52dp" />
+                </shape>
+            </item>
+            <item
+                android:left="4dp"
+                android:right="4dp">
+                <selector>
+                    <item
+                        android:drawable="@drawable/bg_goto_press"
+                        android:state_pressed="true"/>
+                </selector>
+            </item>
+        </layer-list>
+    </item>
+    <item
+        android:maxLevel="3"
+        android:minLevel="2">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle" >
+                    <size
+                        android:height="52dp"
+                        android:width="44dp" />
+                </shape>
+            </item>
+            <item
+                android:bottom="4dp"
+                android:top="4dp">
+                <selector>
+                    <item
+                        android:drawable="@drawable/bg_goto_press"
+                        android:state_pressed="true"/>
+                </selector>
+            </item>
+        </layer-list>
+    </item>
+
+</level-list>

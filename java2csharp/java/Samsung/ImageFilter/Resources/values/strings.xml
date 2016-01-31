@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, SPen_Example</string>
+    <string name="app_name">Image Filter</string>
+    <string name="setimagefilter">Set Image Filter</string>
+    <string name="selectimage">Select Image</string>
+    <string name="setfilterlevel">Set Filter Level</string>    
+</resources>

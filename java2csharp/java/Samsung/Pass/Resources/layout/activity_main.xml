@@ -1,0 +1,135 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonHasRegisteredFinger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="has Registered Fingerprint" />
+
+                <Button
+                    android:id="@+id/buttonIdentify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="identify" />
+
+                <Button
+                    android:id="@+id/buttonShowIdentifyDialogWithPW"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="identify Dialog With Password" />
+
+                <Button
+                    android:id="@+id/buttonShowIdentifyDialogWithoutPW"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="identify Dialog Without Password" />
+
+                <Button
+                    android:id="@+id/buttonCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel Identify" />
+
+                <Button
+                    android:id="@+id/buttonRegisterFinger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="register Finger" />
+
+                <Button
+                    android:id="@+id/buttonGetRegisteredFingerprintName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="get Fingerprint name" />
+                
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Supported Fingerprint Unique ID"
+                    android:textSize="12dp"
+                    android:textColor="#0094ae"/>
+                
+                <Button
+                    android:id="@+id/buttonGetRegisteredFingerprintID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="get Fingerprint Unique ID" />
+
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Supported Indexed Identify"
+                    android:textSize="12dp"
+                    android:textColor="#0094ae"/>
+
+                <Button
+                    android:id="@+id/buttonIdentifyWithIndex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="identify With Index 1" />
+
+                <Button
+                    android:id="@+id/buttonShowIdentifyDialogWithIndex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="identify Dialog With Index 2,3" />
+
+                <TextView 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Supported customized identify Dialog"
+                    android:textSize="12dp"
+                    android:textColor="#0094ae"/>
+
+                <Button
+                    android:id="@+id/buttonShowIdentifyDialogWithTitleNLogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="customized Dialog With Logo" />
+
+                <Button
+                    android:id="@+id/buttonCustomizedDialogWithTransparency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="customized Dialog With Transparency" />
+
+                <Button
+                    android:id="@+id/buttonCustomizedDialogWithSetDialogDismiss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="customized Dialog With setting Dialog dismiss" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

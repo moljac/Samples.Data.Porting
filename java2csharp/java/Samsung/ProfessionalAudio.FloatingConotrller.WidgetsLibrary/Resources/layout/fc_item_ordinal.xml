@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginStart="@dimen/ord_app_root_layout_margin_start"
+              android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/device_app_button"
+        android:layout_width="@dimen/ord_app_expand_action_button_with_frame_width"
+        android:layout_height="@dimen/ord_app_expand_action_button_with_frame_height"
+        android:layout_marginBottom="@dimen/ord_app_expand_action_button_margin_bottom"
+        android:layout_marginTop="@dimen/ord_app_expand_action_button_margin_top"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"/>
+
+    <LinearLayout
+        android:id="@+id/device_root_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/ord_app_root_layout_margin_bottom"
+        android:layout_marginEnd="@dimen/ord_app_main_layout_margin_end"
+        android:layout_marginTop="@dimen/ord_app_root_layout_margin_top"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/device_open_actions"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/ord_app_action_layout_margin_start_with_frame"
+            android:visibility="gone"
+            android:orientation="horizontal"/>
+
+        <LinearLayout
+            android:id="@+id/device_actions"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/ord_app_action_layout_margin_start"
+            android:background="@drawable/floating_controller_actions_group_frame"
+            android:visibility="gone"
+            android:orientation="horizontal"/>
+
+        <LinearLayout
+            android:id="@+id/device_volume_actions"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/device_volume_label"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:paddingBottom="@dimen/floating_controller_volume_label_padding_bottom"
+                android:text="@string/fc_volume_label"
+                android:textAlignment="gravity"
+                android:textColor="@color/floating_controller_actions_group_frame_stroke_color"
+                android:textSize="@dimen/ord_app_vol_label_text_size"
+                />
+
+            <LinearLayout
+                android:id="@+id/device_volumes"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/ord_app_action_volume_layout_margin_start"
+                android:background="@drawable/floating_controller_actions_group_frame"
+                android:orientation="horizontal"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

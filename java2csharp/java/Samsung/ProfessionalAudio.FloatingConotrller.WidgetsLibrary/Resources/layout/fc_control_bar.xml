@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/control_bar_root_layout"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layoutDirection="inherit"
+    android:layout_height="@dimen/floating_controller_height_with_shadow">
+    <LinearLayout
+        android:id="@+id/floating_controller_bar_handler"
+        android:layout_width="wrap_content"
+        android:paddingBottom="@dimen/fc_shadow_height"
+        android:layout_height="@dimen/floating_controller_height_with_shadow"
+        >
+        <ImageButton
+            android:id="@+id/barhandler"
+            android:contentDescription="@string/open_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageButton
+            android:id="@+id/main_app_image"
+            android:layout_width="@dimen/floating_controller_main_app_width"
+            android:layout_height="@dimen/floating_controller_height"
+            android:paddingTop="@dimen/fc_main_app_icon_margin_vertical"
+            android:paddingBottom="@dimen/fc_main_app_icon_margin_vertical"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/fc_main_app_icon_margin_horizontal"
+            android:scaleType="centerInside"
+            android:background="@color/floating_controller_main_color"/>
+    </LinearLayout>
+    <com.samsung.android.sdk.professionalaudio.widgets.refactor.FcRecycleView
+        android:id="@+id/devices_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/floating_controller_height_with_shadow"
+        android:paddingBottom="@dimen/fc_shadow_height"
+        android:visibility="gone"
+        app:max_width="@dimen/floating_controller_actions_length"
+        android:layoutDirection="inherit"
+        android:background="@drawable/fc_recycler_shadow"/>
+</LinearLayout>

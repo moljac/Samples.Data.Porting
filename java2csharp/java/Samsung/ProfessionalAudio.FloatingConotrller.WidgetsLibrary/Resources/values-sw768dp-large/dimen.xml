@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dimensions below are from old implementation of floating controller; please don't use them in new code -->
+    <dimen name="max_floating_controller_length">573dp</dimen>
+    <dimen name="floating_controller_item_spacer_width">8.5dp</dimen>
+    <!-- End of old dimensions -->
+
+    <!-- General dimensions for floating controller -->
+    <dimen name="floating_controller_height">64dp</dimen>
+    <dimen name="floating_controller_height_with_shadow">69dp</dimen>
+
+    <!-- Dimensions for actions group frame for floating controller -->
+    <dimen name="floating_controller_actions_group_frame_corners_radius">7dp</dimen>
+    <dimen name="floating_controller_actions_group_frame_stroke_width">3px</dimen>
+    <dimen name="floating_controller_actions_length">477dp</dimen>
+
+
+    <!-- Dimensions for open/close button of floating controller -->
+    <dimen name="floating_controller_open_close_button_height">64dp</dimen>
+    <dimen name="floating_controller_open_close_button_corner_radius">32dp</dimen>
+    <dimen name="floating_controller_open_close_button_width">36dp</dimen>
+    <dimen name="floating_controller_open_close_button_distance_between_arrow_and_edge">13dp</dimen>
+
+    <!-- Dimensions for main app icon in floating controller -->
+    <dimen name="floating_controller_main_app_width">60dp</dimen>
+    <dimen name="fc_main_app_icon_margin_horizontal">4dp</dimen>
+    <dimen name="fc_main_app_icon_margin_vertical">4dp</dimen>
+
+    <!-- Dimensions for ordinal app layout in floating controller -->
+    <dimen name="floating_controller_active_app_size_with_active_indication_frame">56dp</dimen>
+    <dimen name="floating_controller_active_app_frame_stroke_width">1dp</dimen>
+    <dimen name="floating_controller_ordinal_app_layout_vertical_margin">8.5dp</dimen>
+    <dimen name="floating_controller_ordinal_app_layout_vertical_margin_for_app_icon">4dp</dimen>
+    <dimen name="floating_controller_ordinal_app_layout_distance_between_app_icon_and_active_indication_frame">3.5dp
+    </dimen>
+    <dimen name="floating_controller_ordinal_app_layout_action_icon_width">65dp</dimen>
+    <dimen name="floating_controller_ordinal_app_layout_action_icon_height">47dp</dimen>
+    <dimen name="floating_controller_ordinal_app_layout_action_icon_horizontal_padding">9dp</dimen>
+
+    <!-- Dimensions for volume label -->
+    <dimen name="floating_controller_volume_label_width">44dp</dimen>
+    <dimen name="floating_controller_volume_label_margin_right">6dp</dimen>
+    <dimen name="floating_controller_volume_label_padding_bottom">17dp</dimen>
+    <dimen name="floating_controller_volume_label_text_size">22sp</dimen>
+
+
+    <!-- Newly measured dimensions -->
+
+    <!-- Main app root actions layout -->
+    <dimen name="main_app_root_layout_height">47dp</dimen>
+    <dimen name="main_app_root_layout_margin_top">8.5dp</dimen>
+    <dimen name="main_app_root_layout_margin_bottom">8.5dp</dimen>
+
+    <!-- Main app action layouts -->
+    <dimen name="main_app_action_layout_margin_start">8dp</dimen>
+    <dimen name="main_app_action_layout_margin_end">4.5dp</dimen>
+
+    <!-- Ordinal app main layout -->
+    <dimen name="ord_app_main_layout_margin_start">6dp</dimen>
+    <dimen name="ord_app_main_layout_margin_end">4.5dp</dimen>
+
+    <!-- Ordinal app root actions layout -->
+    <dimen name="ord_app_root_layout_height">47dp</dimen>
+    <dimen name="ord_app_root_layout_margin_top">8.5dp</dimen>
+    <dimen name="ord_app_root_layout_margin_start">6dp</dimen>
+    <dimen name="ord_app_root_layout_margin_bottom">8.5dp</dimen>
+
+    <!-- Ordinal app action layouts -->
+    <dimen name="ord_app_action_layout_margin_start">8dp</dimen>
+    <dimen name="ord_app_action_layout_margin_start_with_frame">3.5dp</dimen>
+    <dimen name="ord_app_action_volume_layout_margin_start">6dp</dimen>
+    <dimen name="ord_app_action_volume_layout_margin_ltr">6dp</dimen>
+    <dimen name="ord_app_action_volume_layout_margin_rtl">8dp</dimen>
+
+    <!-- Ordinal app volume label and text -->
+    <dimen name="ord_app_vol_label_root_layout_width">42dp</dimen>
+    <dimen name="ord_app_vol_label_text_layout_height">30dp</dimen>
+    <dimen name="ord_app_vol_label_space_layout_height">17dp</dimen>
+    <dimen name="ord_app_vol_label_width">36dp</dimen>
+    <dimen name="ord_app_vol_label_text_size">22sp</dimen>
+    <dimen name="ord_app_vol_label_margin">6dp</dimen>
+    <dimen name="ord_app_bypass_text_size">24sp</dimen>
+    <dimen name="ord_app_bypass_button_width">65dp</dimen>
+
+    <!-- Action buttons -->
+    <dimen name="action_button_width">47dp</dimen>
+    <dimen name="action_button_total_width">65dp</dimen>
+    <dimen name="action_button_height">47dp</dimen>
+    <dimen name="action_button_padding_start">9dp</dimen>
+    <dimen name="action_button_padding_end">9dp</dimen>
+
+    <!-- Ord app expand action button -->
+    <dimen name="ord_app_expand_action_button_width">47dp</dimen>
+    <dimen name="ord_app_expand_action_button_with_frame_width">56dp</dimen>
+    <dimen name="ord_app_expand_action_button_height">47dp</dimen>
+    <dimen name="ord_app_expand_action_button_with_frame_height">56dp</dimen>
+    <dimen name="number_icon_text_size">15dp</dimen>
+    <!-- TODO: Change -->
+    <dimen name="ord_app_expand_action_button_margin_top">4dp</dimen>
+    <dimen name="ord_app_expand_action_button_margin_bottom">4dp</dimen>
+    <dimen name="ord_app_expand_action_button_margin_start">10.5dp</dimen>
+    <dimen name="fc_shadow_indent">32dp</dimen>
+    <dimen name="fc_shadow_right_indent">64dp</dimen>
+    <dimen name="fc_shadow_height">5dp</dimen>
+</resources>

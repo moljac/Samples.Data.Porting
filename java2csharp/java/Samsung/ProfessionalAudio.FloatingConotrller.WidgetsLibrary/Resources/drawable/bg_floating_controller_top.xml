@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Drawable use level lists for handling different orientations
+  0 horizontal left to right
+  1 horizontal right to left
+  2 vertical left to right
+  3 vertical right to left (used as bottom to top)
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:drawable="@drawable/bg_floating_controller_top_img"
+        android:left="6dp"
+        android:right="6dp"/>
+    <item
+        android:left="6dp"
+        android:right="6dp">
+        <selector>
+            <item
+                android:drawable="@drawable/bg_btn_press_top"
+                android:state_pressed="true"/>
+        </selector>
+    </item>
+
+</layer-list>

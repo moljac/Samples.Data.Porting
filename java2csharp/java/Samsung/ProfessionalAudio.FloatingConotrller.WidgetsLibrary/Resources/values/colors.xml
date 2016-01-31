@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="floating_controller_main_color">#ff15aa93</color>
+    <color name="floating_controller_actions_group_frame_stroke_color">#ff3f3f3e</color>
+    <color name="floating_controller_active_app_frame_stroke_color">#ff00d8ff</color>
+    <color name="fc_app_icon_number_color">#fafafa</color>
+    <color name="bypass_text_color">#3f3f3e</color>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.samsung.android.sdk.professionalaudio.widgets.ReversableLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"   
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end|center_vertical"
+    android:orientation="horizontal"
+    android:background="@drawable/controlbar_bg"
+    android:id="@+id/total_panel"
+    android:layoutDirection="inherit">
+
+    <ImageButton
+        android:id="@+id/barhandler"
+        android:contentDescription="@string/open_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <HorizontalScrollView
+        android:id="@+id/main_scroll_view"
+        android:layoutDirection="inherit"
+        android:layout_width="0dp"
+        android:scrollbars="none"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <com.samsung.android.sdk.professionalaudio.widgets.ReversableLinearLayout
+            android:id="@+id/main_panel"
+            android:layoutDirection="inherit"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/end"
+                android:layout_width="5dp"
+                android:visibility="gone"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY" />
+        </com.samsung.android.sdk.professionalaudio.widgets.ReversableLinearLayout>
+    </HorizontalScrollView>
+
+</com.samsung.android.sdk.professionalaudio.widgets.ReversableLinearLayout>

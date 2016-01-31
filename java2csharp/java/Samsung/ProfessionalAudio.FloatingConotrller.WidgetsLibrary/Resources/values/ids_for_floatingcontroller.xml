@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="first_action_view" type="layout">@layout/left_action</item>
+    <item name="middle_action_view" type="layout">@layout/center_action</item>
+    <item name="last_action_view" type="layout">@layout/right_action</item>
+    <item name="only_action_view" type="layout">@layout/only_action</item>
+    <item name="app_view" type="layout">@layout/app_btn</item>
+    <item name="main_app_view" type="layout">@layout/main_app_btn</item>
+    <item name="open_btn_view" type="layout">@layout/open_btn</item>
+    
+    <item name="controlbar_bg" type="drawable">@drawable/bg_floating_contr</item>
+    <item name="button_width" type="dimen">43dp</item>
+</resources>

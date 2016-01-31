@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Smotion Test</string>
+    <string name="title_activity_main">Smotion Test</string>
+    <string name="res_layout">RelativeLayout</string>
+    <string name="menu_setting1">Delete log files</string>
+    <string name="res_activity_realtime">Real Time</string>
+    <string name="res_activity_batch">Batch</string>
+    <string name="res_activity_all">All</string>
+    <string name="res_activity_noti_stationary">Stationary</string>
+    <string name="res_activity_noti_walk">Walk</string>
+    <string name="res_activity_noti_run">Run</string>
+    <string name="res_activity_noti_vehicle">Vehicle</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_stop">Stop</string>
+    <string name="res_activity_realtime_periodic">Periodic Time</string>
+    <string name="res_activity_realtime_periodic_interval">10</string>
+    <string name="res_activity_realtime_periodic_interval_sec">sec</string>
+    <string name="res_activity_batch_updateinfo">updateInfo</string>
+
+    <string-array name="spinnerArray">
+        <item> Call </item>
+        <item> Pedometer - Real Time </item>
+        <item> Pedometer - Periodic Time </item>
+        <item> Activity </item>
+        <item> ActivityNotification </item>
+    </string-array>
+
+</resources>

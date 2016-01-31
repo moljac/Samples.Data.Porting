@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:maxLevel="1"
+        android:minLevel="0">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle" >
+                    <size
+                        android:height="45dp"
+                        android:width="49dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item
+        android:maxLevel="3"
+        android:minLevel="2">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle" >
+                    <size
+                        android:width="45dp"
+                        android:height="49dp" />
+                </shape>
+            </item>
+            <item
+                android:bottom="4dp"
+                android:drawable="@drawable/bg_goto_press"
+                android:top="4dp"/>
+        </layer-list>
+    </item>
+
+</level-list>

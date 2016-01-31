@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Drawable use level lists for handling different orientations
+  0 horizontal left to right
+  1 horizontal right to left -->
+<level-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:maxLevel="0"
+        android:minLevel="0">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <size
+                        android:height="@dimen/floating_controller_open_close_button_height"
+                        android:width="@dimen/floating_controller_open_close_button_width" />
+
+                    <corners
+                        android:radius="@dimen/floating_controller_open_close_button_corner_radius"
+                        android:bottomRightRadius="0dp"
+                        android:topRightRadius="0dp" />
+
+                    <solid android:color="@color/floating_controller_main_color" />
+                </shape>
+            </item>
+            <item>
+                <inset android:insetLeft="@dimen/floating_controller_open_close_button_distance_between_arrow_and_edge">
+                    <selector>
+                        <item android:state_activated="true">
+                            <bitmap
+                                android:gravity="center_vertical|left"
+                                android:src="@drawable/sc_ic_controller_open" />
+                        </item>
+                        <item>
+                            <bitmap
+                                android:gravity="center_vertical|left"
+                                android:src="@drawable/sc_ic_controller_close" />
+                        </item>
+                    </selector>
+                </inset>
+            </item>
+        </layer-list>
+    </item>
+    <item
+        android:maxLevel="1"
+        android:minLevel="1">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <size
+                        android:height="@dimen/floating_controller_open_close_button_height"
+                        android:width="@dimen/floating_controller_open_close_button_width" />
+
+                    <corners
+                        android:radius="@dimen/floating_controller_open_close_button_corner_radius"
+                        android:bottomLeftRadius="0dp"
+                        android:topLeftRadius="0dp" />
+
+                    <solid android:color="@color/floating_controller_main_color" />
+                </shape>
+            </item>
+            <item>
+                <inset android:insetRight="@dimen/floating_controller_open_close_button_distance_between_arrow_and_edge">
+                    <selector>
+                        <item android:state_activated="false">
+                            <bitmap
+                                android:gravity="center_vertical|right"
+                                android:src="@drawable/sc_ic_controller_open" />
+                        </item>
+                        <item>
+                            <bitmap
+                                android:gravity="center_vertical|right"
+                                android:src="@drawable/sc_ic_controller_close" />
+                        </item>
+                    </selector>
+                </inset>
+            </item>
+        </layer-list>
+    </item>
+
+</level-list>
