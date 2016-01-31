@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp"
+    >
+    <fragment
+            android:id="@+id/sourcePicker"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            class="com.samsung.android.sdk.sample.mediabrowser.devicepicker.DevicePicker" />
+    <fragment
+            android:id="@+id/playerPicker"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="4dp"
+            class="com.samsung.android.sdk.sample.mediabrowser.devicepicker.DevicePicker" />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/source_device"
+            android:layout_alignLeft="@+id/sourcePicker"
+            android:layout_below="@+id/sourcePicker" android:id="@+id/textView"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/target_device"
+            android:layout_alignRight="@+id/playerPicker"
+            android:layout_below="@+id/sourcePicker"/>
+    <TextView
+            android:id="@+id/separator"
+            android:padding="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/file_list"
+            android:background="#44586a"
+            android:layout_below="@+id/textView"/>
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listView"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/separator"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_files"
+            android:id="@+id/no_files"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView"/>
+    <ProgressBar
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress"
+            android:layout_centerInParent="true"/>
+
+</RelativeLayout>
+

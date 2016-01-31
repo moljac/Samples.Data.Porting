@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/search"
+          android:title="@string/search"
+          android:icon="@drawable/search"
+          android:showAsAction="always|collapseActionView"
+          android:actionViewClass="android.widget.SearchView" />
+    <item android:id="@+id/upload"
+          android:title="@string/upload"
+          android:icon="@drawable/upload"
+          android:showAsAction="always|collapseActionView">
+          <menu>
+            <item android:id="@+id/upload_audio"
+                  android:title="@string/upload_audio"/>
+            <item android:id="@+id/upload_image"
+                  android:title="@string/upload_image"/>
+            <item android:id="@+id/upload_video"
+                  android:title="@string/upload_video"/>
+        </menu>
+	</item>
+</menu>
