@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/panel_horizonal_margin"
+    android:paddingRight="@dimen/panel_horizonal_margin" >
+
+    <HorizontalListView
+        android:id="@+id/widgetlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="#10d6d6d6"
+        android:dividerHeight="1px"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/emptylist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/empty_list"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
