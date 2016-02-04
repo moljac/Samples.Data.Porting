@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">Sapa Instrument Sample</string>
+    <string name="volumeUp">volume up</string>
+    <string name="volumeDown">volume down</string>
+
+</resources>
