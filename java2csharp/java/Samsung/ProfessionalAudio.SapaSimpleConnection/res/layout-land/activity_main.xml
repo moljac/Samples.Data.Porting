@@ -1,0 +1,164 @@
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AbsoluteLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/connect_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="900dp"
+        android:layout_y="50dp"
+        android:text="@string/connect_button" />
+
+    <Button
+        android:id="@+id/disconn_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="1000dp"
+        android:layout_y="50dp"
+        android:text="@string/disconn_all_button" />
+
+    <Button
+        android:id="@+id/getconn_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="700dp"
+        android:layout_y="50dp"
+        android:text="@string/getconn_button" />
+
+    <ListView
+        android:id="@+id/inputPort_listView"
+        android:layout_width="250dp"
+        android:layout_height="400dp"
+        android:layout_x="50dp"
+        android:layout_y="250dp" >
+    </ListView>
+
+    <ListView
+        android:id="@+id/outputPort_listView"
+        android:layout_width="250dp"
+        android:layout_height="400dp"
+        android:layout_x="350dp"
+        android:layout_y="250dp" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/inputlist_label"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_x="50dp"
+        android:layout_y="200dp"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/outputlist_label"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_x="350dp"
+        android:layout_y="200dp"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/connected_label"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_x="700dp"
+        android:layout_y="200dp"
+        android:textSize="30sp" />
+
+    <ListView
+        android:id="@+id/connected_ListView"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_x="700dp"
+        android:layout_y="250dp" >
+    </ListView>
+
+    <Spinner
+                android:id="@+id/latency_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    
+    <ToggleButton
+        android:id="@+id/service_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="30dp"
+        android:layout_y="40dp"
+        android:text="@string/toggle_button"
+        android:textOff="@string/start_service"
+        android:textOn="@string/stop_service" />
+
+    <Button
+        android:id="@+id/sync_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="160dp"
+        android:layout_y="40dp"
+        android:text="@string/sync_start" />
+
+    <Button
+        android:id="@+id/sync_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="290dp"
+        android:layout_y="40dp"
+        android:text="@string/sync_stop" />
+
+    <Button
+        android:id="@+id/set_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="420dp"
+        android:layout_y="40dp"
+        android:text="@string/set_position" />
+    
+    <Button
+        android:id="@+id/audio_tab_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="30dp"
+        android:layout_y="120dp"
+        android:text="@string/audio_tab" />
+
+    <Button
+        android:id="@+id/midi_tab_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="120dp"
+        android:layout_y="120dp"
+        android:text="@string/midi_tab" />
+
+    <TextView
+        android:id="@+id/input_label"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_x="220dp"
+        android:layout_y="120dp"
+        android:text="@string/input_label" />
+
+    <TextView
+        android:id="@+id/inputport_text"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_x="320dp"
+        android:layout_y="120dp" />
+
+    <TextView
+        android:id="@+id/out_label"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_x="220dp"
+        android:layout_y="140dp"
+        android:text="@string/output_label" />
+
+    <TextView
+        android:id="@+id/outputport_text"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_x="320dp"
+        android:layout_y="140dp" />
+
+</AbsoluteLayout>
