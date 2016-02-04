@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:gravity="center" >
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:orientation="vertical" >
+
+<!-- 		<LinearLayout -->
+<!-- 			android:layout_width="wrap_content" -->
+<!-- 			android:layout_height="wrap_content" -->
+<!-- 			android:gravity="center" -->
+<!-- 			android:orientation="horizontal" > -->
+
+<!-- 			<Button -->
+<!-- 				android:id="@+id/button_start_jackd" -->
+<!-- 				android:layout_width="wrap_content" -->
+<!-- 				android:layout_height="wrap_content" -->
+<!-- 				android:text="@string/start_jackd" /> -->
+
+<!-- 			<Button -->
+<!-- 				android:id="@+id/button_stop_jackd" -->
+<!-- 				android:layout_width="wrap_content" -->
+<!-- 				android:layout_height="wrap_content" -->
+<!-- 				android:text="@string/stop_jackd" /> -->
+
+<!-- 		</LinearLayout> -->
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:orientation="horizontal" >
+
+			<Button
+				android:id="@+id/play_button"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/play_sound" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal" >
+
+			<Button
+				android:id="@+id/button_activate"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/activate_client" />
+
+			<Button
+				android:id="@+id/button_deactivate"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/deactivate_client" />
+
+		</LinearLayout>
+
+		<TextView
+			android:id="@+id/textView1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="50dp"
+			android:text="@string/hello_world" />
+
+    </LinearLayout>
+
+</LinearLayout>
