@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">Sapa Midi Sample</string>
+    <string name="C4">C4</string>
+    <string name="D4">D4</string>
+    <string name="E4">E4</string>
+    <string name="F4">F4</string>
+    <string name="G4">G4</string>
+    <string name="A4">A4</string>
+    <string name="B4">B4</string>
+    <string name="C5">C5</string>
+</resources>

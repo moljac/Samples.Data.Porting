@@ -1,0 +1,93 @@
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.samsung.audiosuite.sapamidisample"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#543016" >    
+    
+    
+
+    <LinearLayout
+        android:id="@+id/layout_keys"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <com.samsung.audiosuite.sapamidisample.KeyButton
+            android:text="@+string/C4"
+            custom:note="60"
+            custom:velocity="80"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <com.samsung.audiosuite.sapamidisample.KeyButton
+            android:text="@+string/D4"
+            custom:note="62"
+            custom:velocity="80"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        
+        <com.samsung.audiosuite.sapamidisample.KeyButton
+            android:text="@+string/E4"
+            custom:note="64"
+            custom:velocity="80"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        
+        <com.samsung.audiosuite.sapamidisample.KeyButton
+            android:text="@+string/F4"
+            custom:note="65"
+            custom:velocity="80"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        
+        <com.samsung.audiosuite.sapamidisample.KeyButton
+            android:text="@+string/G4"
+            custom:note="67"
+            custom:velocity="80"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        
+        <com.samsung.audiosuite.sapamidisample.KeyButton
+            android:text="@+string/A4"
+            custom:note="69"
+            custom:velocity="80"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <com.samsung.audiosuite.sapamidisample.KeyButton
+            android:text="@+string/B4"
+            custom:note="71"
+            custom:velocity="80"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <com.samsung.audiosuite.sapamidisample.KeyButton
+            android:text="@+string/C5"
+            custom:note="72"
+            custom:velocity="80"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+	
+	<com.samsung.android.sdk.professionalaudio.widgets.FloatingController
+	    xmlns:control="http://schemas.android.com/apk/res-auto"
+	    android:id="@+id/jam_control"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:soundEffectsEnabled="false" />
+
+</RelativeLayout>
