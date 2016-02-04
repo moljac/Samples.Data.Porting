@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RemoteSensorSampleApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="user_activity">User Activity</string>
+    <string name="pedometer">Pedometer</string>
+    <string name="wearing_state">Wearing State</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="acc_raw ">Acceleration Raw Data</string>
+    <string name="hrm_raw">Heart Rate Raw Data</string>
+    <string name="hrm_sum_raw">Heart Rate Sum Raw Data</string>
+    <string name="acc_hrm_raw">Acc + HRM Raw Data</string>
+    <string name="acc_hrm_sum_raw">Acc + HRM Sum Raw Data</string>
+    <string name="motion">Motion</string>
+    <string name="screen_touch">Screen touch</string>
+    <string name="hand_writing">Hand writing</string>
+    <string name="motion_touch_point">Motion/Touch point</string>
+    <string name="car_driving_detect">Car driving detect</string>
+    <string name="wearable_attached">Wearable attached</string>
+    <string name="wearable_detached">Wearable detached</string>
+    <string name="value">Value</string>
+    <string name="stop">Stop</string>
+    <string name="ok_str">Ok</string>
+    <string name="manager_msg_str">Please install Gear Manager or Gear Fit Manager and Remote Sensor Service first. After that update / reinstall your application.</string>
+    <string name="rss_msg_str">Please install Remote Sensor Service first. After that update / reinstall your application.</string>
+    <string name="permission_msg_str">There is no permission to access the Remote Sensor Service. Please update / reinstall your application.</string>
+    <string name="rss_permission_msg_str">There is no permission to access the Gear Manager or Gear Fit Manager. Please update/reinstall the Remote Sensor Service.</string>
+
+</resources>
