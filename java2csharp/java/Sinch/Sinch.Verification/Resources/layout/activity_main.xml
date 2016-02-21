@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="0dip"
+                android:background="@drawable/startbg"
+                tools:context=".MainActivity">
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp" android:id="@+id/numberInputLayout">
+
+        <com.sinch.verification.sample.CountrySpinner
+            android:layout_width="255dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/enterphonenumber"
+                android:textAllCaps="true"
+                android:id="@+id/textView" android:layout_gravity="center_horizontal"
+                android:textColor="@color/sinch_purple" android:textSize="18sp"/>
+
+        <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="32sp"
+                android:padding="10dp"
+                android:textColor="@color/sinch_purple"
+                android:background="@drawable/inputbox" android:inputType="phone">
+
+            <requestFocus/>
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentBottom="true"
+                  android:layout_centerHorizontal="true"
+                  android:paddingStart="40dp"
+                  android:paddingEnd="40dp"
+                  android:orientation="vertical">
+
+        <Button
+                android:id="@+id/smsVerificationButton"
+                android:background="@drawable/button_purple_generic"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:minHeight="56dp"
+                android:minWidth="132dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:text="SMS Verification"
+                android:onClick="onButtonClicked"/>
+
+        <Button
+                android:id="@+id/callVerificationButton"
+                android:background="@drawable/button_purple_generic"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="30dp"
+                android:layout_gravity="center_horizontal"
+                android:minHeight="56dp"
+                android:minWidth="132dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:text="Flash call Verification"
+                android:onClick="onButtonClicked"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selectcountry"
+        android:textAllCaps="true"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/sinch_purple"
+        android:textSize="18sp"
+        android:layout_above="@+id/numberInputLayout"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

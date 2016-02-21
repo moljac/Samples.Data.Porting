@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="SinchTheme" parent="@style/_SinchTheme"/>
+
+  <style name="_SinchTheme" parent="android:Theme.Holo.Light.NoActionBar">
+
+    <item name="android:dropDownSpinnerStyle">@style/SpinnerSinchTheme</item>
+
+  </style>
+
+</resources>
