@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="com.pinterest.android.pinsdk.HomeActivity">
+
+
+    <ImageView
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:paddingTop="20dip"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/profile_imageview"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_textview"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@+id/profile_imageview"
+        />
+
+    <Button
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:text="My Pins"
+        android:id="@+id/pins_button"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/name_textview"
+        android:background="@null"
+        />
+
+    <Button
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:text="My Boards"
+        android:id="@+id/boards_button"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/pins_button"
+        android:background="@null"
+        />
+
+    <Button
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:id="@+id/following_button"
+        android:text="My Following"
+        android:layout_below="@+id/boards_button"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        />
+
+    <Button
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:id="@+id/path_button"
+        android:text="Get Any Path"
+        android:layout_below="@+id/following_button"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        />
+
+    <Button
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:id="@+id/logout_button"
+        android:text="Logout"
+        android:layout_below="@+id/path_button"
+        android:layout_centerHorizontal="true"
+        android:background="@null"
+        />
+
+
+</RelativeLayout>
