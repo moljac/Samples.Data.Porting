@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="app_name">Generalscan USB广播服务</string>
+    <string name="bluetooth">蓝牙扫描器SDK应用例程</string>
+    <string name="usb">USB附件扫描SDK例程</string>
+    <string name="tts">语音SDK例程</string>
+    <string name="usbService">USB附件服务</string>
+    <string name="edit">版本：</string>
+    <!-- 列表 -->
+    <string name="Function">硬件控制功能</string>
+    <string name="Config">条码配置功能</string>
+    <string name="Read">读取硬件信息</string>
+    <!-- 蓝牙 -->
+    <string name="B_Open">开启蓝牙并配对</string>
+    <string name="B_Select">选择要连接的设备</string>
+    <string name="B_Connect">连接蓝牙</string>
+    <string name="B_Close">关闭连接</string>
+    <string name="B_Clear">清空</string>
+    <string name="B_SendContent">输入发送的数据</string>
+    <string name="B_Send">发送</string>
+    <string name="B_SendList">配置命令</string>
+    <!--USB -->
+    <string name="U_Clear">清空</string>
+    <string name="U_SendContent">输入发送的数据</string>
+    <string name="U_Send">发送自定义命令</string>
+    <string name="U_SendList">配置命令</string>
+    <string name="U_ChargeState">设置充电模式切换阈值</string>
+    <string name="U_ChargeMax">正常模式电量 (默认:35)</string>
+    <string name="U_ChargeMin">快速充电模式电量 (默认:30)</string>
+    <string name="U_ChargeWarn">设备提醒充电 (默认:5)</string>
+    <string name="U_ScanContent">条码扫描内容：</string>
+    <string name="U_StartService">开启服务</string>
+    <string name="U_stopService">停止服务</string>
+    <string name="U_newActivity">更多设置</string>
+    <string name="U_AutoStartServer">自动开启服务</string>
+    <string name="U_SelectApp">选择应用</string>
+    <string name="U_CurrentApp">当前应用:</string>
+    <string name="U_StartApp">手动运行</string>
+    <!--TTS-->
+    <string name="T_Product">产品名称</string>
+    <string name="T_Barcode">条码</string>
+    <string name="T_Count">数量</string>
+    <string name="T_Clear">清空</string>
+    <string name="T_Pronunciation">发音</string>
+    <string name="T_Content">设置发音内容</string>
+    <string name="T_SysSetting">系统设置</string>
+    <string name="T_Back">返回</string>
+    <string name="T_Ok">确定</string>
+    <string name="T_P_Finish">产品名称?采集完成</string>
+    <string name="T_B_Finish">条码?采集完成</string>
+    <string name="T_C_finish">数量?采集完成</string>
+    <string name="T_question_mark">问号?代表采集的内容，请用英文的问号</string>
+</resources>

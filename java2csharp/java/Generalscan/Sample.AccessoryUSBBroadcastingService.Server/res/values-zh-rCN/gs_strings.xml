@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="gs_submit">提交</string>
+    <string name="gs_ok">确定</string>
+    <string name="gs_cancel">取消</string>
+    <!-- 蓝牙提示显示内容 -->
+    <string name="gs_bluetooth_connecting"></string>
+    <string name="gs_bluetooth_connected">蓝牙连接成功</string>
+    <string name="gs_bluetooth_content_text"></string>
+    <!-- USB提示显示内容 -->
+    <string name="gs_usb_connecting"></string>
+    <string name="gs_usb_connected">Generalscan 扫描附件连接成功</string>
+    <string name="gs_usb_charge_normal">标准扫描模式</string>
+    <string name="gs_usb_charge_fast">快速充电模式</string>
+    <string name="gs_usb_charge_warn">请给扫描附件充电</string>
+    <string name="gs_usb_charge_quantity">电池电量剩余</string>
+    <!-- 提示访问地址 -->
+    <string name="gs_website">www.generalscan.com</string>
+    <string name="gs_bluetooth_list">蓝牙设备列表</string>
+    <!-- 发送内容 -->
+
+    <string name="gs_select_model">选择产品型号</string>
+
+    <!-- 发送列表 -->
+    <string name="gs_send_list">配置命令</string>
+    <!-- 读取产品信息 -->
+
+    <string name="gs_cipher">硬件加密密匙</string>
+    <string name="gs_hardware_id">读取硬件唯一序列号</string>
+    <string name="gs_read_battery">读取设备电池电量</string>
+    <string name="gs_read_version">读取固件版本信息</string>
+    <string name="gs_read_charge">读取当前充电状态</string>
+    <!-- 功能 -->
+    <string name="gs_start_scan">开始扫描</string>
+    <string name="gs_close_hibernate">关闭休眠时间</string>
+    <string name="gs_close_read">关闭读取数据</string>
+    <string name="gs_open_read">打开读取数据</string>
+    <string name="gs_Resume_DefaultSetting">还原默认设置</string>
+    <string name="gs_charge_fast">快速充电模式</string>
+    <string name="gs_charge_normal">标准扫描模式</string>
+
+    <!-- 配置 -->
+    <string name="gs_reading_scanner">正在获取扫描器信息</string>
+    <string name="gs_please_connected_scanner">请先连接扫描器并确定扫描器未在休眠状态</string>
+    <!-- 开关 -->
+    <string name="gs_condition_open">打开</string>
+    <string name="gs_condition_close">关闭</string>
+    <!-- 休眠时间 -->
+    <string name="gs_set_hibernate">休眠时间</string>
+    <string name="gs_condition_hibernate">请输入休眠时间，单位秒，范围0~240</string>
+    <!-- 蓝牙名称 -->
+    <string name="gs_set_sppbluetoothname">SPP蓝牙名称</string>
+    <string name="gs_set_hidbluetoothname">HID蓝牙名称</string>
+    <string name="gs_condition_bluetoothname">请输入蓝牙名称，使用英文或者数字</string>
+    <!-- 字符 -->
+    <string name="gs_character">字符</string>
+    <string name="gs_is_delete_character">删除当前字符？</string>
+    <string name="gs_character_settings">字符设置</string>
+    <string name="gs_delete_character">删除当前字符</string>
+    <string name="gs_userdefined_character">自定义字符</string>
+    <string name="gs_character_ascii">请输入字符的ASCII码,范围0-127</string>
+    <!-- 前綴字符 -->
+    <string name="gs_set_preamblecharacter">前綴字符</string>
+    <string name="gs_condition_preamblecharacter">选择前缀字符，长按更多选项</string>
+    <!-- 后缀字符 -->
+
+    <string name="gs_set_postamblecharacter">后缀字符</string>
+    <string name="gs_condition_state">状态开关</string>
+    <string name="gs_condition_postamblecharacter">选择后缀字符，长按更多选项</string>
+    <!-- 字符 -->
+    <string name="gs_condition_crlf">回车换行</string>
+    <string name="gs_condition_hv">TAB键</string>
+    <!-- 输出方式 -->
+    <string name="gs_set_output">输出方式</string>
+    <string name="gs_output_serialport">串口方式</string>
+    <string name="gs_output_usb">USB HID键盘模式</string>
+    <string name="gs_output_usb1">USB背夹模式</string>
+    <string name="gs_output_bluetooth">蓝牙接口</string>
+    <string name="gs_condition_output">请选择输出方式</string>
+    <!-- LED -->
+    <string name="gs_set_led">LED开关</string>
+    <!-- 蜂鸣器 -->
+    <string name="gs_set_buzzer">蜂鸣器开关</string>
+    <!-- 无解码输出 -->
+    <string name="gs_set_noread">无解码输出 </string>
+    <string name="gs_condition_noread">选择无解码输出时的输出字符，长按更多选项</string>
+    <!-- 触发模式 -->
+    <string name="gs_set_triggermode">触发模式 </string>
+    <string name="gs_triggermode_sequence">连续读取模式 </string>
+    <string name="gs_triggermode_sequence_oneoutput">连续读取一次输出 </string>
+    <string name="gs_triggermode_externamleave">电平触发模 </string>
+    <string name="gs_triggermode_externaledge">边沿触发模式 </string>
+    <string name="gs_triggermode_serialdata">串口触发模式 </string>
+    <string name="gs_condition_triggermode">请选择触发模式</string>
+    <!-- 无解玛超时 -->
+    <string name="gs_set_NoDecodeTimeOut">无解码超时</string>
+    <string name="gs_condition_NoDecodeTimeOut">请输超时时间，单位秒，范围1~4095</string>
+    <!-- TTR -->
+    <string name="gs_set_TTR">读取条码时间测试</string>
+    <!-- 同一条码解码纠错 -->
+    <string name="gs_set_DecodesBeforeOutput">同一条码解码纠错</string>
+    <string name="gs_condition_DecodesBeforeOutput">纠错次数。范围0-10</string>
+    <!-- 音量控制 -->
+    <string name="gs_set_Volume">声音</string>
+    <string name="gs_condition_Volume">范围0-1000</string>
+    <!-- 39码设置 -->
+    <string name="gs_set_code39">39码设置 </string>
+    <string name="gs_condition_Code39State">39码状态</string>
+    <string name="gs_condition_Code39CheckCharacterStatus">39码校验码状态</string>
+    <string name="gs_condition_Code39CheckCharacterOutputStatus">39码校验码显示使能</string>
+    <string name="gs_condition_Code39MinimumSymbolLength">39码条码最小字符长度，范围0-32</string>
+    <string name="gs_condition_Code39FullASCIISet">39码全ASCII码支持</string>
+    <!-- 128码设置 -->
+    <string name="gs_set_code128">128码设置 </string>
+    <string name="gs_condition_Code128State">128码状态</string>
+    <string name="gs_condition_Code128MinimumSymbolLength">128码条码最小字符长度，范围0-32</string>
+    <!-- Codabar码设置 -->
+    <string name="gs_set_codeCodabar">Codabar码设置 </string>
+    <string name="gs_condition_CodeCodabarState">Codabar码状态</string>
+    <string name="gs_condition_CodeCodabarStartandStopOutputStatus">Codabar码开始和结束字符显示使能</string>
+    <string name="gs_condition_CodeCodabarMinimumSymbolLength">Codabar码条码最小字符长度，范围0-32</string>
+    <string name="gs_condition_CodeCodabarCheckCharacterStatus">Codabar码校验码状态</string>
+    <string name="gs_condition_CodeCodabarCheckCharacterOutputStatus">Codabar码校验码显示使能</string>
+    <!-- i25码设置 -->
+    <string name="gs_set_codei25">i25码设置 </string>
+    <string name="gs_condition_Codei25State">i25码状态</string>
+    <string name="gs_condition_Codei25CheckCharacterStatus">i25码校验码状态</string>
+    <string name="gs_condition_Codei25CheckCharacterOutputStatus">i25码校验码显示使能</string>
+    <string name="gs_condition_Codei25MinimumSymbolLength">i25码条码最小字符长度，范围0-32</string>
+    <!-- UPCEAN码设置 -->
+    <string name="gs_set_UPCEAN">UPC/EAN码设置 </string>
+    <string name="gs_condition_UPCAState">UPC-A码状态</string>
+    <string name="gs_condition_UPCEState">UPC-E码状态</string>
+    <string name="gs_condition_EAN8State">EAN-8码状态</string>
+    <string name="gs_condition_EAN13State">EAN-13码状态</string>
+    <string name="gs_condition_UPCEANSupplementalStatus">UPC/EAN码附加码状态</string>
+    <string name="gs_condition_UPCEANSupplemental2Status">UPC/EAN码2字符附加码状态</string>
+    <string name="gs_condition_UPCEANSupplemental5Status">UPC/EAN码5字符附加码开关</string>
+    <string name="gs_condition_UPCEANSymbolLength">UPC/EAN码最小条码长度，范围0-32</string>
+
+</resources>

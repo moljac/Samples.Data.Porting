@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>   
+    
+    <!--  附件类型判断 -->
+	<usb-accessory model="Generalscan Scanner" manufacturer="Generalscan" version="1.0"/>
+	<usb-accessory model="FTDIUARTDemo" manufacturer="FTDI" version="1.0"/>
+	<usb-accessory model="Android Accessory FT312D" manufacturer="FTDI" version="1.0"/>
+	
+</resources>
