@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="gs_usbhost_show">Show Trigger Button</string>
+    <string name="gs_usbhost_hide">Hide Trigger Button</string>
+    <string name="gs_usbhost_type1">Type 1</string>
+    <string name="gs_usbhost_type2">Type 2</string>
+    <string name="gs_usbhost_type3">Type 3</string>
+    <string name="gs_usbhost_transparency">Transparency</string>
+    <string name="gs_usbhost_font_size">Font Size</string>
+    <string name="gs_usbhost_vibrate">Vibrate</string>
+    <string name="gs_usbhost_vibrate_time">Vibrate Time</string>
+    <string name="gs_usbhost_trigger">Trigger</string>
+    <string name="gs_usbhost_trigger_time">Trigger Time</string>
+    <string name="gs_usbhost_battery">Show Battery</string>
+    <string name="gs_usbhost_save">Save</string>
+    
+    <string name="gs_usbhost_connect">Generalscan ScanBuddy BarcodeAccessory is connected !</string>
+
+</resources>

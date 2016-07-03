@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="gs_usbhost_show">显示桌面悬浮窗</string>
+    <string name="gs_usbhost_hide">隐藏桌面悬浮窗</string>
+    <string name="gs_usbhost_type1">类型1</string>
+    <string name="gs_usbhost_type2">类型2</string>
+    <string name="gs_usbhost_type3">类型3</string>
+    <string name="gs_usbhost_transparency">透明度</string>
+    <string name="gs_usbhost_font_size">字体大小</string>
+    <string name="gs_usbhost_vibrate">是否震动</string>
+    <string name="gs_usbhost_vibrate_time">震动时长</string>
+    <string name="gs_usbhost_trigger">自动触发</string>
+    <string name="gs_usbhost_trigger_time">触发间隔</string>
+    <string name="gs_usbhost_battery">显示电量以及时间</string>
+    <string name="gs_usbhost_save">保存</string>
+
+    <string name="gs_usbhost_connect">Generalscan ScanBuddy已经连接</string>
+    
+</resources>

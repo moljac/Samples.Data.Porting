@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="app_name">GS_SDK</string>
+    <string name="bluetooth">Bluetooth Scanner Sample</string>
+    <string name="usb">USB Accessory Sample</string>
+    <string name="tts">TTS Sample</string>
+    <string name="usbService">USB Accessory Service Sample</string>
+    <string name="usbHost">Scanbuddy USB Host Sample</string>
+    <string name="edit">Version：</string>
+    <!-- 列表 -->
+    <string name="Function">Hardware Function</string>
+    <string name="Config">Barcode Setting</string>
+    <string name="Read">Read Accessory Information</string>
+    <!-- 蓝牙 -->
+    <string name="B_Open">Open the Bluetooth and pairing</string>
+    <string name="B_Select">Select device</string>
+    <string name="B_Connect">Connect</string>
+    <string name="B_Close">Disconnect</string>
+    <string name="B_Clear">Clear</string>
+    <string name="B_SendContent">Send Command</string>
+    <string name="B_Send">Send</string>
+    <string name="B_SendList">Setting</string>
+    <string name="U_ScanContent">Scan Information：</string>
+    <!-- USB -->
+    <string name="U_Clear">Clear</string>
+    <string name="U_SendContent">Send Command</string>
+    <string name="U_Send">Send</string>
+    <string name="U_SendList">Setting</string>
+    <string name="U_ChargeState">Set Charging Mode Threshold</string>
+    <string name="U_ChargeMax">Max Value( Default:35)</string>
+    <string name="U_ChargeMin">Min Value (Default:30)</string>
+    <string name="U_ChargeWarn">Sled Battery Warning( Default:5)</string>
+    <string name="U_StartService">Start service</string>
+    <string name="U_stopService">Stop service</string>
+    <string name="U_newActivity">More</string>
+    <!--TTS-->
+    <string name="T_Product">Product</string>
+    <string name="T_Barcode">Barcode</string>
+    <string name="T_Count">Count</string>
+    <string name="T_Clear">clear</string>
+    <string name="T_Pronunciation">pronunciation</string>
+    <string name="T_Content">Content Setting</string>
+    <string name="T_SysSetting">System Setting</string>
+    <string name="T_Back">Back</string>
+    <string name="T_Ok">OK</string>
+    <string name="T_P_Finish">Product?Finish</string>
+    <string name="T_B_Finish">Barcode?Finish</string>
+    <string name="T_C_finish">Count?Finish</string>
+    <string name="T_question_mark">question? Represents the collection content, please use the English question mark</string>
+    <!-- usbhost -->
+    <string name="Connect">Connect</string>
+    <string name="Clean">Clear</string>
+    <string name="SendCount">Send Count</string>
+    <string name="ReadCount">Read Count"</string>
+    <string name="Setting">Setting</string>
+</resources>

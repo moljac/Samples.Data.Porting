@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="gs_submit">Submit</string>
+    <string name="gs_ok">OK</string>
+    <string name="gs_cancel">Cancel</string>
+    <!-- 蓝牙提示显示内容 -->
+    <string name="gs_bluetooth_connecting">Bluetooth Connecting</string>
+    <string name="gs_bluetooth_connected"></string>
+    <string name="gs_bluetooth_content_text"></string>
+    <!-- USB提示显示内容 -->
+    <string name="gs_usb_connecting"></string>
+    <string name="gs_usb_connected">Generalscan Barcode Sled Connected</string>
+    <string name="gs_usb_content_text"></string>
+    <string name="gs_usb_charge_normal">Standard Scanning Mode</string>
+    <string name="gs_usb_charge_fast">Fast Charge Mode</string>
+    <string name="gs_usb_charge_warn">Charge Warning</string>
+    <string name="gs_usb_charge_quantity">Phone Battery:</string>
+    <!-- 提示访问地址 -->
+    <string name="gs_website">www.generalscan.com</string>
+    <string name="gs_bluetooth_list">Bluetooth devices</string>
+    <!-- 发送内容 -->
+    <string name="gs_select_model">Select Model</string>
+    <!-- 发送列表 -->
+    <string name="gs_send_list">Setting Function</string>
+    <!-- 读取产品信息 -->
+    <string name="gs_cipher">Encryption Code</string>
+    <string name="gs_hardware_id">Hardware ID</string>
+    <string name="gs_read_battery">Sled Battery Information</string>
+    <string name="gs_read_version">Firm Version</string>
+    <string name="gs_read_charge">Sled Charging State</string>
+    <string name="gs_read_usbsleep">Usb Sleep Time</string>
+    <string name="gs_read_upload_battery">Usb Upload Battery Time</string>
+       
+       
+    <!-- 功能 -->
+    <string name="gs_start_scan">Start scan</string>
+    <string name="gs_close_hibernate">Close Hibernate</string>
+    <string name="gs_close_read">Close Read</string>
+    <string name="gs_open_read">Open Read</string>
+    <string name="gs_Resume_DefaultSetting">Resume Default Setting</string>
+    <string name="gs_charge_fast">Fast Charge</string>
+    <string name="gs_charge_normal">Normal Charge</string>
+
+    <!-- 配置 -->
+    <string name="gs_reading_scanner">Getting the scanner data</string>
+    <string name="gs_please_connected_scanner">Please connect the scanner</string>
+
+    <!-- 开关 -->
+    <string name="gs_condition_open">Open</string>
+    <string name="gs_condition_close">Close</string>
+    <!-- 休眠时间 -->
+    <string name="gs_set_hibernate">Hibernate time</string>
+    <string name="gs_condition_hibernate">0~240s</string>
+        <!-- USB休眠时间 -->
+    <string name="gs_set_usb_hibernate">USB Hibernate time</string>
+    <string name="gs_condition_usb_hibernate">1~900</string>
+    
+     <!-- 背夹电量上传频率 -->
+    <string name="gs_set_upload_battery">upload battery</string>
+    <string name="gs_condition_upload_battery">0~100</string>
+  
+    <!-- 蓝牙名称 -->
+    <string name="gs_set_sppbluetoothname">SPP Bluetooth Name</string>
+    <string name="gs_set_hidbluetoothname">HID Bluetooth Name</string>
+    <string name="gs_condition_bluetoothname">please enter english or number</string>
+    <!-- 字符 -->
+    <string name="gs_character">Character</string>
+    <string name="gs_is_delete_character">Delete the current character?</string>
+    <string name="gs_character_settings">Current character Settings</string>
+    <string name="gs_delete_character">Delete the current character</string>
+    <string name="gs_userdefined_character">The custom character</string>
+    <string name="gs_character_ascii">Please enter the characters ASCII code, 0-127</string>
+    <!-- 前綴字符 -->
+    <string name="gs_set_preamblecharacter">Preamble Character</string>
+    <string name="gs_condition_preamblecharacter">Select Preamble Character,Long click for more options</string>
+    <!-- 后缀字符 -->
+    <string name="gs_set_postamblecharacter">Postamble Character</string>
+    <string name="gs_condition_state">State</string>
+    <string name="gs_condition_postamblecharacter">Select Postamble Character,Long click for more options</string>
+    <!-- 字符 -->
+    <string name="gs_condition_crlf">CR LF</string>
+    <string name="gs_condition_hv">TAB</string>
+
+    <!-- 输出方式 -->
+    <string name="gs_set_output">Output model</string>
+    <string name="gs_output_serialport">Serial port</string>
+    <string name="gs_output_usb">USB</string>
+    <string name="gs_output_usb1">USB Jack</string>
+    <string name="gs_output_bluetooth">Bluetooth</string>
+    <string name="gs_condition_output">Select output model</string>
+    <!-- LED -->
+    <string name="gs_set_led">LED</string>
+    <!-- 蜂鸣器 -->
+    <string name="gs_set_buzzer">Buzzer</string>
+    <!-- 无解码输出 -->
+    <string name="gs_set_noread">NoRead</string>
+    <string name="gs_condition_noread">Select NoRead Character,Long click for more options</string>
+    <!-- 触发模式 -->
+    <string name="gs_set_triggermode">Trigger Mode</string>
+    <string name="gs_triggermode_sequence">Continuous Read </string>
+    <string name="gs_triggermode_sequence_oneoutput">Continous Read One Output</string>
+    <string name="gs_triggermode_externamleave">Externam Leave</string>
+    <string name="gs_triggermode_externaledge">External Edge </string>
+    <string name="gs_triggermode_serialdata">Serial Data</string>
+    <string name="gs_condition_triggermode">Select Trigger Mode</string>
+    <!-- 无解玛超时 -->
+    <string name="gs_set_NoDecodeTimeOut">No Decode TimeOut</string>
+    <string name="gs_condition_NoDecodeTimeOut">TimeOut,1~4095</string>
+    <!-- TTR -->
+    <string name="gs_set_TTR">TTR</string>
+    <!-- 同一条码解码纠错 -->
+    <string name="gs_set_DecodesBeforeOutput">DecodesBeforeOutput</string>
+    <string name="gs_condition_DecodesBeforeOutput">Error recovery number。0-10</string>
+
+    <!-- 音量控制 -->
+    <string name="gs_set_Volume">Volume</string>
+    <string name="gs_condition_Volume">0-1000</string>
+
+    <!-- 39码设置 -->
+    <string name="gs_set_code39">Code 39</string>
+    <string name="gs_condition_Code39State">Code 39 State</string>
+    <string name="gs_condition_Code39CheckCharacterStatus">Code 39 Check Character Status</string>
+    <string name="gs_condition_Code39CheckCharacterOutputStatus">Code39 Check Character Output Status</string>
+    <string name="gs_condition_Code39MinimumSymbolLength">Code 39 Minimum Symbol Length,0-32</string>
+    <string name="gs_condition_Code39FullASCIISet">Code 39 Full ASCII Set</string>
+    <!-- 128码设置 -->
+    <string name="gs_set_code128">Code 128</string>
+    <string name="gs_condition_Code128State">Code 128 State</string>
+    <string name="gs_condition_Code128MinimumSymbolLength">Code 128 Minimum Symbol Length,0-32</string>
+    <!-- Codabar码设置 -->
+    <string name="gs_set_codeCodabar">Codabar</string>
+    <string name="gs_condition_CodeCodabarState">Codabar State</string>
+    <string name="gs_condition_CodeCodabarStartandStopOutputStatus">Codabar Start and Stop Output Status</string>
+    <string name="gs_condition_CodeCodabarMinimumSymbolLength">Codabar Minimum Symbol Length,0-32</string>
+    <string name="gs_condition_CodeCodabarCheckCharacterStatus">Codabar Check Character Status</string>
+    <string name="gs_condition_CodeCodabarCheckCharacterOutputStatus">Codabar Check Character Output Status</string>
+    <!-- i25码设置 -->
+    <string name="gs_set_codei25">Code i25</string>
+    <string name="gs_condition_Codei25State">Code i25 State</string>
+    <string name="gs_condition_Codei25CheckCharacterStatus">Code i25 Check Character Status</string>
+    <string name="gs_condition_Codei25CheckCharacterOutputStatus">Codei25 Check Character Output Status</string>
+    <string name="gs_condition_Codei25MinimumSymbolLength">Code i25 Minimum Symbol Length,0-32</string>
+    <!-- UPCEAN码设置 -->
+    <string name="gs_set_UPCEAN">UPC/EAN </string>
+    <string name="gs_condition_UPCAState">UPC-A State</string>
+    <string name="gs_condition_UPCEState">UPC-E State</string>
+    <string name="gs_condition_EAN8State">EAN-8 State</string>
+    <string name="gs_condition_EAN13State">EAN-13 State</string>
+    <string name="gs_condition_UPCEANSupplementalStatus">UPC/EAN Supplemental Status</string>
+    <string name="gs_condition_UPCEANSupplemental2Status">UPC/EAN Supplemental 2 Status</string>
+    <string name="gs_condition_UPCEANSupplemental5Status">UPC/EAN Supplemental 5 Status</string>
+    <string name="gs_condition_UPCEANSymbolLength">UPC/EAN Minimum Symbol Length,0-32</string>
+
+    <!-- USB -->
+    <string name="gs_baudRate">Baud rate</string>
+
+    <string-array name="gs_baud_rate">
+        <item>300</item>
+        <item>600</item>
+        <item>1200</item>
+        <item>4800</item>
+        <item>9600</item>
+        <item>19200</item>
+        <item>38400</item>
+        <item>57600</item>
+        <item>115200</item>
+        <item>230400</item>
+        <item>460800</item>
+        <item>921600</item>
+    </string-array>
+    <string-array name="gs_stop_bits">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="gs_data_bits">
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="gs_parity">
+        <item>None</item>
+        <item>Odd</item>
+        <item>Even</item>
+        <item>Mark</item>
+        <item>Space</item>
+    </string-array>
+    <string-array name="gs_flow_control">
+        <item>None</item>
+        <item>CTS/RTS</item>
+    </string-array>
+
+</resources>
