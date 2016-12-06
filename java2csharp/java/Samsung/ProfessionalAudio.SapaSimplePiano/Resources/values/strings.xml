@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="app_name">SapaSimplePiano</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">This is an sample to use the SapaSynthesizer.</string>
-    <string name="play_sound_c1">Play Piano Sound</string>
-
-</resources>

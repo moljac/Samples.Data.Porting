@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<cocktail-provider xmlns:android="http://schemas.android.com/apk/res/android" 
-    label="@string/single_cocktail_name" 
-    description="@string/description_single"
-    previewImage="@drawable/bg_preview"
-    updatePeriodMills="1800000"
-    permitVisibilityChanged="false"
-    configure="com.example.cocktail.ExampleCocktailConfigure">
-</cocktail-provider>
