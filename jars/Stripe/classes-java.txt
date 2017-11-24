@@ -1,0 +1,2227 @@
+Compiled from "BuildConfig.java"
+public final class com.stripe.android.BuildConfig {
+  public static final boolean DEBUG;
+  public static final java.lang.String APPLICATION_ID;
+  public static final java.lang.String BUILD_TYPE;
+  public static final java.lang.String FLAVOR;
+  public static final int VERSION_CODE;
+  public static final java.lang.String VERSION_NAME;
+  public com.stripe.android.BuildConfig();
+}
+Compiled from "CardUtils.java"
+public class com.stripe.android.CardUtils {
+  public com.stripe.android.CardUtils();
+  public static java.lang.String getPossibleCardType(java.lang.String);
+  public static boolean isValidCardNumber(java.lang.String);
+  static boolean isValidLuhnNumber(java.lang.String);
+  static boolean isValidCardLength(java.lang.String);
+  static boolean isValidCardLength(java.lang.String, java.lang.String);
+}
+Compiled from "CustomerSession.java"
+class com.stripe.android.CustomerSession$1 implements java.lang.Runnable {
+  final java.lang.ref.WeakReference val$contextWeakReference;
+  final com.stripe.android.EphemeralKey val$key;
+  final java.util.List val$productUsageTokens;
+  final java.lang.String val$sourceId;
+  final java.lang.String val$sourceType;
+  final com.stripe.android.CustomerSession this$0;
+  com.stripe.android.CustomerSession$1(com.stripe.android.CustomerSession, java.lang.ref.WeakReference, com.stripe.android.EphemeralKey, java.util.List, java.lang.String, java.lang.String);
+  public void run();
+}
+Compiled from "CustomerSession.java"
+class com.stripe.android.CustomerSession$2 implements java.lang.Runnable {
+  final java.lang.ref.WeakReference val$contextWeakReference;
+  final com.stripe.android.EphemeralKey val$key;
+  final java.util.List val$productUsageTokens;
+  final java.lang.String val$sourceId;
+  final java.lang.String val$sourceType;
+  final com.stripe.android.CustomerSession this$0;
+  com.stripe.android.CustomerSession$2(com.stripe.android.CustomerSession, java.lang.ref.WeakReference, com.stripe.android.EphemeralKey, java.util.List, java.lang.String, java.lang.String);
+  public void run();
+}
+Compiled from "CustomerSession.java"
+class com.stripe.android.CustomerSession$3 implements java.lang.Runnable {
+  final java.lang.ref.WeakReference val$contextWeakReference;
+  final com.stripe.android.EphemeralKey val$key;
+  final java.util.List val$productUsageTokens;
+  final com.stripe.android.model.ShippingInformation val$shippingInformation;
+  final com.stripe.android.CustomerSession this$0;
+  com.stripe.android.CustomerSession$3(com.stripe.android.CustomerSession, java.lang.ref.WeakReference, com.stripe.android.EphemeralKey, java.util.List, com.stripe.android.model.ShippingInformation);
+  public void run();
+}
+Compiled from "CustomerSession.java"
+class com.stripe.android.CustomerSession$4 implements java.lang.Runnable {
+  final com.stripe.android.EphemeralKey val$key;
+  final com.stripe.android.CustomerSession this$0;
+  com.stripe.android.CustomerSession$4(com.stripe.android.CustomerSession, com.stripe.android.EphemeralKey);
+  public void run();
+}
+Compiled from "CustomerSession.java"
+class com.stripe.android.CustomerSession$5 extends android.os.Handler {
+  final com.stripe.android.CustomerSession this$0;
+  com.stripe.android.CustomerSession$5(com.stripe.android.CustomerSession, android.os.Looper);
+  public void handleMessage(android.os.Message);
+}
+Compiled from "CustomerSession.java"
+public interface com.stripe.android.CustomerSession$CustomerRetrievalListener {
+  public abstract void onCustomerRetrieved(com.stripe.android.model.Customer);
+  public abstract void onError(int, java.lang.String);
+}
+Compiled from "CustomerSession.java"
+public interface com.stripe.android.CustomerSession$SourceRetrievalListener {
+  public abstract void onSourceRetrieved(com.stripe.android.model.Source);
+  public abstract void onError(int, java.lang.String);
+}
+Compiled from "CustomerSession.java"
+interface com.stripe.android.CustomerSession$StripeApiProxy {
+  public abstract com.stripe.android.model.Customer retrieveCustomerWithKey(java.lang.String, java.lang.String) throws com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException;
+  public abstract com.stripe.android.model.Source addCustomerSourceWithKey(android.content.Context, java.lang.String, java.lang.String, java.util.List<java.lang.String>, java.lang.String, java.lang.String, java.lang.String) throws com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException;
+  public abstract com.stripe.android.model.Customer setDefaultCustomerSourceWithKey(android.content.Context, java.lang.String, java.lang.String, java.util.List<java.lang.String>, java.lang.String, java.lang.String, java.lang.String) throws com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException;
+  public abstract com.stripe.android.model.Customer setCustomerShippingInfoWithKey(android.content.Context, java.lang.String, java.lang.String, java.util.List<java.lang.String>, com.stripe.android.model.ShippingInformation, java.lang.String) throws com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException;
+}
+Compiled from "CustomerSession.java"
+public class com.stripe.android.CustomerSession implements com.stripe.android.EphemeralKeyManager$KeyManagerListener {
+  public static final java.lang.String ACTION_API_EXCEPTION;
+  public static final java.lang.String EXTRA_EXCEPTION;
+  public static final java.lang.String EVENT_SHIPPING_INFO_SAVED;
+  public static void initCustomerSession(com.stripe.android.EphemeralKeyProvider);
+  public static com.stripe.android.CustomerSession getInstance();
+  public static void endCustomerSession();
+  static void initCustomerSession(com.stripe.android.EphemeralKeyProvider, com.stripe.android.CustomerSession$StripeApiProxy, java.util.Calendar);
+  static void clearInstance();
+  public void addProductUsageTokenIfValid(java.lang.String);
+  public void retrieveCurrentCustomer(com.stripe.android.CustomerSession$CustomerRetrievalListener);
+  public void updateCurrentCustomer(com.stripe.android.CustomerSession$CustomerRetrievalListener);
+  public com.stripe.android.model.Customer getCachedCustomer();
+  public void addCustomerSource(android.content.Context, java.lang.String, java.lang.String, com.stripe.android.CustomerSession$SourceRetrievalListener);
+  public void setCustomerShippingInformation(android.content.Context, com.stripe.android.model.ShippingInformation);
+  public void setCustomerDefaultSource(android.content.Context, java.lang.String, java.lang.String, com.stripe.android.CustomerSession$CustomerRetrievalListener);
+  void resetUsageTokens();
+  com.stripe.android.model.Customer getCustomer();
+  long getCustomerCacheTime();
+  com.stripe.android.EphemeralKey getEphemeralKey();
+  java.util.Set<java.lang.String> getProductUsageTokens();
+  void setStripeApiProxy(com.stripe.android.CustomerSession$StripeApiProxy);
+  public void onKeyUpdate(com.stripe.android.EphemeralKey, java.lang.String, java.util.Map<java.lang.String, java.lang.Object>);
+  public void onKeyError(int, java.lang.String);
+  static com.stripe.android.model.Source addCustomerSourceWithKey(java.lang.ref.WeakReference<android.content.Context>, com.stripe.android.EphemeralKey, java.util.List<java.lang.String>, java.lang.String, java.lang.String, com.stripe.android.CustomerSession$StripeApiProxy) throws com.stripe.android.exception.StripeException;
+  static com.stripe.android.model.Customer setCustomerShippingInfoWithKey(java.lang.ref.WeakReference<android.content.Context>, com.stripe.android.EphemeralKey, java.util.List<java.lang.String>, com.stripe.android.model.ShippingInformation, com.stripe.android.CustomerSession$StripeApiProxy) throws com.stripe.android.exception.StripeException;
+  static com.stripe.android.model.Customer setCustomerSourceDefaultWithKey(java.lang.ref.WeakReference<android.content.Context>, com.stripe.android.EphemeralKey, java.util.List<java.lang.String>, java.lang.String, java.lang.String, com.stripe.android.CustomerSession$StripeApiProxy) throws com.stripe.android.exception.StripeException;
+  static com.stripe.android.model.Customer retrieveCustomerWithKey(java.lang.ref.WeakReference<android.content.Context>, com.stripe.android.EphemeralKey, com.stripe.android.CustomerSession$StripeApiProxy) throws com.stripe.android.exception.StripeException;
+  static void sendErrorIntent(java.lang.ref.WeakReference<android.content.Context>, com.stripe.android.exception.StripeException);
+  static com.stripe.android.CustomerSession$StripeApiProxy access$000(com.stripe.android.CustomerSession);
+  static android.os.Handler access$100(com.stripe.android.CustomerSession);
+  static java.lang.ref.WeakReference access$200(com.stripe.android.CustomerSession);
+  static com.stripe.android.model.Customer access$302(com.stripe.android.CustomerSession, com.stripe.android.model.Customer);
+  static long access$402(com.stripe.android.CustomerSession, long);
+  static java.util.Calendar access$500(com.stripe.android.CustomerSession);
+  static com.stripe.android.CustomerSession$CustomerRetrievalListener access$600(com.stripe.android.CustomerSession);
+  static com.stripe.android.model.Customer access$300(com.stripe.android.CustomerSession);
+  static com.stripe.android.CustomerSession$CustomerRetrievalListener access$602(com.stripe.android.CustomerSession, com.stripe.android.CustomerSession$CustomerRetrievalListener);
+  static com.stripe.android.CustomerSession$SourceRetrievalListener access$700(com.stripe.android.CustomerSession);
+  static com.stripe.android.CustomerSession$SourceRetrievalListener access$702(com.stripe.android.CustomerSession, com.stripe.android.CustomerSession$SourceRetrievalListener);
+  static java.lang.ref.WeakReference access$202(com.stripe.android.CustomerSession, java.lang.ref.WeakReference);
+  static {};
+}
+Compiled from "EphemeralKey.java"
+final class com.stripe.android.EphemeralKey$1 implements android.os.Parcelable$Creator<com.stripe.android.EphemeralKey> {
+  com.stripe.android.EphemeralKey$1();
+  public com.stripe.android.EphemeralKey createFromParcel(android.os.Parcel);
+  public com.stripe.android.EphemeralKey[] newArray(int);
+  public java.lang.Object[] newArray(int);
+  public java.lang.Object createFromParcel(android.os.Parcel);
+}
+Compiled from "EphemeralKey.java"
+class com.stripe.android.EphemeralKey extends com.stripe.android.model.StripeJsonModel implements android.os.Parcelable {
+  static final java.lang.String FIELD_CREATED;
+  static final java.lang.String FIELD_EXPIRES;
+  static final java.lang.String FIELD_SECRET;
+  static final java.lang.String FIELD_LIVEMODE;
+  static final java.lang.String FIELD_OBJECT;
+  static final java.lang.String FIELD_ID;
+  static final java.lang.String FIELD_ASSOCIATED_OBJECTS;
+  static final java.lang.String FIELD_TYPE;
+  static final java.lang.String NULL;
+  public static final android.os.Parcelable$Creator<com.stripe.android.EphemeralKey> CREATOR;
+  public org.json.JSONObject toJson();
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public int describeContents();
+  public void writeToParcel(android.os.Parcel, int);
+  long getCreated();
+  java.lang.String getCustomerId();
+  long getExpires();
+  void setExpires(long);
+  java.lang.String getId();
+  boolean isLiveMode();
+  java.lang.String getObject();
+  java.lang.String getSecret();
+  java.lang.String getType();
+  static com.stripe.android.EphemeralKey fromString(java.lang.String);
+  static com.stripe.android.EphemeralKey fromJson(org.json.JSONObject);
+  com.stripe.android.EphemeralKey(android.os.Parcel, com.stripe.android.EphemeralKey$1);
+  static {};
+}
+Compiled from "EphemeralKeyManager.java"
+class com.stripe.android.EphemeralKeyManager$ClientKeyUpdateListener implements com.stripe.android.EphemeralKeyUpdateListener {
+  com.stripe.android.EphemeralKeyManager$ClientKeyUpdateListener(com.stripe.android.EphemeralKeyManager, java.lang.String, java.util.Map<java.lang.String, java.lang.Object>);
+  public void onKeyUpdate(java.lang.String);
+  public void onKeyUpdateFailure(int, java.lang.String);
+}
+Compiled from "EphemeralKeyManager.java"
+interface com.stripe.android.EphemeralKeyManager$KeyManagerListener {
+  public abstract void onKeyUpdate(com.stripe.android.EphemeralKey, java.lang.String, java.util.Map<java.lang.String, java.lang.Object>);
+  public abstract void onKeyError(int, java.lang.String);
+}
+Compiled from "EphemeralKeyManager.java"
+class com.stripe.android.EphemeralKeyManager {
+  com.stripe.android.EphemeralKeyManager(com.stripe.android.EphemeralKeyProvider, com.stripe.android.EphemeralKeyManager$KeyManagerListener, long, java.util.Calendar);
+  void retrieveEphemeralKey(java.lang.String, java.util.Map<java.lang.String, java.lang.Object>);
+  com.stripe.android.EphemeralKey getEphemeralKey();
+  static boolean shouldRefreshKey(com.stripe.android.EphemeralKey, long, java.util.Calendar);
+  static void access$000(com.stripe.android.EphemeralKeyManager, java.lang.String, java.lang.String, java.util.Map);
+  static void access$100(com.stripe.android.EphemeralKeyManager, int, java.lang.String);
+}
+Compiled from "EphemeralKeyProvider.java"
+public interface com.stripe.android.EphemeralKeyProvider {
+  public abstract void createEphemeralKey(java.lang.String, com.stripe.android.EphemeralKeyUpdateListener);
+}
+Compiled from "EphemeralKeyUpdateListener.java"
+public interface com.stripe.android.EphemeralKeyUpdateListener {
+  public abstract void onKeyUpdate(java.lang.String);
+  public abstract void onKeyUpdateFailure(int, java.lang.String);
+}
+Compiled from "ErrorParser.java"
+class com.stripe.android.ErrorParser$StripeError {
+  public java.lang.String type;
+  public java.lang.String message;
+  public java.lang.String code;
+  public java.lang.String param;
+  public java.lang.String decline_code;
+  public java.lang.String charge;
+  com.stripe.android.ErrorParser$StripeError();
+}
+Compiled from "ErrorParser.java"
+class com.stripe.android.ErrorParser {
+  static final java.lang.String MALFORMED_RESPONSE_MESSAGE;
+  com.stripe.android.ErrorParser();
+  static com.stripe.android.ErrorParser$StripeError parseError(java.lang.String);
+}
+Compiled from "APIConnectionException.java"
+public class com.stripe.android.exception.APIConnectionException extends com.stripe.android.exception.StripeException {
+  public com.stripe.android.exception.APIConnectionException(java.lang.String);
+  public com.stripe.android.exception.APIConnectionException(java.lang.String, java.lang.Throwable);
+}
+Compiled from "APIException.java"
+public class com.stripe.android.exception.APIException extends com.stripe.android.exception.StripeException {
+  public com.stripe.android.exception.APIException(java.lang.String, java.lang.String, java.lang.Integer, java.lang.Throwable);
+}
+Compiled from "AuthenticationException.java"
+public class com.stripe.android.exception.AuthenticationException extends com.stripe.android.exception.StripeException {
+  public com.stripe.android.exception.AuthenticationException(java.lang.String, java.lang.String, java.lang.Integer);
+}
+Compiled from "CardException.java"
+public class com.stripe.android.exception.CardException extends com.stripe.android.exception.StripeException {
+  public com.stripe.android.exception.CardException(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Integer, java.lang.Throwable);
+  public java.lang.String getCode();
+  public java.lang.String getParam();
+  public java.lang.String getDeclineCode();
+  public java.lang.String getCharge();
+}
+Compiled from "InvalidRequestException.java"
+public class com.stripe.android.exception.InvalidRequestException extends com.stripe.android.exception.StripeException {
+  public com.stripe.android.exception.InvalidRequestException(java.lang.String, java.lang.String, java.lang.String, java.lang.Integer, java.lang.Throwable);
+  public java.lang.String getParam();
+}
+Compiled from "PermissionException.java"
+public class com.stripe.android.exception.PermissionException extends com.stripe.android.exception.AuthenticationException {
+  public com.stripe.android.exception.PermissionException(java.lang.String, java.lang.String, java.lang.Integer);
+}
+Compiled from "RateLimitException.java"
+public class com.stripe.android.exception.RateLimitException extends com.stripe.android.exception.InvalidRequestException {
+  public com.stripe.android.exception.RateLimitException(java.lang.String, java.lang.String, java.lang.String, java.lang.Integer, java.lang.Throwable);
+}
+Compiled from "StripeException.java"
+public abstract class com.stripe.android.exception.StripeException extends java.lang.Exception {
+  protected static final long serialVersionUID;
+  public com.stripe.android.exception.StripeException(java.lang.String, java.lang.String, java.lang.Integer);
+  public com.stripe.android.exception.StripeException(java.lang.String, java.lang.String, java.lang.Integer, java.lang.Throwable);
+  public java.lang.String getRequestId();
+  public java.lang.Integer getStatusCode();
+  public java.lang.String toString();
+}
+Compiled from "LoggingUtils.java"
+class com.stripe.android.LoggingUtils {
+  static final java.lang.String UNKNOWN;
+  static final java.lang.String NO_CONTEXT;
+  static final java.lang.String EVENT_TOKEN_CREATION;
+  static final java.lang.String EVENT_SOURCE_CREATION;
+  static final java.lang.String EVENT_ADD_SOURCE;
+  static final java.lang.String EVENT_DEFAULT_SOURCE;
+  static final java.lang.String EVENT_SET_SHIPPING_INFO;
+  static final java.lang.String FIELD_PRODUCT_USAGE;
+  static final java.lang.String FIELD_ANALYTICS_UA;
+  static final java.lang.String FIELD_APP_NAME;
+  static final java.lang.String FIELD_APP_VERSION;
+  static final java.lang.String FIELD_BINDINGS_VERSION;
+  static final java.lang.String FIELD_DEVICE_TYPE;
+  static final java.lang.String FIELD_EVENT;
+  static final java.lang.String FIELD_OS_NAME;
+  static final java.lang.String FIELD_OS_RELEASE;
+  static final java.lang.String FIELD_OS_VERSION;
+  static final java.lang.String FIELD_PUBLISHABLE_KEY;
+  static final java.lang.String FIELD_SOURCE_TYPE;
+  static final java.lang.String FIELD_TOKEN_TYPE;
+  static final java.util.Set<java.lang.String> VALID_PARAM_FIELDS;
+  com.stripe.android.LoggingUtils();
+  static java.util.Map<java.lang.String, java.lang.Object> getTokenCreationParams(android.content.Context, java.util.List<java.lang.String>, java.lang.String, java.lang.String);
+  static java.util.Map<java.lang.String, java.lang.Object> getSourceCreationParams(android.content.Context, java.util.List<java.lang.String>, java.lang.String, java.lang.String);
+  static java.util.Map<java.lang.String, java.lang.Object> getAddSourceParams(android.content.Context, java.util.List<java.lang.String>, java.lang.String, java.lang.String);
+  static java.util.Map<java.lang.String, java.lang.Object> getEventLoggingParams(android.content.Context, java.util.List<java.lang.String>, java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  static void addNameAndVersion(java.util.Map<java.lang.String, java.lang.Object>, android.content.Context);
+  static java.lang.String getDeviceLoggingString();
+  static java.lang.String getAnalyticsUa();
+  static java.lang.String getEventParamName(java.lang.String);
+  static {};
+}
+Compiled from "Address.java"
+final class com.stripe.android.model.Address$1 implements android.os.Parcelable$Creator<com.stripe.android.model.Address> {
+  com.stripe.android.model.Address$1();
+  public com.stripe.android.model.Address createFromParcel(android.os.Parcel);
+  public com.stripe.android.model.Address[] newArray(int);
+  public java.lang.Object[] newArray(int);
+  public java.lang.Object createFromParcel(android.os.Parcel);
+}
+Compiled from "Address.java"
+public class com.stripe.android.model.Address$Builder {
+  public com.stripe.android.model.Address$Builder();
+  public com.stripe.android.model.Address$Builder setCity(java.lang.String);
+  public com.stripe.android.model.Address$Builder setCountry(java.lang.String);
+  public com.stripe.android.model.Address$Builder setLine1(java.lang.String);
+  public com.stripe.android.model.Address$Builder setLine2(java.lang.String);
+  public com.stripe.android.model.Address$Builder setPostalCode(java.lang.String);
+  public com.stripe.android.model.Address$Builder setState(java.lang.String);
+  public com.stripe.android.model.Address build();
+  static java.lang.String access$000(com.stripe.android.model.Address$Builder);
+  static java.lang.String access$100(com.stripe.android.model.Address$Builder);
+  static java.lang.String access$200(com.stripe.android.model.Address$Builder);
+  static java.lang.String access$300(com.stripe.android.model.Address$Builder);
+  static java.lang.String access$400(com.stripe.android.model.Address$Builder);
+  static java.lang.String access$500(com.stripe.android.model.Address$Builder);
+}
+Compiled from "Address.java"
+public interface com.stripe.android.model.Address$RequiredBillingAddressFields extends java.lang.annotation.Annotation {
+  public static final int NONE;
+  public static final int ZIP;
+  public static final int FULL;
+}
+Compiled from "Address.java"
+public class com.stripe.android.model.Address extends com.stripe.android.model.StripeJsonModel implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator<com.stripe.android.model.Address> CREATOR;
+  com.stripe.android.model.Address(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  com.stripe.android.model.Address(com.stripe.android.model.Address$Builder);
+  public java.lang.String getCity();
+  public void setCity(java.lang.String);
+  public java.lang.String getCountry();
+  public void setCountry(java.lang.String);
+  public java.lang.String getLine1();
+  public void setLine1(java.lang.String);
+  public java.lang.String getLine2();
+  public void setLine2(java.lang.String);
+  public java.lang.String getPostalCode();
+  public void setPostalCode(java.lang.String);
+  public java.lang.String getState();
+  public void setState(java.lang.String);
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public org.json.JSONObject toJson();
+  public static com.stripe.android.model.Address fromString(java.lang.String);
+  public static com.stripe.android.model.Address fromJson(org.json.JSONObject);
+  public void writeToParcel(android.os.Parcel, int);
+  public int describeContents();
+  protected com.stripe.android.model.Address(android.os.Parcel);
+  static {};
+}
+Compiled from "BankAccount.java"
+public interface com.stripe.android.model.BankAccount$BankAccountType extends java.lang.annotation.Annotation {
+}
+Compiled from "BankAccount.java"
+public class com.stripe.android.model.BankAccount {
+  public static final java.lang.String TYPE_COMPANY;
+  public static final java.lang.String TYPE_INDIVIDUAL;
+  public com.stripe.android.model.BankAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  public com.stripe.android.model.BankAccount(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  public java.lang.String getAccountNumber();
+  public java.lang.String getAccountHolderName();
+  public com.stripe.android.model.BankAccount setAccountHolderName(java.lang.String);
+  public java.lang.String getAccountHolderType();
+  public com.stripe.android.model.BankAccount setAccountHolderType(java.lang.String);
+  public java.lang.String getBankName();
+  public java.lang.String getCountryCode();
+  public java.lang.String getCurrency();
+  public java.lang.String getFingerprint();
+  public java.lang.String getLast4();
+  public java.lang.String getRoutingNumber();
+  public static java.lang.String asBankAccountType(java.lang.String);
+  public static com.stripe.android.model.BankAccount fromString(java.lang.String);
+  public static com.stripe.android.model.BankAccount fromJson(org.json.JSONObject);
+}
+Compiled from "Card.java"
+final class com.stripe.android.model.Card$1 extends java.util.HashMap<java.lang.String, java.lang.Integer> {
+  com.stripe.android.model.Card$1();
+}
+Compiled from "Card.java"
+public class com.stripe.android.model.Card$Builder {
+  public com.stripe.android.model.Card$Builder(java.lang.String, java.lang.Integer, java.lang.Integer, java.lang.String);
+  public com.stripe.android.model.Card$Builder name(java.lang.String);
+  public com.stripe.android.model.Card$Builder addressLine1(java.lang.String);
+  public com.stripe.android.model.Card$Builder addressLine1Check(java.lang.String);
+  public com.stripe.android.model.Card$Builder addressLine2(java.lang.String);
+  public com.stripe.android.model.Card$Builder addressCity(java.lang.String);
+  public com.stripe.android.model.Card$Builder addressState(java.lang.String);
+  public com.stripe.android.model.Card$Builder addressZip(java.lang.String);
+  public com.stripe.android.model.Card$Builder addressZipCheck(java.lang.String);
+  public com.stripe.android.model.Card$Builder addressCountry(java.lang.String);
+  public com.stripe.android.model.Card$Builder brand(java.lang.String);
+  public com.stripe.android.model.Card$Builder fingerprint(java.lang.String);
+  public com.stripe.android.model.Card$Builder funding(java.lang.String);
+  public com.stripe.android.model.Card$Builder country(java.lang.String);
+  public com.stripe.android.model.Card$Builder currency(java.lang.String);
+  public com.stripe.android.model.Card$Builder customer(java.lang.String);
+  public com.stripe.android.model.Card$Builder cvcCheck(java.lang.String);
+  public com.stripe.android.model.Card$Builder last4(java.lang.String);
+  public com.stripe.android.model.Card$Builder id(java.lang.String);
+  public com.stripe.android.model.Card$Builder tokenizationMethod(java.lang.String);
+  public com.stripe.android.model.Card build();
+  static java.lang.String access$100(com.stripe.android.model.Card$Builder);
+  static java.lang.Integer access$200(com.stripe.android.model.Card$Builder);
+  static java.lang.Integer access$300(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$400(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$500(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$600(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$700(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$800(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$900(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$1000(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$1100(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$1200(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$1300(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$1400(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$1500(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$1600(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$1700(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$1800(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$1900(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$2000(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$2100(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$2200(com.stripe.android.model.Card$Builder);
+  static java.lang.String access$2300(com.stripe.android.model.Card$Builder);
+}
+Compiled from "Card.java"
+public interface com.stripe.android.model.Card$CardBrand extends java.lang.annotation.Annotation {
+}
+Compiled from "Card.java"
+public interface com.stripe.android.model.Card$FundingType extends java.lang.annotation.Annotation {
+}
+Compiled from "Card.java"
+public class com.stripe.android.model.Card extends com.stripe.android.model.StripeJsonModel implements com.stripe.android.model.StripePaymentSource {
+  public static final java.lang.String AMERICAN_EXPRESS;
+  public static final java.lang.String DISCOVER;
+  public static final java.lang.String JCB;
+  public static final java.lang.String DINERS_CLUB;
+  public static final java.lang.String VISA;
+  public static final java.lang.String MASTERCARD;
+  public static final java.lang.String UNKNOWN;
+  public static final int CVC_LENGTH_AMERICAN_EXPRESS;
+  public static final int CVC_LENGTH_COMMON;
+  public static final java.lang.String FUNDING_CREDIT;
+  public static final java.lang.String FUNDING_DEBIT;
+  public static final java.lang.String FUNDING_PREPAID;
+  public static final java.lang.String FUNDING_UNKNOWN;
+  public static final java.util.Map<java.lang.String, java.lang.Integer> BRAND_RESOURCE_MAP;
+  public static final java.lang.String[] PREFIXES_AMERICAN_EXPRESS;
+  public static final java.lang.String[] PREFIXES_DISCOVER;
+  public static final java.lang.String[] PREFIXES_JCB;
+  public static final java.lang.String[] PREFIXES_DINERS_CLUB;
+  public static final java.lang.String[] PREFIXES_VISA;
+  public static final java.lang.String[] PREFIXES_MASTERCARD;
+  public static final int MAX_LENGTH_STANDARD;
+  public static final int MAX_LENGTH_AMERICAN_EXPRESS;
+  public static final int MAX_LENGTH_DINERS_CLUB;
+  static final java.lang.String VALUE_CARD;
+  public static java.lang.String asCardBrand(java.lang.String);
+  public static java.lang.String asFundingType(java.lang.String);
+  public static com.stripe.android.model.Card fromString(java.lang.String);
+  public static com.stripe.android.model.Card fromJson(org.json.JSONObject);
+  public com.stripe.android.model.Card(java.lang.String, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  public com.stripe.android.model.Card(java.lang.String, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  public com.stripe.android.model.Card(java.lang.String, java.lang.Integer, java.lang.Integer, java.lang.String);
+  public boolean validateCard();
+  public boolean validateNumber();
+  public boolean validateExpiryDate();
+  public boolean validateCVC();
+  public boolean validateExpMonth();
+  boolean validateExpYear(java.util.Calendar);
+  public java.lang.String getNumber();
+  public java.util.List<java.lang.String> getLoggingTokens();
+  public com.stripe.android.model.Card addLoggingToken(java.lang.String);
+  public void setNumber(java.lang.String);
+  public java.lang.String getCVC();
+  public void setCVC(java.lang.String);
+  public java.lang.Integer getExpMonth();
+  public void setExpMonth(java.lang.Integer);
+  public java.lang.Integer getExpYear();
+  public void setExpYear(java.lang.Integer);
+  public java.lang.String getName();
+  public void setName(java.lang.String);
+  public java.lang.String getAddressLine1();
+  public void setAddressLine1(java.lang.String);
+  public java.lang.String getAddressLine2();
+  public void setAddressLine2(java.lang.String);
+  public java.lang.String getAddressCity();
+  public void setAddressCity(java.lang.String);
+  public java.lang.String getAddressZip();
+  public void setAddressZip(java.lang.String);
+  public java.lang.String getAddressState();
+  public void setAddressState(java.lang.String);
+  public java.lang.String getAddressCountry();
+  public void setAddressCountry(java.lang.String);
+  public java.lang.String getCurrency();
+  public void setCurrency(java.lang.String);
+  public java.lang.String getLast4();
+  public java.lang.String getType();
+  public java.lang.String getBrand();
+  public java.lang.String getFingerprint();
+  public java.lang.String getFunding();
+  public java.lang.String getCountry();
+  public java.lang.String getId();
+  public java.lang.String getAddressLine1Check();
+  public java.lang.String getAddressZipCheck();
+  public java.lang.String getCustomerId();
+  public java.lang.String getCvcCheck();
+  public org.json.JSONObject toJson();
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  java.lang.String getTokenizationMethod();
+  boolean validateCard(java.util.Calendar);
+  boolean validateExpiryDate(java.util.Calendar);
+  com.stripe.android.model.Card(com.stripe.android.model.Card$Builder, com.stripe.android.model.Card$1);
+  static {};
+}
+Compiled from "Customer.java"
+public class com.stripe.android.model.Customer extends com.stripe.android.model.StripeJsonModel {
+  public java.lang.String getId();
+  public java.lang.String getDefaultSource();
+  public com.stripe.android.model.ShippingInformation getShippingInformation();
+  public java.util.List<com.stripe.android.model.CustomerSource> getSources();
+  public java.lang.Boolean getHasMore();
+  public java.lang.Integer getTotalCount();
+  public java.lang.String getUrl();
+  public com.stripe.android.model.CustomerSource getSourceById(java.lang.String);
+  public org.json.JSONObject toJson();
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public static com.stripe.android.model.Customer fromString(java.lang.String);
+  public static com.stripe.android.model.Customer fromJson(org.json.JSONObject);
+}
+Compiled from "CustomerSource.java"
+public class com.stripe.android.model.CustomerSource extends com.stripe.android.model.StripeJsonModel implements com.stripe.android.model.StripePaymentSource {
+  public com.stripe.android.model.StripePaymentSource getStripePaymentSource();
+  public java.lang.String getId();
+  public com.stripe.android.model.Source asSource();
+  public java.lang.String getTokenizationMethod();
+  public com.stripe.android.model.Card asCard();
+  public java.lang.String getSourceType();
+  public static com.stripe.android.model.CustomerSource fromString(java.lang.String);
+  public static com.stripe.android.model.CustomerSource fromJson(org.json.JSONObject);
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public org.json.JSONObject toJson();
+}
+Compiled from "ModelUtils.java"
+class com.stripe.android.model.ModelUtils {
+  com.stripe.android.model.ModelUtils();
+  static boolean isWholePositiveNumber(java.lang.String);
+  static boolean hasMonthPassed(int, int, java.util.Calendar);
+  static boolean hasYearPassed(int, java.util.Calendar);
+  static int normalizeYear(int, java.util.Calendar);
+}
+Compiled from "ShippingInformation.java"
+final class com.stripe.android.model.ShippingInformation$1 implements android.os.Parcelable$Creator<com.stripe.android.model.ShippingInformation> {
+  com.stripe.android.model.ShippingInformation$1();
+  public com.stripe.android.model.ShippingInformation createFromParcel(android.os.Parcel);
+  public com.stripe.android.model.ShippingInformation[] newArray(int);
+  public java.lang.Object[] newArray(int);
+  public java.lang.Object createFromParcel(android.os.Parcel);
+}
+Compiled from "ShippingInformation.java"
+public class com.stripe.android.model.ShippingInformation extends com.stripe.android.model.StripeJsonModel implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator<com.stripe.android.model.ShippingInformation> CREATOR;
+  public com.stripe.android.model.ShippingInformation();
+  public com.stripe.android.model.ShippingInformation(com.stripe.android.model.Address, java.lang.String, java.lang.String);
+  public com.stripe.android.model.Address getAddress();
+  public java.lang.String getName();
+  public java.lang.String getPhone();
+  public static com.stripe.android.model.ShippingInformation fromJson(org.json.JSONObject);
+  public org.json.JSONObject toJson();
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public int describeContents();
+  public void writeToParcel(android.os.Parcel, int);
+  protected com.stripe.android.model.ShippingInformation(android.os.Parcel);
+  static {};
+}
+Compiled from "ShippingMethod.java"
+final class com.stripe.android.model.ShippingMethod$1 implements android.os.Parcelable$Creator<com.stripe.android.model.ShippingMethod> {
+  com.stripe.android.model.ShippingMethod$1();
+  public com.stripe.android.model.ShippingMethod createFromParcel(android.os.Parcel);
+  public com.stripe.android.model.ShippingMethod[] newArray(int);
+  public java.lang.Object[] newArray(int);
+  public java.lang.Object createFromParcel(android.os.Parcel);
+}
+Compiled from "ShippingMethod.java"
+public class com.stripe.android.model.ShippingMethod extends com.stripe.android.model.StripeJsonModel implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator<com.stripe.android.model.ShippingMethod> CREATOR;
+  public com.stripe.android.model.ShippingMethod(java.lang.String, java.lang.String, long, java.lang.String);
+  public com.stripe.android.model.ShippingMethod(java.lang.String, java.lang.String, java.lang.String, long, java.lang.String);
+  public java.util.Currency getCurrency();
+  public long getAmount();
+  public java.lang.String getLabel();
+  public java.lang.String getDetail();
+  public java.lang.String getIdentifier();
+  public org.json.JSONObject toJson();
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public int describeContents();
+  public void writeToParcel(android.os.Parcel, int);
+  com.stripe.android.model.ShippingMethod(android.os.Parcel, com.stripe.android.model.ShippingMethod$1);
+  static {};
+}
+Compiled from "Source.java"
+public interface com.stripe.android.model.Source$SourceFlow extends java.lang.annotation.Annotation {
+}
+Compiled from "Source.java"
+public interface com.stripe.android.model.Source$SourceStatus extends java.lang.annotation.Annotation {
+}
+Compiled from "Source.java"
+public interface com.stripe.android.model.Source$SourceType extends java.lang.annotation.Annotation {
+}
+Compiled from "Source.java"
+public interface com.stripe.android.model.Source$Usage extends java.lang.annotation.Annotation {
+}
+Compiled from "Source.java"
+public class com.stripe.android.model.Source extends com.stripe.android.model.StripeJsonModel implements com.stripe.android.model.StripePaymentSource {
+  static final java.lang.String VALUE_SOURCE;
+  public static final java.lang.String ALIPAY;
+  public static final java.lang.String BITCOIN;
+  public static final java.lang.String CARD;
+  public static final java.lang.String THREE_D_SECURE;
+  public static final java.lang.String GIROPAY;
+  public static final java.lang.String SEPA_DEBIT;
+  public static final java.lang.String IDEAL;
+  public static final java.lang.String SOFORT;
+  public static final java.lang.String BANCONTACT;
+  public static final java.lang.String P24;
+  public static final java.lang.String UNKNOWN;
+  public static final java.util.Set<java.lang.String> MODELED_TYPES;
+  public static final java.lang.String PENDING;
+  public static final java.lang.String CHARGEABLE;
+  public static final java.lang.String CONSUMED;
+  public static final java.lang.String CANCELED;
+  public static final java.lang.String FAILED;
+  public static final java.lang.String REUSABLE;
+  public static final java.lang.String SINGLE_USE;
+  public static final java.lang.String REDIRECT;
+  public static final java.lang.String RECEIVER;
+  public static final java.lang.String CODE_VERIFICATION;
+  public static final java.lang.String NONE;
+  static final java.lang.String EURO;
+  static final java.lang.String USD;
+  static final java.lang.String FIELD_ID;
+  static final java.lang.String FIELD_OBJECT;
+  static final java.lang.String FIELD_AMOUNT;
+  static final java.lang.String FIELD_CLIENT_SECRET;
+  static final java.lang.String FIELD_CODE_VERIFICATION;
+  static final java.lang.String FIELD_CREATED;
+  static final java.lang.String FIELD_CURRENCY;
+  static final java.lang.String FIELD_FLOW;
+  static final java.lang.String FIELD_LIVEMODE;
+  static final java.lang.String FIELD_METADATA;
+  static final java.lang.String FIELD_OWNER;
+  static final java.lang.String FIELD_RECEIVER;
+  static final java.lang.String FIELD_REDIRECT;
+  static final java.lang.String FIELD_STATUS;
+  static final java.lang.String FIELD_TYPE;
+  static final java.lang.String FIELD_USAGE;
+  com.stripe.android.model.Source(java.lang.String, java.lang.Long, java.lang.String, com.stripe.android.model.SourceCodeVerification, java.lang.Long, java.lang.String, java.lang.String, java.lang.Boolean, java.util.Map<java.lang.String, java.lang.String>, com.stripe.android.model.SourceOwner, com.stripe.android.model.SourceReceiver, com.stripe.android.model.SourceRedirect, java.lang.String, java.util.Map<java.lang.String, java.lang.Object>, com.stripe.android.model.StripeSourceTypeModel, java.lang.String, java.lang.String, java.lang.String);
+  public java.lang.String getId();
+  public java.lang.Long getAmount();
+  public java.lang.String getClientSecret();
+  public com.stripe.android.model.SourceCodeVerification getCodeVerification();
+  public java.lang.Long getCreated();
+  public java.lang.String getCurrency();
+  public java.lang.String getFlow();
+  public java.lang.Boolean isLiveMode();
+  public java.util.Map<java.lang.String, java.lang.String> getMetaData();
+  public com.stripe.android.model.SourceOwner getOwner();
+  public com.stripe.android.model.SourceReceiver getReceiver();
+  public com.stripe.android.model.SourceRedirect getRedirect();
+  public java.lang.String getStatus();
+  public java.util.Map<java.lang.String, java.lang.Object> getSourceTypeData();
+  public com.stripe.android.model.StripeSourceTypeModel getSourceTypeModel();
+  public java.lang.String getType();
+  public java.lang.String getTypeRaw();
+  public java.lang.String getUsage();
+  public void setId(java.lang.String);
+  public void setAmount(long);
+  public void setClientSecret(java.lang.String);
+  public void setCodeVerification(com.stripe.android.model.SourceCodeVerification);
+  public void setCreated(long);
+  public void setCurrency(java.lang.String);
+  public void setFlow(java.lang.String);
+  public void setLiveMode(boolean);
+  public void setMetaData(java.util.Map<java.lang.String, java.lang.String>);
+  public void setOwner(com.stripe.android.model.SourceOwner);
+  public void setReceiver(com.stripe.android.model.SourceReceiver);
+  public void setRedirect(com.stripe.android.model.SourceRedirect);
+  public void setStatus(java.lang.String);
+  public void setSourceTypeData(java.util.Map<java.lang.String, java.lang.Object>);
+  public void setTypeRaw(java.lang.String);
+  public void setType(java.lang.String);
+  public void setUsage(java.lang.String);
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public org.json.JSONObject toJson();
+  public static com.stripe.android.model.Source fromString(java.lang.String);
+  public static com.stripe.android.model.Source fromJson(org.json.JSONObject);
+  static <T extends com.stripe.android.model.StripeJsonModel> T optStripeJsonModel(org.json.JSONObject, java.lang.String, java.lang.Class<T>);
+  static java.lang.String asSourceStatus(java.lang.String);
+  static java.lang.String asSourceType(java.lang.String);
+  static java.lang.String asUsage(java.lang.String);
+  static java.lang.String asSourceFlow(java.lang.String);
+  static {};
+}
+Compiled from "SourceCardData.java"
+public interface com.stripe.android.model.SourceCardData$ThreeDSecureStatus extends java.lang.annotation.Annotation {
+}
+Compiled from "SourceCardData.java"
+public class com.stripe.android.model.SourceCardData extends com.stripe.android.model.StripeSourceTypeModel {
+  public static final java.lang.String REQUIRED;
+  public static final java.lang.String OPTIONAL;
+  public static final java.lang.String NOT_SUPPORTED;
+  public static final java.lang.String UNKNOWN;
+  public static final java.lang.String FIELD_ADDRESS_LINE1_CHECK;
+  public static final java.lang.String FIELD_ADDRESS_ZIP_CHECK;
+  public static final java.lang.String FIELD_BRAND;
+  public static final java.lang.String FIELD_COUNTRY;
+  public static final java.lang.String FIELD_CVC_CHECK;
+  public static final java.lang.String FIELD_DYNAMIC_LAST4;
+  public static final java.lang.String FIELD_EXP_MONTH;
+  public static final java.lang.String FIELD_EXP_YEAR;
+  public static final java.lang.String FIELD_FUNDING;
+  public static final java.lang.String FIELD_LAST4;
+  public static final java.lang.String FIELD_THREE_D_SECURE;
+  public static final java.lang.String FIELD_TOKENIZATION_METHOD;
+  public java.lang.String getAddressLine1Check();
+  public java.lang.String getAddressZipCheck();
+  public java.lang.String getBrand();
+  public java.lang.String getCountry();
+  public java.lang.String getCvcCheck();
+  public java.lang.String getDynamicLast4();
+  public java.lang.Integer getExpiryMonth();
+  public java.lang.Integer getExpiryYear();
+  public java.lang.String getFunding();
+  public java.lang.String getLast4();
+  public java.lang.String getThreeDSecureStatus();
+  public java.lang.String getTokenizationMethod();
+  public org.json.JSONObject toJson();
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  static com.stripe.android.model.SourceCardData fromJson(org.json.JSONObject);
+  static com.stripe.android.model.SourceCardData fromString(java.lang.String);
+  static java.lang.String asThreeDSecureStatus(java.lang.String);
+  public java.util.Map getAdditionalFields();
+}
+Compiled from "SourceCodeVerification.java"
+public class com.stripe.android.model.SourceCodeVerification extends com.stripe.android.model.StripeJsonModel {
+  static final java.lang.String PENDING;
+  static final java.lang.String SUCCEEDED;
+  static final java.lang.String FAILED;
+  com.stripe.android.model.SourceCodeVerification(int, java.lang.String);
+  public int getAttemptsRemaining();
+  void setAttemptsRemaining(int);
+  public java.lang.String getStatus();
+  void setStatus(java.lang.String);
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public org.json.JSONObject toJson();
+  public static com.stripe.android.model.SourceCodeVerification fromString(java.lang.String);
+  public static com.stripe.android.model.SourceCodeVerification fromJson(org.json.JSONObject);
+}
+Compiled from "SourceOwner.java"
+public class com.stripe.android.model.SourceOwner extends com.stripe.android.model.StripeJsonModel {
+  com.stripe.android.model.SourceOwner(com.stripe.android.model.Address, java.lang.String, java.lang.String, java.lang.String, com.stripe.android.model.Address, java.lang.String, java.lang.String, java.lang.String);
+  public com.stripe.android.model.Address getAddress();
+  public java.lang.String getEmail();
+  public java.lang.String getName();
+  public java.lang.String getPhone();
+  public com.stripe.android.model.Address getVerifiedAddress();
+  public java.lang.String getVerifiedEmail();
+  public java.lang.String getVerifiedName();
+  public java.lang.String getVerifiedPhone();
+  void setAddress(com.stripe.android.model.Address);
+  void setEmail(java.lang.String);
+  void setName(java.lang.String);
+  void setPhone(java.lang.String);
+  void setVerifiedAddress(com.stripe.android.model.Address);
+  void setVerifiedEmail(java.lang.String);
+  void setVerifiedName(java.lang.String);
+  void setVerifiedPhone(java.lang.String);
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public org.json.JSONObject toJson();
+  public static com.stripe.android.model.SourceOwner fromString(java.lang.String);
+  public static com.stripe.android.model.SourceOwner fromJson(org.json.JSONObject);
+}
+Compiled from "SourceParams.java"
+public class com.stripe.android.model.SourceParams {
+  static final java.lang.String API_PARAM_AMOUNT;
+  static final java.lang.String API_PARAM_CURRENCY;
+  static final java.lang.String API_PARAM_METADATA;
+  static final java.lang.String API_PARAM_OWNER;
+  static final java.lang.String API_PARAM_REDIRECT;
+  static final java.lang.String API_PARAM_TYPE;
+  static final java.lang.String API_PARAM_TOKEN;
+  static final java.lang.String API_PARAM_USAGE;
+  static final java.lang.String API_PARAM_CLIENT_SECRET;
+  static final java.lang.String FIELD_ADDRESS;
+  static final java.lang.String FIELD_BANK;
+  static final java.lang.String FIELD_CARD;
+  static final java.lang.String FIELD_CITY;
+  static final java.lang.String FIELD_COUNTRY;
+  static final java.lang.String FIELD_CVC;
+  static final java.lang.String FIELD_EMAIL;
+  static final java.lang.String FIELD_EXP_MONTH;
+  static final java.lang.String FIELD_EXP_YEAR;
+  static final java.lang.String FIELD_IBAN;
+  static final java.lang.String FIELD_LINE_1;
+  static final java.lang.String FIELD_LINE_2;
+  static final java.lang.String FIELD_NAME;
+  static final java.lang.String FIELD_NUMBER;
+  static final java.lang.String FIELD_POSTAL_CODE;
+  static final java.lang.String FIELD_RETURN_URL;
+  static final java.lang.String FIELD_STATE;
+  static final java.lang.String FIELD_STATEMENT_DESCRIPTOR;
+  public static com.stripe.android.model.SourceParams createP24Params(long, java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  public static com.stripe.android.model.SourceParams createAlipayReusableParams(java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  public static com.stripe.android.model.SourceParams createAlipaySingleUseParams(long, java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  public static com.stripe.android.model.SourceParams createBancontactParams(long, java.lang.String, java.lang.String, java.lang.String);
+  public static com.stripe.android.model.SourceParams createCustomParams();
+  public static com.stripe.android.model.SourceParams createBitcoinParams(long, java.lang.String, java.lang.String);
+  public static com.stripe.android.model.SourceParams createCardParams(com.stripe.android.model.Card);
+  public static com.stripe.android.model.SourceParams createGiropayParams(long, java.lang.String, java.lang.String, java.lang.String);
+  public static com.stripe.android.model.SourceParams createIdealParams(long, java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  public static com.stripe.android.model.SourceParams createSepaDebitParams(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String);
+  public static com.stripe.android.model.SourceParams createSofortParams(long, java.lang.String, java.lang.String, java.lang.String);
+  public static com.stripe.android.model.SourceParams createThreeDSecureParams(long, java.lang.String, java.lang.String, java.lang.String);
+  public static java.util.Map<java.lang.String, java.lang.Object> createRetrieveSourceParams(java.lang.String);
+  public java.lang.Long getAmount();
+  public java.util.Map<java.lang.String, java.lang.Object> getApiParameterMap();
+  public java.lang.String getCurrency();
+  public java.util.Map<java.lang.String, java.lang.Object> getOwner();
+  public java.util.Map<java.lang.String, java.lang.Object> getRedirect();
+  public java.lang.String getType();
+  public java.lang.String getTypeRaw();
+  public java.lang.String getUsage();
+  public java.util.Map<java.lang.String, java.lang.String> getMetaData();
+  public com.stripe.android.model.SourceParams setAmount(long);
+  public com.stripe.android.model.SourceParams setApiParameterMap(java.util.Map<java.lang.String, java.lang.Object>);
+  public com.stripe.android.model.SourceParams setCurrency(java.lang.String);
+  public com.stripe.android.model.SourceParams setOwner(java.util.Map<java.lang.String, java.lang.Object>);
+  public com.stripe.android.model.SourceParams setRedirect(java.util.Map<java.lang.String, java.lang.Object>);
+  public com.stripe.android.model.SourceParams setReturnUrl(java.lang.String);
+  public com.stripe.android.model.SourceParams setType(java.lang.String);
+  public com.stripe.android.model.SourceParams setTypeRaw(java.lang.String);
+  public com.stripe.android.model.SourceParams setMetaData(java.util.Map<java.lang.String, java.lang.String>);
+  public com.stripe.android.model.SourceParams setToken(java.lang.String);
+  public com.stripe.android.model.SourceParams setUsage(java.lang.String);
+  public java.util.Map<java.lang.String, java.lang.Object> toParamMap();
+}
+Compiled from "SourceReceiver.java"
+public class com.stripe.android.model.SourceReceiver extends com.stripe.android.model.StripeJsonModel {
+  com.stripe.android.model.SourceReceiver(java.lang.String, long, long, long);
+  public java.lang.String getAddress();
+  public void setAddress(java.lang.String);
+  public long getAmountCharged();
+  public void setAmountCharged(long);
+  public long getAmountReceived();
+  public void setAmountReceived(long);
+  public long getAmountReturned();
+  public void setAmountReturned(long);
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public org.json.JSONObject toJson();
+  public static com.stripe.android.model.SourceReceiver fromString(java.lang.String);
+  public static com.stripe.android.model.SourceReceiver fromJson(org.json.JSONObject);
+}
+Compiled from "SourceRedirect.java"
+public class com.stripe.android.model.SourceRedirect extends com.stripe.android.model.StripeJsonModel {
+  public static final java.lang.String PENDING;
+  public static final java.lang.String SUCCEEDED;
+  public static final java.lang.String FAILED;
+  static final java.lang.String FIELD_RETURN_URL;
+  static final java.lang.String FIELD_STATUS;
+  static final java.lang.String FIELD_URL;
+  com.stripe.android.model.SourceRedirect(java.lang.String, java.lang.String, java.lang.String);
+  public java.lang.String getReturnUrl();
+  public void setReturnUrl(java.lang.String);
+  public java.lang.String getStatus();
+  public void setStatus(java.lang.String);
+  public java.lang.String getUrl();
+  public void setUrl(java.lang.String);
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public org.json.JSONObject toJson();
+  public static com.stripe.android.model.SourceRedirect fromString(java.lang.String);
+  public static com.stripe.android.model.SourceRedirect fromJson(org.json.JSONObject);
+}
+Compiled from "SourceSepaDebitData.java"
+public class com.stripe.android.model.SourceSepaDebitData extends com.stripe.android.model.StripeSourceTypeModel {
+  public static com.stripe.android.model.SourceSepaDebitData fromJson(org.json.JSONObject);
+  public java.lang.String getBankCode();
+  public java.lang.String getBranchCode();
+  public java.lang.String getCountry();
+  public java.lang.String getFingerPrint();
+  public java.lang.String getLast4();
+  public java.lang.String getMandateReference();
+  public java.lang.String getMandateUrl();
+  public org.json.JSONObject toJson();
+  public java.util.Map<java.lang.String, java.lang.Object> toMap();
+  static com.stripe.android.model.SourceSepaDebitData fromString(java.lang.String);
+  public java.util.Map getAdditionalFields();
+}
+Compiled from "StripeJsonModel.java"
+public abstract class com.stripe.android.model.StripeJsonModel {
+  public com.stripe.android.model.StripeJsonModel();
+  public abstract java.util.Map<java.lang.String, java.lang.Object> toMap();
+  public abstract org.json.JSONObject toJson();
+  public java.lang.String toString();
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+  static void putStripeJsonModelMapIfNotNull(java.util.Map<java.lang.String, java.lang.Object>, java.lang.String, com.stripe.android.model.StripeJsonModel);
+  static void putStripeJsonModelIfNotNull(org.json.JSONObject, java.lang.String, com.stripe.android.model.StripeJsonModel);
+  static void putStripeJsonModelListIfNotNull(java.util.Map<java.lang.String, java.lang.Object>, java.lang.String, java.util.List<? extends com.stripe.android.model.StripeJsonModel>);
+  static void putStripeJsonModelListIfNotNull(org.json.JSONObject, java.lang.String, java.util.List<? extends com.stripe.android.model.StripeJsonModel>);
+}
+Compiled from "StripeJsonUtils.java"
+class com.stripe.android.model.StripeJsonUtils {
+  com.stripe.android.model.StripeJsonUtils();
+  static java.lang.String getString(org.json.JSONObject, java.lang.String) throws org.json.JSONException;
+  static java.lang.Boolean optBoolean(org.json.JSONObject, java.lang.String);
+  static java.lang.Integer optInteger(org.json.JSONObject, java.lang.String);
+  static java.lang.Long optLong(org.json.JSONObject, java.lang.String);
+  static java.lang.String optString(org.json.JSONObject, java.lang.String);
+  static java.lang.String optCountryCode(org.json.JSONObject, java.lang.String);
+  static java.lang.String optCurrency(org.json.JSONObject, java.lang.String);
+  static java.util.Map<java.lang.String, java.lang.Object> optMap(org.json.JSONObject, java.lang.String);
+  static java.util.Map<java.lang.String, java.lang.String> optHash(org.json.JSONObject, java.lang.String);
+  static java.util.Map<java.lang.String, java.lang.Object> jsonObjectToMap(org.json.JSONObject);
+  static java.util.Map<java.lang.String, java.lang.String> jsonObjectToStringMap(org.json.JSONObject);
+  static java.util.List<java.lang.Object> jsonArrayToList(org.json.JSONArray);
+  static org.json.JSONObject mapToJsonObject(java.util.Map<java.lang.String, ? extends java.lang.Object>);
+  static org.json.JSONObject stringHashToJsonObject(java.util.Map<java.lang.String, java.lang.String>);
+  static org.json.JSONArray listToJsonArray(java.util.List);
+  static void putStringIfNotNull(org.json.JSONObject, java.lang.String, java.lang.String);
+  static void putIntegerIfNotNull(org.json.JSONObject, java.lang.String, java.lang.Integer);
+  static void putLongIfNotNull(org.json.JSONObject, java.lang.String, java.lang.Long);
+  static void putDoubleIfNotNull(org.json.JSONObject, java.lang.String, java.lang.Double);
+  static void putBooleanIfNotNull(org.json.JSONObject, java.lang.String, java.lang.Boolean);
+  static void putStringHashIfNotNull(org.json.JSONObject, java.lang.String, java.util.Map<java.lang.String, java.lang.String>);
+  static void putMapIfNotNull(org.json.JSONObject, java.lang.String, java.util.Map<java.lang.String, java.lang.Object>);
+  static void putObjectIfNotNull(org.json.JSONObject, java.lang.String, org.json.JSONObject);
+  static java.lang.String nullIfNullOrEmpty(java.lang.String);
+}
+Compiled from "StripePaymentSource.java"
+public interface com.stripe.android.model.StripePaymentSource {
+  public abstract java.lang.String getId();
+}
+Compiled from "StripeSourceTypeModel.java"
+abstract class com.stripe.android.model.StripeSourceTypeModel extends com.stripe.android.model.StripeJsonModel {
+  java.util.Map<java.lang.String, java.lang.Object> mAdditionalFields;
+  java.util.Set<java.lang.String> mStandardFields;
+  com.stripe.android.model.StripeSourceTypeModel();
+  public java.util.Map<java.lang.String, java.lang.Object> getAdditionalFields();
+  void addStandardFields(java.lang.String...);
+  void setAdditionalFields(java.util.Map<java.lang.String, java.lang.Object>);
+  static java.util.Map<java.lang.String, java.lang.Object> jsonObjectToMapWithoutKeys(org.json.JSONObject, java.util.Set<java.lang.String>);
+  static void putAdditionalFieldsIntoJsonObject(org.json.JSONObject, java.util.Map<java.lang.String, java.lang.Object>);
+  static void putAdditionalFieldsIntoMap(java.util.Map<java.lang.String, java.lang.Object>, java.util.Map<java.lang.String, java.lang.Object>);
+}
+Compiled from "Token.java"
+public interface com.stripe.android.model.Token$TokenType extends java.lang.annotation.Annotation {
+}
+Compiled from "Token.java"
+public class com.stripe.android.model.Token implements com.stripe.android.model.StripePaymentSource {
+  public static final java.lang.String TYPE_CARD;
+  public static final java.lang.String TYPE_BANK_ACCOUNT;
+  public static final java.lang.String TYPE_PII;
+  public com.stripe.android.model.Token(java.lang.String, boolean, java.util.Date, java.lang.Boolean, com.stripe.android.model.Card);
+  public com.stripe.android.model.Token(java.lang.String, boolean, java.util.Date, java.lang.Boolean, com.stripe.android.model.BankAccount);
+  public com.stripe.android.model.Token(java.lang.String, boolean, java.util.Date, java.lang.Boolean);
+  public java.util.Date getCreated();
+  public java.lang.String getId();
+  public boolean getLivemode();
+  public boolean getUsed();
+  public java.lang.String getType();
+  public com.stripe.android.model.Card getCard();
+  public com.stripe.android.model.BankAccount getBankAccount();
+  public static com.stripe.android.model.Token fromString(java.lang.String);
+  public static com.stripe.android.model.Token fromJson(org.json.JSONObject);
+  static java.lang.String asTokenType(java.lang.String);
+}
+Compiled from "PaymentCompletionProvider.java"
+public interface com.stripe.android.PaymentCompletionProvider {
+  public abstract void completePayment(com.stripe.android.PaymentSessionData, com.stripe.android.PaymentResultListener);
+}
+Compiled from "PaymentConfiguration.java"
+public class com.stripe.android.PaymentConfiguration {
+  public static com.stripe.android.PaymentConfiguration getInstance();
+  public static void init(java.lang.String);
+  public java.lang.String getPublishableKey();
+  public int getRequiredBillingAddressFields();
+  public com.stripe.android.PaymentConfiguration setRequiredBillingAddressFields(int);
+  public boolean getShouldUseSourcesForCards();
+  public com.stripe.android.PaymentConfiguration setShouldUseSourcesForCards(boolean);
+  static void setInstance(com.stripe.android.PaymentConfiguration);
+}
+Compiled from "PaymentResultListener.java"
+public interface com.stripe.android.PaymentResultListener {
+  public static final java.lang.String SUCCESS;
+  public static final java.lang.String USER_CANCELLED;
+  public static final java.lang.String ERROR;
+  public static final java.lang.String INCOMPLETE;
+  public abstract void onPaymentResult(java.lang.String);
+}
+Compiled from "PaymentSession.java"
+class com.stripe.android.PaymentSession$1 implements com.stripe.android.PaymentResultListener {
+  final com.stripe.android.PaymentSession this$0;
+  com.stripe.android.PaymentSession$1(com.stripe.android.PaymentSession);
+  public void onPaymentResult(java.lang.String);
+}
+Compiled from "PaymentSession.java"
+class com.stripe.android.PaymentSession$2 implements com.stripe.android.CustomerSession$CustomerRetrievalListener {
+  final com.stripe.android.PaymentSession this$0;
+  com.stripe.android.PaymentSession$2(com.stripe.android.PaymentSession);
+  public void onCustomerRetrieved(com.stripe.android.model.Customer);
+  public void onError(int, java.lang.String);
+}
+Compiled from "PaymentSession.java"
+public interface com.stripe.android.PaymentSession$PaymentSessionListener {
+  public abstract void onCommunicatingStateChanged(boolean);
+  public abstract void onError(int, java.lang.String);
+  public abstract void onPaymentSessionDataChanged(com.stripe.android.PaymentSessionData);
+}
+Compiled from "PaymentSession.java"
+public class com.stripe.android.PaymentSession {
+  public static final java.lang.String TOKEN_PAYMENT_SESSION;
+  public static final java.lang.String EXTRA_PAYMENT_SESSION_ACTIVE;
+  static final int PAYMENT_SHIPPING_DETAILS_REQUEST;
+  static final int PAYMENT_METHOD_REQUEST;
+  public static final java.lang.String PAYMENT_SESSION_DATA_KEY;
+  public static final java.lang.String PAYMENT_SESSION_CONFIG;
+  public com.stripe.android.PaymentSession(android.app.Activity);
+  public void completePayment(com.stripe.android.PaymentCompletionProvider);
+  public boolean handlePaymentData(int, int, android.content.Intent);
+  public boolean updateIsPaymentReadyToCharge(com.stripe.android.PaymentSessionConfig, com.stripe.android.PaymentSessionData);
+  public boolean init(com.stripe.android.PaymentSession$PaymentSessionListener, com.stripe.android.PaymentSessionConfig);
+  public boolean init(com.stripe.android.PaymentSession$PaymentSessionListener, com.stripe.android.PaymentSessionConfig, android.os.Bundle);
+  public void presentPaymentMethodSelection();
+  public void savePaymentSessionInstanceState(android.os.Bundle);
+  public void setCartTotal(long);
+  public void presentShippingFlow();
+  public com.stripe.android.PaymentSessionData getPaymentSessionData();
+  public void onDestroy();
+  static com.stripe.android.PaymentSessionData access$000(com.stripe.android.PaymentSession);
+  static com.stripe.android.PaymentSession$PaymentSessionListener access$100(com.stripe.android.PaymentSession);
+  static com.stripe.android.PaymentSessionConfig access$200(com.stripe.android.PaymentSession);
+}
+Compiled from "PaymentSessionConfig.java"
+final class com.stripe.android.PaymentSessionConfig$1 implements android.os.Parcelable$Creator<com.stripe.android.PaymentSessionConfig> {
+  com.stripe.android.PaymentSessionConfig$1();
+  public com.stripe.android.PaymentSessionConfig createFromParcel(android.os.Parcel);
+  public com.stripe.android.PaymentSessionConfig[] newArray(int);
+  public java.lang.Object[] newArray(int);
+  public java.lang.Object createFromParcel(android.os.Parcel);
+}
+Compiled from "PaymentSessionConfig.java"
+public class com.stripe.android.PaymentSessionConfig$Builder {
+  public com.stripe.android.PaymentSessionConfig$Builder();
+  public com.stripe.android.PaymentSessionConfig$Builder setHiddenShippingInfoFields(java.lang.String...);
+  public com.stripe.android.PaymentSessionConfig$Builder setOptionalShippingInfoFields(java.lang.String...);
+  public com.stripe.android.PaymentSessionConfig$Builder setPrepopulatedShippingInfo(com.stripe.android.model.ShippingInformation);
+  public com.stripe.android.PaymentSessionConfig$Builder setShippingInfoRequired(boolean);
+  public com.stripe.android.PaymentSessionConfig$Builder setShippingMethodsRequired(boolean);
+  public com.stripe.android.PaymentSessionConfig build();
+  static java.util.List access$000(com.stripe.android.PaymentSessionConfig$Builder);
+  static java.util.List access$100(com.stripe.android.PaymentSessionConfig$Builder);
+  static com.stripe.android.model.ShippingInformation access$200(com.stripe.android.PaymentSessionConfig$Builder);
+  static boolean access$300(com.stripe.android.PaymentSessionConfig$Builder);
+  static boolean access$400(com.stripe.android.PaymentSessionConfig$Builder);
+}
+Compiled from "PaymentSessionConfig.java"
+public class com.stripe.android.PaymentSessionConfig implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator<com.stripe.android.PaymentSessionConfig> CREATOR;
+  com.stripe.android.PaymentSessionConfig(com.stripe.android.PaymentSessionConfig$Builder);
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+  public int describeContents();
+  public void writeToParcel(android.os.Parcel, int);
+  public java.util.List<java.lang.String> getHiddenShippingInfoFields();
+  public java.util.List<java.lang.String> getOptionalShippingInfoFields();
+  public com.stripe.android.model.ShippingInformation getPrepopulatedShippingInfo();
+  public boolean isShippingInfoRequired();
+  public boolean isShippingMethodRequired();
+  com.stripe.android.PaymentSessionConfig(android.os.Parcel, com.stripe.android.PaymentSessionConfig$1);
+  static {};
+}
+Compiled from "PaymentSessionData.java"
+final class com.stripe.android.PaymentSessionData$1 implements android.os.Parcelable$Creator<com.stripe.android.PaymentSessionData> {
+  com.stripe.android.PaymentSessionData$1();
+  public com.stripe.android.PaymentSessionData createFromParcel(android.os.Parcel);
+  public com.stripe.android.PaymentSessionData[] newArray(int);
+  public java.lang.Object[] newArray(int);
+  public java.lang.Object createFromParcel(android.os.Parcel);
+}
+Compiled from "PaymentSessionData.java"
+public class com.stripe.android.PaymentSessionData implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator<com.stripe.android.PaymentSessionData> CREATOR;
+  public com.stripe.android.PaymentSessionData();
+  public java.lang.String getSelectedPaymentMethodId();
+  public long getCartTotal();
+  public java.lang.String getPaymentResult();
+  public boolean isPaymentReadyToCharge();
+  public void setPaymentReadyToCharge(boolean);
+  public long getShippingTotal();
+  public com.stripe.android.model.ShippingInformation getShippingInformation();
+  public void setShippingInformation(com.stripe.android.model.ShippingInformation);
+  public com.stripe.android.model.ShippingMethod getShippingMethod();
+  public void setShippingMethod(com.stripe.android.model.ShippingMethod);
+  void setCartTotal(long);
+  void setPaymentResult(java.lang.String);
+  void setSelectedPaymentMethodId(java.lang.String);
+  void setShippingTotal(long);
+  public boolean equals(java.lang.Object);
+  public int hashCode();
+  public int describeContents();
+  public void writeToParcel(android.os.Parcel, int);
+  com.stripe.android.PaymentSessionData(android.os.Parcel, com.stripe.android.PaymentSessionData$1);
+  static {};
+}
+Compiled from "PaymentSessionUtils.java"
+class com.stripe.android.PaymentSessionUtils {
+  com.stripe.android.PaymentSessionUtils();
+  public static java.lang.String paymentResultFromString(java.lang.String);
+}
+Compiled from "RequestOptions.java"
+class com.stripe.android.RequestOptions$1 {
+}
+Compiled from "RequestOptions.java"
+public final class com.stripe.android.RequestOptions$RequestOptionsBuilder {
+  com.stripe.android.RequestOptions$RequestOptionsBuilder(java.lang.String, java.lang.String);
+  com.stripe.android.RequestOptions$RequestOptionsBuilder setPublishableApiKey(java.lang.String);
+  com.stripe.android.RequestOptions$RequestOptionsBuilder setIdempotencyKey(java.lang.String);
+  com.stripe.android.RequestOptions$RequestOptionsBuilder setGuid(java.lang.String);
+  com.stripe.android.RequestOptions$RequestOptionsBuilder setApiVersion(java.lang.String);
+  com.stripe.android.RequestOptions$RequestOptionsBuilder setStripeAccount(java.lang.String);
+  public com.stripe.android.RequestOptions build();
+}
+Compiled from "RequestOptions.java"
+public interface com.stripe.android.RequestOptions$RequestType extends java.lang.annotation.Annotation {
+}
+Compiled from "RequestOptions.java"
+public class com.stripe.android.RequestOptions {
+  public static final java.lang.String TYPE_QUERY;
+  public static final java.lang.String TYPE_JSON;
+  java.lang.String getApiVersion();
+  java.lang.String getGuid();
+  java.lang.String getIdempotencyKey();
+  java.lang.String getPublishableApiKey();
+  java.lang.String getRequestType();
+  java.lang.String getStripeAccount();
+  public static com.stripe.android.RequestOptions$RequestOptionsBuilder builder(java.lang.String);
+  public static com.stripe.android.RequestOptions$RequestOptionsBuilder builder(java.lang.String, java.lang.String, java.lang.String);
+  public static com.stripe.android.RequestOptions$RequestOptionsBuilder builder(java.lang.String, java.lang.String);
+  com.stripe.android.RequestOptions(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, com.stripe.android.RequestOptions$1);
+}
+Compiled from "SourceCallback.java"
+public interface com.stripe.android.SourceCallback {
+  public abstract void onError(java.lang.Exception);
+  public abstract void onSuccess(com.stripe.android.model.Source);
+}
+Compiled from "Stripe.java"
+class com.stripe.android.Stripe$1$1 extends android.os.AsyncTask<java.lang.Void, java.lang.Void, com.stripe.android.Stripe$ResponseWrapper> {
+  final com.stripe.android.model.SourceParams val$sourceParams;
+  final java.lang.String val$publishableKey;
+  final java.lang.String val$stripeAccount;
+  final com.stripe.android.SourceCallback val$sourceCallback;
+  final com.stripe.android.Stripe$1 this$1;
+  com.stripe.android.Stripe$1$1(com.stripe.android.Stripe$1, com.stripe.android.model.SourceParams, java.lang.String, java.lang.String, com.stripe.android.SourceCallback);
+  protected com.stripe.android.Stripe$ResponseWrapper doInBackground(java.lang.Void...);
+  protected void onPostExecute(com.stripe.android.Stripe$ResponseWrapper);
+  protected void onPostExecute(java.lang.Object);
+  protected java.lang.Object doInBackground(java.lang.Object[]);
+}
+Compiled from "Stripe.java"
+class com.stripe.android.Stripe$1 implements com.stripe.android.Stripe$SourceCreator {
+  final com.stripe.android.Stripe this$0;
+  com.stripe.android.Stripe$1(com.stripe.android.Stripe);
+  public void create(com.stripe.android.model.SourceParams, java.lang.String, java.lang.String, java.util.concurrent.Executor, com.stripe.android.SourceCallback);
+}
+Compiled from "Stripe.java"
+class com.stripe.android.Stripe$2$1 extends android.os.AsyncTask<java.lang.Void, java.lang.Void, com.stripe.android.Stripe$ResponseWrapper> {
+  final java.lang.String val$publishableKey;
+  final java.lang.String val$stripeAccount;
+  final java.util.Map val$tokenParams;
+  final java.lang.String val$tokenType;
+  final com.stripe.android.TokenCallback val$callback;
+  final com.stripe.android.Stripe$2 this$1;
+  com.stripe.android.Stripe$2$1(com.stripe.android.Stripe$2, java.lang.String, java.lang.String, java.util.Map, java.lang.String, com.stripe.android.TokenCallback);
+  protected com.stripe.android.Stripe$ResponseWrapper doInBackground(java.lang.Void...);
+  protected void onPostExecute(com.stripe.android.Stripe$ResponseWrapper);
+  protected void onPostExecute(java.lang.Object);
+  protected java.lang.Object doInBackground(java.lang.Object[]);
+}
+Compiled from "Stripe.java"
+class com.stripe.android.Stripe$2 implements com.stripe.android.Stripe$TokenCreator {
+  final com.stripe.android.Stripe this$0;
+  com.stripe.android.Stripe$2(com.stripe.android.Stripe);
+  public void create(java.util.Map<java.lang.String, java.lang.Object>, java.lang.String, java.lang.String, java.lang.String, java.util.concurrent.Executor, com.stripe.android.TokenCallback);
+}
+Compiled from "Stripe.java"
+class com.stripe.android.Stripe$ResponseWrapper {
+  final com.stripe.android.model.Source source;
+  final com.stripe.android.model.Token token;
+  final java.lang.Exception error;
+  final com.stripe.android.Stripe this$0;
+  com.stripe.android.Stripe$ResponseWrapper(com.stripe.android.Stripe, com.stripe.android.model.Source, com.stripe.android.Stripe$1);
+  com.stripe.android.Stripe$ResponseWrapper(com.stripe.android.Stripe, java.lang.Exception, com.stripe.android.Stripe$1);
+  com.stripe.android.Stripe$ResponseWrapper(com.stripe.android.Stripe, com.stripe.android.model.Token, com.stripe.android.Stripe$1);
+}
+Compiled from "Stripe.java"
+interface com.stripe.android.Stripe$SourceCreator {
+  public abstract void create(com.stripe.android.model.SourceParams, java.lang.String, java.lang.String, java.util.concurrent.Executor, com.stripe.android.SourceCallback);
+}
+Compiled from "Stripe.java"
+interface com.stripe.android.Stripe$TokenCreator {
+  public abstract void create(java.util.Map<java.lang.String, java.lang.Object>, java.lang.String, java.lang.String, java.lang.String, java.util.concurrent.Executor, com.stripe.android.TokenCallback);
+}
+Compiled from "Stripe.java"
+public class com.stripe.android.Stripe {
+  com.stripe.android.Stripe$SourceCreator mSourceCreator;
+  com.stripe.android.Stripe$TokenCreator mTokenCreator;
+  public com.stripe.android.Stripe(android.content.Context);
+  public com.stripe.android.Stripe(android.content.Context, java.lang.String);
+  public void createBankAccountToken(com.stripe.android.model.BankAccount, com.stripe.android.TokenCallback);
+  public void createBankAccountToken(com.stripe.android.model.BankAccount, java.lang.String, java.util.concurrent.Executor, com.stripe.android.TokenCallback);
+  public void createPiiToken(java.lang.String, com.stripe.android.TokenCallback);
+  public void createPiiToken(java.lang.String, java.lang.String, java.util.concurrent.Executor, com.stripe.android.TokenCallback);
+  public com.stripe.android.model.Token createBankAccountTokenSynchronous(com.stripe.android.model.BankAccount) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.CardException, com.stripe.android.exception.APIException;
+  public com.stripe.android.model.Token createBankAccountTokenSynchronous(com.stripe.android.model.BankAccount, java.lang.String) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.CardException, com.stripe.android.exception.APIException;
+  public void createSource(com.stripe.android.model.SourceParams, com.stripe.android.SourceCallback);
+  public void createSource(com.stripe.android.model.SourceParams, com.stripe.android.SourceCallback, java.lang.String, java.util.concurrent.Executor);
+  public void createToken(com.stripe.android.model.Card, com.stripe.android.TokenCallback);
+  public void createToken(com.stripe.android.model.Card, java.lang.String, com.stripe.android.TokenCallback);
+  public void createToken(com.stripe.android.model.Card, java.util.concurrent.Executor, com.stripe.android.TokenCallback);
+  public void createToken(com.stripe.android.model.Card, java.lang.String, java.util.concurrent.Executor, com.stripe.android.TokenCallback);
+  public com.stripe.android.model.Source createSourceSynchronous(com.stripe.android.model.SourceParams) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.CardException, com.stripe.android.exception.APIException;
+  public com.stripe.android.model.Source createSourceSynchronous(com.stripe.android.model.SourceParams, java.lang.String) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException;
+  public com.stripe.android.model.Token createTokenSynchronous(com.stripe.android.model.Card) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.CardException, com.stripe.android.exception.APIException;
+  public com.stripe.android.model.Token createTokenSynchronous(com.stripe.android.model.Card, java.lang.String) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.CardException, com.stripe.android.exception.APIException;
+  public com.stripe.android.model.Token createPiiTokenSynchronous(java.lang.String) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.CardException, com.stripe.android.exception.APIException;
+  public com.stripe.android.model.Token createPiiTokenSynchronous(java.lang.String, java.lang.String) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.CardException, com.stripe.android.exception.APIException;
+  public void logEventSynchronous(java.util.List<java.lang.String>, com.stripe.android.model.StripePaymentSource);
+  public com.stripe.android.model.Source retrieveSourceSynchronous(java.lang.String, java.lang.String) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.CardException, com.stripe.android.exception.APIException;
+  public com.stripe.android.model.Source retrieveSourceSynchronous(java.lang.String, java.lang.String, java.lang.String) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.CardException, com.stripe.android.exception.APIException;
+  public void setDefaultPublishableKey(java.lang.String);
+  public void setStripeAccount(java.lang.String);
+  void setLoggingResponseListener(com.stripe.android.StripeApiHandler$LoggingResponseListener);
+  static android.content.Context access$000(com.stripe.android.Stripe);
+  static void access$300(com.stripe.android.Stripe, java.util.concurrent.Executor, android.os.AsyncTask);
+  static com.stripe.android.StripeApiHandler$LoggingResponseListener access$400(com.stripe.android.Stripe);
+  static void access$600(com.stripe.android.Stripe, com.stripe.android.Stripe$ResponseWrapper, com.stripe.android.TokenCallback);
+}
+Compiled from "StripeApiHandler.java"
+interface com.stripe.android.StripeApiHandler$LoggingResponseListener {
+  public abstract boolean shouldLogTest();
+  public abstract void onLoggingResponse(com.stripe.android.StripeResponse);
+  public abstract void onStripeException(com.stripe.android.exception.StripeException);
+}
+Compiled from "StripeApiHandler.java"
+final class com.stripe.android.StripeApiHandler$Parameter {
+  public final java.lang.String key;
+  public final java.lang.String value;
+  com.stripe.android.StripeApiHandler$Parameter(java.lang.String, java.lang.String);
+}
+Compiled from "StripeApiHandler.java"
+interface com.stripe.android.StripeApiHandler$StripeResponseListener {
+  public abstract void onStripeResponse(com.stripe.android.StripeResponse);
+}
+Compiled from "StripeApiHandler.java"
+class com.stripe.android.StripeApiHandler {
+  static final java.lang.String GET;
+  static final java.lang.String POST;
+  static final java.lang.String API_VERSION;
+  com.stripe.android.StripeApiHandler();
+  static void logApiCall(java.util.Map<java.lang.String, java.lang.Object>, com.stripe.android.RequestOptions, com.stripe.android.StripeApiHandler$LoggingResponseListener);
+  static com.stripe.android.model.Source createSource(com.stripe.android.StripeNetworkUtils$UidProvider, android.content.Context, com.stripe.android.model.SourceParams, java.lang.String, java.lang.String, com.stripe.android.StripeApiHandler$LoggingResponseListener) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException;
+  static com.stripe.android.model.Source createSource(com.stripe.android.StripeNetworkUtils$UidProvider, android.content.Context, com.stripe.android.model.SourceParams, java.lang.String, java.lang.String, com.stripe.android.StripeApiHandler$LoggingResponseListener, com.stripe.android.StripeApiHandler$StripeResponseListener) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException;
+  static com.stripe.android.model.Source retrieveSource(java.lang.String, java.lang.String, java.lang.String) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException;
+  static com.stripe.android.model.Token createToken(android.content.Context, java.util.Map<java.lang.String, java.lang.Object>, com.stripe.android.RequestOptions, java.lang.String, com.stripe.android.StripeApiHandler$LoggingResponseListener) throws com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.CardException, com.stripe.android.exception.APIException;
+  static com.stripe.android.model.Source addCustomerSource(android.content.Context, java.lang.String, java.lang.String, java.util.List<java.lang.String>, java.lang.String, java.lang.String, java.lang.String, com.stripe.android.StripeApiHandler$LoggingResponseListener) throws com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException, com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.CardException;
+  static com.stripe.android.model.Customer setDefaultCustomerSource(android.content.Context, java.lang.String, java.lang.String, java.util.List<java.lang.String>, java.lang.String, java.lang.String, java.lang.String, com.stripe.android.StripeApiHandler$LoggingResponseListener) throws com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException, com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.CardException;
+  static com.stripe.android.model.Customer setCustomerShippingInfo(android.content.Context, java.lang.String, java.lang.String, java.util.List<java.lang.String>, com.stripe.android.model.ShippingInformation, java.lang.String, com.stripe.android.StripeApiHandler$LoggingResponseListener) throws com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException, com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.CardException;
+  static com.stripe.android.model.Customer retrieveCustomer(java.lang.String, java.lang.String) throws com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException, com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.CardException;
+  static java.lang.String createQuery(java.util.Map<java.lang.String, java.lang.Object>) throws java.io.UnsupportedEncodingException, com.stripe.android.exception.InvalidRequestException;
+  static java.util.Map<java.lang.String, java.lang.String> getHeaders(com.stripe.android.RequestOptions);
+  static java.lang.String getApiUrl();
+  static java.lang.String getSourcesUrl();
+  static java.lang.String getCustomersUrl();
+  static java.lang.String getAddCustomerSourceUrl(java.lang.String);
+  static java.lang.String getRetrieveCustomerUrl(java.lang.String);
+  static java.lang.String getRetrieveSourceApiUrl(java.lang.String);
+  static java.lang.String getRetrieveTokenApiUrl(java.lang.String);
+  static void convertErrorsToExceptionsAndThrowIfNecessary(com.stripe.android.StripeResponse) throws com.stripe.android.exception.InvalidRequestException, com.stripe.android.exception.APIConnectionException, com.stripe.android.exception.APIException, com.stripe.android.exception.AuthenticationException, com.stripe.android.exception.CardException;
+  static {};
+}
+Compiled from "StripeNetworkUtils.java"
+interface com.stripe.android.StripeNetworkUtils$UidProvider {
+  public abstract java.lang.String getUid();
+  public abstract java.lang.String getPackageName();
+}
+Compiled from "StripeNetworkUtils.java"
+public class com.stripe.android.StripeNetworkUtils {
+  public com.stripe.android.StripeNetworkUtils();
+  static java.util.Map<java.lang.String, java.lang.Object> hashMapFromCard(android.content.Context, com.stripe.android.model.Card);
+  static java.util.Map<java.lang.String, java.lang.Object> hashMapFromPersonalId(android.content.Context, java.lang.String);
+  static java.util.Map<java.lang.String, java.lang.Object> hashMapFromBankAccount(android.content.Context, com.stripe.android.model.BankAccount);
+  public static void removeNullAndEmptyParams(java.util.Map<java.lang.String, java.lang.Object>);
+  static void addUidParams(com.stripe.android.StripeNetworkUtils$UidProvider, android.content.Context, java.util.Map<java.lang.String, java.lang.Object>);
+}
+Compiled from "StripeResponse.java"
+class com.stripe.android.StripeResponse {
+  com.stripe.android.StripeResponse(int, java.lang.String, java.util.Map<java.lang.String, java.util.List<java.lang.String>>);
+  int getResponseCode();
+  java.lang.String getResponseBody();
+  java.util.Map<java.lang.String, java.util.List<java.lang.String>> getResponseHeaders();
+}
+Compiled from "StripeSSLSocketFactory.java"
+class com.stripe.android.StripeSSLSocketFactory extends javax.net.ssl.SSLSocketFactory {
+  com.stripe.android.StripeSSLSocketFactory();
+  public java.lang.String[] getDefaultCipherSuites();
+  public java.lang.String[] getSupportedCipherSuites();
+  public java.net.Socket createSocket(java.net.Socket, java.lang.String, int, boolean) throws java.io.IOException;
+  public java.net.Socket createSocket(java.lang.String, int) throws java.io.IOException;
+  public java.net.Socket createSocket(java.lang.String, int, java.net.InetAddress, int) throws java.io.IOException;
+  public java.net.Socket createSocket(java.net.InetAddress, int) throws java.io.IOException;
+  public java.net.Socket createSocket(java.net.InetAddress, int, java.net.InetAddress, int) throws java.io.IOException;
+}
+Compiled from "StripeTextUtils.java"
+public class com.stripe.android.StripeTextUtils {
+  public com.stripe.android.StripeTextUtils();
+  public static java.lang.String nullIfBlank(java.lang.String);
+  public static boolean isBlank(java.lang.String);
+  public static java.lang.String removeSpacesAndHyphens(java.lang.String);
+  static boolean hasAnyPrefix(java.lang.String, java.lang.String...);
+  static java.lang.String shaHashInput(java.lang.String);
+  static {};
+}
+Compiled from "TelemetryClientUtil.java"
+class com.stripe.android.TelemetryClientUtil {
+  com.stripe.android.TelemetryClientUtil();
+  static java.util.Map<java.lang.String, java.lang.Object> createTelemetryMap(android.content.Context);
+  static java.lang.String getHashedId(android.content.Context);
+}
+Compiled from "TokenCallback.java"
+public interface com.stripe.android.TokenCallback {
+  public abstract void onError(java.lang.Exception);
+  public abstract void onSuccess(com.stripe.android.model.Token);
+}
+Compiled from "AddSourceActivity.java"
+class com.stripe.android.view.AddSourceActivity$1 implements com.stripe.android.SourceCallback {
+  final com.stripe.android.view.AddSourceActivity this$0;
+  com.stripe.android.view.AddSourceActivity$1(com.stripe.android.view.AddSourceActivity);
+  public void onError(java.lang.Exception);
+  public void onSuccess(com.stripe.android.model.Source);
+}
+Compiled from "AddSourceActivity.java"
+class com.stripe.android.view.AddSourceActivity$2 implements com.stripe.android.CustomerSession$SourceRetrievalListener {
+  final com.stripe.android.view.AddSourceActivity this$0;
+  com.stripe.android.view.AddSourceActivity$2(com.stripe.android.view.AddSourceActivity);
+  public void onSourceRetrieved(com.stripe.android.model.Source);
+  public void onError(int, java.lang.String);
+}
+Compiled from "AddSourceActivity.java"
+interface com.stripe.android.view.AddSourceActivity$CustomerSessionProxy {
+  public abstract void addProductUsageTokenIfValid(java.lang.String);
+  public abstract void addCustomerSource(java.lang.String, com.stripe.android.CustomerSession$SourceRetrievalListener);
+}
+Compiled from "AddSourceActivity.java"
+interface com.stripe.android.view.AddSourceActivity$StripeProvider {
+  public abstract com.stripe.android.Stripe getStripe(android.content.Context);
+}
+Compiled from "AddSourceActivity.java"
+public class com.stripe.android.view.AddSourceActivity extends com.stripe.android.view.StripeActivity {
+  public static final java.lang.String EXTRA_NEW_SOURCE;
+  static final java.lang.String ADD_SOURCE_ACTIVITY;
+  static final java.lang.String EXTRA_SHOW_ZIP;
+  static final java.lang.String EXTRA_PROXY_DELAY;
+  static final java.lang.String EXTRA_UPDATE_CUSTOMER;
+  com.stripe.android.view.CardMultilineWidget mCardMultilineWidget;
+  com.stripe.android.view.AddSourceActivity$CustomerSessionProxy mCustomerSessionProxy;
+  android.widget.FrameLayout mErrorLayout;
+  com.stripe.android.view.AddSourceActivity$StripeProvider mStripeProvider;
+  public com.stripe.android.view.AddSourceActivity();
+  public static android.content.Intent newIntent(android.content.Context, boolean, boolean);
+  protected void onCreate(android.os.Bundle);
+  void initCustomerSessionTokens();
+  protected void onActionSave();
+  protected void setCommunicatingProgress(boolean);
+  void setCustomerSessionProxy(com.stripe.android.view.AddSourceActivity$CustomerSessionProxy);
+  void setStripeProvider(com.stripe.android.view.AddSourceActivity$StripeProvider);
+  public boolean onPrepareOptionsMenu(android.view.Menu);
+  public boolean onOptionsItemSelected(android.view.MenuItem);
+  public boolean onCreateOptionsMenu(android.view.Menu);
+  static boolean access$000(com.stripe.android.view.AddSourceActivity);
+  static void access$100(com.stripe.android.view.AddSourceActivity, com.stripe.android.model.StripePaymentSource);
+  static void access$200(com.stripe.android.view.AddSourceActivity, com.stripe.android.model.Source);
+}
+Compiled from "BackUpFieldDeleteListener.java"
+class com.stripe.android.view.BackUpFieldDeleteListener implements com.stripe.android.view.StripeEditText$DeleteEmptyListener {
+  com.stripe.android.view.BackUpFieldDeleteListener(com.stripe.android.view.StripeEditText);
+  public void onDeleteEmpty();
+}
+Compiled from "CardInputListener.java"
+public interface com.stripe.android.view.CardInputListener {
+  public abstract void onFocusChange(java.lang.String);
+  public abstract void onCardComplete();
+  public abstract void onExpirationComplete();
+  public abstract void onCvcComplete();
+  public abstract void onPostalCodeComplete();
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$1 implements android.view.View$OnFocusChangeListener {
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$1(com.stripe.android.view.CardInputWidget);
+  public void onFocusChange(android.view.View, boolean);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$10 extends android.view.animation.Animation {
+  final int val$cvcDestination;
+  final int val$cvcStartPosition;
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$10(com.stripe.android.view.CardInputWidget, int, int);
+  protected void applyTransformation(float, android.view.animation.Transformation);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$11 extends com.stripe.android.view.CardInputWidget$AnimationEndListener {
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$11(com.stripe.android.view.CardInputWidget);
+  public void onAnimationEnd(android.view.animation.Animation);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$12 extends android.view.animation.Animation {
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$12(com.stripe.android.view.CardInputWidget);
+  protected void applyTransformation(float, android.view.animation.Transformation);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$13 extends android.view.animation.Animation {
+  final int val$dateDestination;
+  final int val$dateStartMargin;
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$13(com.stripe.android.view.CardInputWidget, int, int);
+  protected void applyTransformation(float, android.view.animation.Transformation);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$14 extends android.view.animation.Animation {
+  final int val$cvcDestination;
+  final int val$cvcStartMargin;
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$14(com.stripe.android.view.CardInputWidget, int, int);
+  protected void applyTransformation(float, android.view.animation.Transformation);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$15 extends com.stripe.android.view.CardInputWidget$AnimationEndListener {
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$15(com.stripe.android.view.CardInputWidget);
+  public void onAnimationEnd(android.view.animation.Animation);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$2 implements android.view.View$OnFocusChangeListener {
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$2(com.stripe.android.view.CardInputWidget);
+  public void onFocusChange(android.view.View, boolean);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$3 implements android.view.View$OnFocusChangeListener {
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$3(com.stripe.android.view.CardInputWidget);
+  public void onFocusChange(android.view.View, boolean);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$4 implements com.stripe.android.view.StripeEditText$AfterTextChangedListener {
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$4(com.stripe.android.view.CardInputWidget);
+  public void onTextChanged(java.lang.String);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$5 implements com.stripe.android.view.CardNumberEditText$CardNumberCompleteListener {
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$5(com.stripe.android.view.CardInputWidget);
+  public void onCardNumberComplete();
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$6 implements com.stripe.android.view.CardNumberEditText$CardBrandChangeListener {
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$6(com.stripe.android.view.CardInputWidget);
+  public void onCardBrandChanged(java.lang.String);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$7 implements com.stripe.android.view.ExpiryDateEditText$ExpiryDateEditListener {
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$7(com.stripe.android.view.CardInputWidget);
+  public void onExpiryDateComplete();
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$8 extends android.view.animation.Animation {
+  final int val$startPoint;
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$8(com.stripe.android.view.CardInputWidget, int);
+  protected void applyTransformation(float, android.view.animation.Transformation);
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$9 extends android.view.animation.Animation {
+  final int val$dateDestination;
+  final int val$dateStartPosition;
+  final com.stripe.android.view.CardInputWidget this$0;
+  com.stripe.android.view.CardInputWidget$9(com.stripe.android.view.CardInputWidget, int, int);
+  protected void applyTransformation(float, android.view.animation.Transformation);
+}
+Compiled from "CardInputWidget.java"
+abstract class com.stripe.android.view.CardInputWidget$AnimationEndListener implements android.view.animation.Animation$AnimationListener {
+  final com.stripe.android.view.CardInputWidget this$0;
+  public void onAnimationStart(android.view.animation.Animation);
+  public void onAnimationRepeat(android.view.animation.Animation);
+  com.stripe.android.view.CardInputWidget$AnimationEndListener(com.stripe.android.view.CardInputWidget, com.stripe.android.view.CardInputWidget$1);
+}
+Compiled from "CardInputWidget.java"
+interface com.stripe.android.view.CardInputWidget$DimensionOverrideSettings {
+  public abstract int getPixelWidth(java.lang.String, android.widget.EditText);
+  public abstract int getFrameWidth();
+}
+Compiled from "CardInputWidget.java"
+class com.stripe.android.view.CardInputWidget$PlacementParameters {
+  int cardWidth;
+  int hiddenCardWidth;
+  int peekCardWidth;
+  int cardDateSeparation;
+  int dateWidth;
+  int dateCvcSeparation;
+  int cvcWidth;
+  int cardTouchBufferLimit;
+  int dateStartPosition;
+  int dateRightTouchBufferLimit;
+  int cvcStartPosition;
+  com.stripe.android.view.CardInputWidget$PlacementParameters();
+  public java.lang.String toString();
+}
+Compiled from "CardInputWidget.java"
+public class com.stripe.android.view.CardInputWidget extends android.widget.LinearLayout {
+  static final java.lang.String LOGGING_TOKEN;
+  public com.stripe.android.view.CardInputWidget(android.content.Context);
+  public com.stripe.android.view.CardInputWidget(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.CardInputWidget(android.content.Context, android.util.AttributeSet, int);
+  public com.stripe.android.model.Card getCard();
+  public void setCardInputListener(com.stripe.android.view.CardInputListener);
+  public void setCardNumber(java.lang.String);
+  public void setExpiryDate(int, int);
+  public void setCvcCode(java.lang.String);
+  public void clear();
+  public void setEnabled(boolean);
+  public boolean isEnabled();
+  public boolean onInterceptTouchEvent(android.view.MotionEvent);
+  protected android.os.Parcelable onSaveInstanceState();
+  protected void onRestoreInstanceState(android.os.Parcelable);
+  com.stripe.android.view.StripeEditText getFocusRequestOnTouch(int);
+  void setDimensionOverrideSettings(com.stripe.android.view.CardInputWidget$DimensionOverrideSettings);
+  void setCardNumberIsViewed(boolean);
+  com.stripe.android.view.CardInputWidget$PlacementParameters getPlacementParameters();
+  void updateSpaceSizes(boolean);
+  public void onWindowFocusChanged(boolean);
+  static boolean shouldIconShowBrand(java.lang.String, boolean, java.lang.String);
+  protected void onLayout(boolean, int, int, int, int);
+  static void access$000(com.stripe.android.view.CardInputWidget);
+  static com.stripe.android.view.CardInputListener access$100(com.stripe.android.view.CardInputWidget);
+  static void access$200(com.stripe.android.view.CardInputWidget);
+  static com.stripe.android.view.CardNumberEditText access$300(com.stripe.android.view.CardInputWidget);
+  static com.stripe.android.view.StripeEditText access$400(com.stripe.android.view.CardInputWidget);
+  static void access$500(com.stripe.android.view.CardInputWidget, java.lang.String, boolean, java.lang.String);
+  static boolean access$602(com.stripe.android.view.CardInputWidget, boolean);
+  static void access$700(com.stripe.android.view.CardInputWidget, java.lang.String);
+  static void access$800(com.stripe.android.view.CardInputWidget, java.lang.String);
+  static com.stripe.android.view.ExpiryDateEditText access$900(com.stripe.android.view.CardInputWidget);
+  static com.stripe.android.view.CardInputWidget$PlacementParameters access$1000(com.stripe.android.view.CardInputWidget);
+}
+Compiled from "CardMultilineWidget.java"
+class com.stripe.android.view.CardMultilineWidget$1 implements com.stripe.android.view.CardNumberEditText$CardBrandChangeListener {
+  final com.stripe.android.view.CardMultilineWidget this$0;
+  com.stripe.android.view.CardMultilineWidget$1(com.stripe.android.view.CardMultilineWidget);
+  public void onCardBrandChanged(java.lang.String);
+}
+Compiled from "CardMultilineWidget.java"
+class com.stripe.android.view.CardMultilineWidget$2 implements com.stripe.android.view.CardNumberEditText$CardNumberCompleteListener {
+  final com.stripe.android.view.CardMultilineWidget this$0;
+  com.stripe.android.view.CardMultilineWidget$2(com.stripe.android.view.CardMultilineWidget);
+  public void onCardNumberComplete();
+}
+Compiled from "CardMultilineWidget.java"
+class com.stripe.android.view.CardMultilineWidget$3 implements com.stripe.android.view.ExpiryDateEditText$ExpiryDateEditListener {
+  final com.stripe.android.view.CardMultilineWidget this$0;
+  com.stripe.android.view.CardMultilineWidget$3(com.stripe.android.view.CardMultilineWidget);
+  public void onExpiryDateComplete();
+}
+Compiled from "CardMultilineWidget.java"
+class com.stripe.android.view.CardMultilineWidget$4 implements com.stripe.android.view.StripeEditText$AfterTextChangedListener {
+  final com.stripe.android.view.CardMultilineWidget this$0;
+  com.stripe.android.view.CardMultilineWidget$4(com.stripe.android.view.CardMultilineWidget);
+  public void onTextChanged(java.lang.String);
+}
+Compiled from "CardMultilineWidget.java"
+class com.stripe.android.view.CardMultilineWidget$5 implements com.stripe.android.view.StripeEditText$AfterTextChangedListener {
+  final com.stripe.android.view.CardMultilineWidget this$0;
+  com.stripe.android.view.CardMultilineWidget$5(com.stripe.android.view.CardMultilineWidget);
+  public void onTextChanged(java.lang.String);
+}
+Compiled from "CardMultilineWidget.java"
+class com.stripe.android.view.CardMultilineWidget$6 implements android.view.View$OnFocusChangeListener {
+  final com.stripe.android.view.CardMultilineWidget this$0;
+  com.stripe.android.view.CardMultilineWidget$6(com.stripe.android.view.CardMultilineWidget);
+  public void onFocusChange(android.view.View, boolean);
+}
+Compiled from "CardMultilineWidget.java"
+class com.stripe.android.view.CardMultilineWidget$7 implements android.view.View$OnFocusChangeListener {
+  final com.stripe.android.view.CardMultilineWidget this$0;
+  com.stripe.android.view.CardMultilineWidget$7(com.stripe.android.view.CardMultilineWidget);
+  public void onFocusChange(android.view.View, boolean);
+}
+Compiled from "CardMultilineWidget.java"
+class com.stripe.android.view.CardMultilineWidget$8 implements android.view.View$OnFocusChangeListener {
+  final com.stripe.android.view.CardMultilineWidget this$0;
+  com.stripe.android.view.CardMultilineWidget$8(com.stripe.android.view.CardMultilineWidget);
+  public void onFocusChange(android.view.View, boolean);
+}
+Compiled from "CardMultilineWidget.java"
+class com.stripe.android.view.CardMultilineWidget$9 implements android.view.View$OnFocusChangeListener {
+  final com.stripe.android.view.CardMultilineWidget this$0;
+  com.stripe.android.view.CardMultilineWidget$9(com.stripe.android.view.CardMultilineWidget);
+  public void onFocusChange(android.view.View, boolean);
+}
+Compiled from "CardMultilineWidget.java"
+public class com.stripe.android.view.CardMultilineWidget extends android.widget.LinearLayout {
+  static final java.lang.String CARD_MULTILINE_TOKEN;
+  static final long CARD_NUMBER_HINT_DELAY;
+  static final long COMMON_HINT_DELAY;
+  public com.stripe.android.view.CardMultilineWidget(android.content.Context);
+  public com.stripe.android.view.CardMultilineWidget(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.CardMultilineWidget(android.content.Context, android.util.AttributeSet, int);
+  com.stripe.android.view.CardMultilineWidget(android.content.Context, boolean);
+  public void clear();
+  public void setCardInputListener(com.stripe.android.view.CardInputListener);
+  public com.stripe.android.model.Card getCard();
+  public boolean validateAllFields();
+  public void onWindowFocusChanged(boolean);
+  public void setShouldShowPostalCode(boolean);
+  public boolean isEnabled();
+  public void setEnabled(boolean);
+  void adjustViewForPostalCodeAttribute();
+  static boolean isPostalCodeMaximalLength(boolean, java.lang.String);
+  static void access$000(com.stripe.android.view.CardMultilineWidget, java.lang.String);
+  static com.stripe.android.view.ExpiryDateEditText access$100(com.stripe.android.view.CardMultilineWidget);
+  static com.stripe.android.view.CardInputListener access$200(com.stripe.android.view.CardMultilineWidget);
+  static com.stripe.android.view.StripeEditText access$300(com.stripe.android.view.CardMultilineWidget);
+  static java.lang.String access$400(com.stripe.android.view.CardMultilineWidget);
+  static boolean access$500(com.stripe.android.view.CardMultilineWidget);
+  static com.stripe.android.view.StripeEditText access$600(com.stripe.android.view.CardMultilineWidget);
+  static void access$700(com.stripe.android.view.CardMultilineWidget);
+  static com.stripe.android.view.CardNumberEditText access$800(com.stripe.android.view.CardMultilineWidget);
+  static int access$900(com.stripe.android.view.CardMultilineWidget);
+}
+Compiled from "CardNumberEditText.java"
+class com.stripe.android.view.CardNumberEditText$1 implements android.text.TextWatcher {
+  int latestChangeStart;
+  int latestInsertionSize;
+  final com.stripe.android.view.CardNumberEditText this$0;
+  com.stripe.android.view.CardNumberEditText$1(com.stripe.android.view.CardNumberEditText);
+  public void beforeTextChanged(java.lang.CharSequence, int, int, int);
+  public void onTextChanged(java.lang.CharSequence, int, int, int);
+  public void afterTextChanged(android.text.Editable);
+}
+Compiled from "CardNumberEditText.java"
+interface com.stripe.android.view.CardNumberEditText$CardBrandChangeListener {
+  public abstract void onCardBrandChanged(java.lang.String);
+}
+Compiled from "CardNumberEditText.java"
+interface com.stripe.android.view.CardNumberEditText$CardNumberCompleteListener {
+  public abstract void onCardNumberComplete();
+}
+Compiled from "CardNumberEditText.java"
+public class com.stripe.android.view.CardNumberEditText extends com.stripe.android.view.StripeEditText {
+  java.lang.String mCardBrand;
+  public com.stripe.android.view.CardNumberEditText(android.content.Context);
+  public com.stripe.android.view.CardNumberEditText(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.CardNumberEditText(android.content.Context, android.util.AttributeSet, int);
+  public java.lang.String getCardBrand();
+  public java.lang.String getCardNumber();
+  public int getLengthMax();
+  public boolean isCardNumberValid();
+  void setCardNumberCompleteListener(com.stripe.android.view.CardNumberEditText$CardNumberCompleteListener);
+  void setCardBrandChangeListener(com.stripe.android.view.CardNumberEditText$CardBrandChangeListener);
+  void updateLengthFilter();
+  int updateSelectionIndex(int, int, int);
+  static boolean access$000(com.stripe.android.view.CardNumberEditText);
+  static void access$100(com.stripe.android.view.CardNumberEditText, java.lang.String);
+  static boolean access$002(com.stripe.android.view.CardNumberEditText, boolean);
+  static int access$200(com.stripe.android.view.CardNumberEditText);
+  static boolean access$300(com.stripe.android.view.CardNumberEditText);
+  static boolean access$302(com.stripe.android.view.CardNumberEditText, boolean);
+  static com.stripe.android.view.CardNumberEditText$CardNumberCompleteListener access$400(com.stripe.android.view.CardNumberEditText);
+  static {};
+}
+Compiled from "CountryAdapter.java"
+class com.stripe.android.view.CountryAdapter$1 extends android.widget.Filter {
+  final com.stripe.android.view.CountryAdapter this$0;
+  com.stripe.android.view.CountryAdapter$1(com.stripe.android.view.CountryAdapter);
+  protected android.widget.Filter$FilterResults performFiltering(java.lang.CharSequence);
+  protected void publishResults(java.lang.CharSequence, android.widget.Filter$FilterResults);
+}
+Compiled from "CountryAdapter.java"
+class com.stripe.android.view.CountryAdapter$2 implements java.util.Comparator<java.lang.String> {
+  final com.stripe.android.view.CountryAdapter this$0;
+  com.stripe.android.view.CountryAdapter$2(com.stripe.android.view.CountryAdapter);
+  public int compare(java.lang.String, java.lang.String);
+  public int compare(java.lang.Object, java.lang.Object);
+}
+Compiled from "CountryAdapter.java"
+class com.stripe.android.view.CountryAdapter extends android.widget.ArrayAdapter {
+  java.util.List<java.lang.String> mCountries;
+  java.util.List<java.lang.String> mSuggestions;
+  com.stripe.android.view.CountryAdapter(android.content.Context, java.util.List<java.lang.String>);
+  public int getCount();
+  public java.lang.String getItem(int);
+  public long getItemId(int);
+  public android.view.View getView(int, android.view.View, android.view.ViewGroup);
+  public android.widget.Filter getFilter();
+  java.util.List getOrderedCountries(java.util.List<java.lang.String>);
+  java.util.Locale getCurrentLocale();
+  public java.lang.Object getItem(int);
+}
+Compiled from "CountryAutoCompleteTextView.java"
+class com.stripe.android.view.CountryAutoCompleteTextView$1 implements android.widget.AdapterView$OnItemClickListener {
+  final com.stripe.android.view.CountryAutoCompleteTextView this$0;
+  com.stripe.android.view.CountryAutoCompleteTextView$1(com.stripe.android.view.CountryAutoCompleteTextView);
+  public void onItemClick(android.widget.AdapterView<?>, android.view.View, int, long);
+}
+Compiled from "CountryAutoCompleteTextView.java"
+class com.stripe.android.view.CountryAutoCompleteTextView$2 implements android.view.View$OnFocusChangeListener {
+  final com.stripe.android.view.CountryAutoCompleteTextView this$0;
+  com.stripe.android.view.CountryAutoCompleteTextView$2(com.stripe.android.view.CountryAutoCompleteTextView);
+  public void onFocusChange(android.view.View, boolean);
+}
+Compiled from "CountryAutoCompleteTextView.java"
+interface com.stripe.android.view.CountryAutoCompleteTextView$CountryChangeListener {
+  public abstract void onCountryChanged(java.lang.String);
+}
+Compiled from "CountryAutoCompleteTextView.java"
+public class com.stripe.android.view.CountryAutoCompleteTextView extends android.widget.FrameLayout {
+  public com.stripe.android.view.CountryAutoCompleteTextView(android.content.Context);
+  public com.stripe.android.view.CountryAutoCompleteTextView(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.CountryAutoCompleteTextView(android.content.Context, android.util.AttributeSet, int);
+  java.lang.String getSelectedCountryCode();
+  void setCountrySelected(java.lang.String);
+  void setCountryChangeListener(com.stripe.android.view.CountryAutoCompleteTextView$CountryChangeListener);
+  void updateUIForCountryEntered(java.lang.String);
+  static android.widget.AutoCompleteTextView access$000(com.stripe.android.view.CountryAutoCompleteTextView);
+}
+Compiled from "CountryUtils.java"
+class com.stripe.android.view.CountryUtils {
+  static final java.lang.String[] NO_POSTAL_CODE_COUNTRIES;
+  static final java.util.Set<java.lang.String> NO_POSTAL_CODE_COUNTRIES_SET;
+  com.stripe.android.view.CountryUtils();
+  static boolean doesCountryUsePostalCode(java.lang.String);
+  static boolean isUSZipCodeValid(java.lang.String);
+  static boolean isCanadianPostalCodeValid(java.lang.String);
+  static boolean isUKPostcodeValid(java.lang.String);
+  static java.util.Map<java.lang.String, java.lang.String> getCountryNameToCodeMap();
+  static {};
+}
+Compiled from "DateUtils.java"
+class com.stripe.android.view.DateUtils {
+  static final int MAX_VALID_YEAR;
+  com.stripe.android.view.DateUtils();
+  static boolean isValidMonth(java.lang.String);
+  static java.lang.String[] separateDateStringParts(java.lang.String);
+  static boolean isExpiryDataValid(int, int);
+  static boolean isExpiryDataValid(int, int, java.util.Calendar);
+  static java.lang.String createDateStringFromIntegerInput(int, int);
+  static int convertTwoDigitYearToFour(int);
+  static int convertTwoDigitYearToFour(int, java.util.Calendar);
+}
+Compiled from "ErrorListener.java"
+class com.stripe.android.view.ErrorListener implements com.stripe.android.view.StripeEditText$ErrorMessageListener {
+  android.support.design.widget.TextInputLayout textInputLayout;
+  com.stripe.android.view.ErrorListener(android.support.design.widget.TextInputLayout);
+  public void displayErrorMessage(java.lang.String);
+}
+Compiled from "ExpiryDateEditText.java"
+class com.stripe.android.view.ExpiryDateEditText$1 implements android.text.TextWatcher {
+  boolean ignoreChanges;
+  int latestChangeStart;
+  int latestInsertionSize;
+  java.lang.String[] parts;
+  final com.stripe.android.view.ExpiryDateEditText this$0;
+  com.stripe.android.view.ExpiryDateEditText$1(com.stripe.android.view.ExpiryDateEditText);
+  public void beforeTextChanged(java.lang.CharSequence, int, int, int);
+  public void onTextChanged(java.lang.CharSequence, int, int, int);
+  public void afterTextChanged(android.text.Editable);
+}
+Compiled from "ExpiryDateEditText.java"
+interface com.stripe.android.view.ExpiryDateEditText$ExpiryDateEditListener {
+  public abstract void onExpiryDateComplete();
+}
+Compiled from "ExpiryDateEditText.java"
+public class com.stripe.android.view.ExpiryDateEditText extends com.stripe.android.view.StripeEditText {
+  static final int INVALID_INPUT;
+  public com.stripe.android.view.ExpiryDateEditText(android.content.Context);
+  public com.stripe.android.view.ExpiryDateEditText(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.ExpiryDateEditText(android.content.Context, android.util.AttributeSet, int);
+  public boolean isDateValid();
+  public int[] getValidDateFields();
+  public void setExpiryDateEditListener(com.stripe.android.view.ExpiryDateEditText$ExpiryDateEditListener);
+  int updateSelectionIndex(int, int, int);
+  static boolean access$000(com.stripe.android.view.ExpiryDateEditText);
+  static void access$100(com.stripe.android.view.ExpiryDateEditText, java.lang.String[]);
+  static com.stripe.android.view.ExpiryDateEditText$ExpiryDateEditListener access$200(com.stripe.android.view.ExpiryDateEditText);
+  static boolean access$002(com.stripe.android.view.ExpiryDateEditText, boolean);
+}
+Compiled from "IconTextInputLayout.java"
+public class com.stripe.android.view.IconTextInputLayout extends android.support.design.widget.TextInputLayout {
+  android.graphics.Rect mBounds;
+  java.lang.Object mCollapsingTextHelper;
+  java.lang.reflect.Method mRecalculateMethod;
+  public com.stripe.android.view.IconTextInputLayout(android.content.Context);
+  public com.stripe.android.view.IconTextInputLayout(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.IconTextInputLayout(android.content.Context, android.util.AttributeSet, int);
+  protected void onLayout(boolean, int, int, int, int);
+  void init();
+}
+Compiled from "LockableHorizontalScrollView.java"
+interface com.stripe.android.view.LockableHorizontalScrollView$LockableScrollChangedListener {
+  public abstract void onSmoothScrollBy(int, int);
+}
+Compiled from "LockableHorizontalScrollView.java"
+public class com.stripe.android.view.LockableHorizontalScrollView extends android.widget.HorizontalScrollView {
+  public com.stripe.android.view.LockableHorizontalScrollView(android.content.Context);
+  public com.stripe.android.view.LockableHorizontalScrollView(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.LockableHorizontalScrollView(android.content.Context, android.util.AttributeSet, int);
+  public boolean isScrollable();
+  public void setScrollable(boolean);
+  public void scrollTo(int, int);
+  public boolean onTouchEvent(android.view.MotionEvent);
+  public boolean onInterceptTouchEvent(android.view.MotionEvent);
+  void setScrollChangedListener(com.stripe.android.view.LockableHorizontalScrollView$LockableScrollChangedListener);
+  void wrappedSmoothScrollBy(int, int);
+}
+Compiled from "MaskedCardAdapter.java"
+class com.stripe.android.view.MaskedCardAdapter$ViewHolder$1 implements android.view.View$OnClickListener {
+  final com.stripe.android.view.MaskedCardAdapter val$this$0;
+  final com.stripe.android.view.MaskedCardAdapter$ViewHolder this$1;
+  com.stripe.android.view.MaskedCardAdapter$ViewHolder$1(com.stripe.android.view.MaskedCardAdapter$ViewHolder, com.stripe.android.view.MaskedCardAdapter);
+  public void onClick(android.view.View);
+}
+Compiled from "MaskedCardAdapter.java"
+class com.stripe.android.view.MaskedCardAdapter$ViewHolder extends android.support.v7.widget.RecyclerView$ViewHolder {
+  com.stripe.android.view.MaskedCardView maskedCardView;
+  int index;
+  final com.stripe.android.view.MaskedCardAdapter this$0;
+  com.stripe.android.view.MaskedCardAdapter$ViewHolder(com.stripe.android.view.MaskedCardAdapter, android.widget.FrameLayout);
+  void setMaskedCardData(com.stripe.android.model.CustomerSource);
+  void setIndex(int);
+  void setSelected(boolean);
+}
+Compiled from "MaskedCardAdapter.java"
+class com.stripe.android.view.MaskedCardAdapter extends android.support.v7.widget.RecyclerView$Adapter<com.stripe.android.view.MaskedCardAdapter$ViewHolder> {
+  com.stripe.android.view.MaskedCardAdapter(java.util.List<com.stripe.android.model.CustomerSource>);
+  void setCustomerSourceList(java.util.List<com.stripe.android.model.CustomerSource>);
+  void updateCustomer(com.stripe.android.model.Customer);
+  public int getItemCount();
+  public void onBindViewHolder(com.stripe.android.view.MaskedCardAdapter$ViewHolder, int);
+  public com.stripe.android.view.MaskedCardAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup, int);
+  boolean setSelectedSource(java.lang.String);
+  com.stripe.android.model.CustomerSource getSelectedSource();
+  void addCustomerSourceIfSupported(com.stripe.android.model.CustomerSource...);
+  boolean canDisplaySource(com.stripe.android.model.Source);
+  void updateSelectedIndex(int);
+  public void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder, int);
+  public android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup, int);
+}
+Compiled from "MaskedCardView.java"
+public class com.stripe.android.view.MaskedCardView extends android.widget.LinearLayout {
+  int mSelectedAlphaColorInt;
+  int mSelectedColorInt;
+  int mUnselectedColorInt;
+  int mUnselectedTextAlphaColorInt;
+  int mUnselectedTextColorInt;
+  static final java.util.Map<java.lang.String, java.lang.Integer> TEMPLATE_RESOURCE_MAP;
+  public com.stripe.android.view.MaskedCardView(android.content.Context);
+  public com.stripe.android.view.MaskedCardView(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.MaskedCardView(android.content.Context, android.util.AttributeSet, int);
+  public boolean isSelected();
+  public void setSelected(boolean);
+  void setCard(com.stripe.android.model.Card);
+  void setSourceCardData(com.stripe.android.model.SourceCardData);
+  void setCustomerSource(com.stripe.android.model.CustomerSource);
+  void toggleSelected();
+  int[] getTextColorValues();
+  java.lang.String getCardBrand();
+  java.lang.String getLast4();
+  void init();
+  static {};
+}
+Compiled from "PaymentFlowActivity.java"
+class com.stripe.android.view.PaymentFlowActivity$1 implements android.support.v4.view.ViewPager$OnPageChangeListener {
+  final com.stripe.android.view.PaymentFlowActivity this$0;
+  com.stripe.android.view.PaymentFlowActivity$1(com.stripe.android.view.PaymentFlowActivity);
+  public void onPageScrolled(int, float, int);
+  public void onPageSelected(int);
+  public void onPageScrollStateChanged(int);
+}
+Compiled from "PaymentFlowActivity.java"
+class com.stripe.android.view.PaymentFlowActivity$2 extends android.content.BroadcastReceiver {
+  final com.stripe.android.view.PaymentFlowActivity this$0;
+  com.stripe.android.view.PaymentFlowActivity$2(com.stripe.android.view.PaymentFlowActivity);
+  public void onReceive(android.content.Context, android.content.Intent);
+}
+Compiled from "PaymentFlowActivity.java"
+class com.stripe.android.view.PaymentFlowActivity$3 extends android.content.BroadcastReceiver {
+  final com.stripe.android.view.PaymentFlowActivity this$0;
+  com.stripe.android.view.PaymentFlowActivity$3(com.stripe.android.view.PaymentFlowActivity);
+  public void onReceive(android.content.Context, android.content.Intent);
+}
+Compiled from "PaymentFlowActivity.java"
+public class com.stripe.android.view.PaymentFlowActivity extends com.stripe.android.view.StripeActivity {
+  public static final java.lang.String EXTRA_DEFAULT_SHIPPING_METHOD;
+  public static final java.lang.String EXTRA_IS_SHIPPING_INFO_VALID;
+  public static final java.lang.String EXTRA_SHIPPING_INFO_DATA;
+  public static final java.lang.String EXTRA_SHIPPING_INFO_ERROR;
+  public static final java.lang.String EVENT_SHIPPING_INFO_PROCESSED;
+  public static final java.lang.String EVENT_SHIPPING_INFO_SUBMITTED;
+  public static final java.lang.String EXTRA_VALID_SHIPPING_METHODS;
+  static final java.lang.String TOKEN_PAYMENT_FLOW_ACTIVITY;
+  public com.stripe.android.view.PaymentFlowActivity();
+  protected void onCreate(android.os.Bundle);
+  protected void onActionSave();
+  protected void onPause();
+  protected void onResume();
+  public void onBackPressed();
+  public boolean onPrepareOptionsMenu(android.view.Menu);
+  public boolean onOptionsItemSelected(android.view.MenuItem);
+  public boolean onCreateOptionsMenu(android.view.Menu);
+  static android.support.v4.view.ViewPager access$000(com.stripe.android.view.PaymentFlowActivity);
+  static com.stripe.android.view.PaymentFlowPagerAdapter access$100(com.stripe.android.view.PaymentFlowActivity);
+  static void access$200(com.stripe.android.view.PaymentFlowActivity);
+  static java.util.List access$302(com.stripe.android.view.PaymentFlowActivity, java.util.List);
+  static com.stripe.android.model.ShippingMethod access$402(com.stripe.android.view.PaymentFlowActivity, com.stripe.android.model.ShippingMethod);
+  static com.stripe.android.model.ShippingInformation access$502(com.stripe.android.view.PaymentFlowActivity, com.stripe.android.model.ShippingInformation);
+  static java.util.List access$300(com.stripe.android.view.PaymentFlowActivity);
+  static com.stripe.android.model.ShippingMethod access$400(com.stripe.android.view.PaymentFlowActivity);
+  static void access$600(com.stripe.android.view.PaymentFlowActivity, java.util.List, com.stripe.android.model.ShippingMethod);
+  static com.stripe.android.model.ShippingInformation access$500(com.stripe.android.view.PaymentFlowActivity);
+  static com.stripe.android.PaymentSessionData access$700(com.stripe.android.view.PaymentFlowActivity);
+}
+Compiled from "PaymentFlowPagerAdapter.java"
+class com.stripe.android.view.PaymentFlowPagerAdapter extends android.support.v4.view.PagerAdapter {
+  com.stripe.android.view.PaymentFlowPagerAdapter(android.content.Context, com.stripe.android.PaymentSessionConfig);
+  void setShippingInfoSaved(boolean);
+  void setShippingMethods(java.util.List<com.stripe.android.model.ShippingMethod>, com.stripe.android.model.ShippingMethod);
+  void hideShippingPage();
+  public java.lang.Object instantiateItem(android.view.ViewGroup, int);
+  public void destroyItem(android.view.ViewGroup, int, java.lang.Object);
+  public int getCount();
+  com.stripe.android.view.PaymentFlowPagerEnum getPageAt(int);
+  public boolean isViewFromObject(android.view.View, java.lang.Object);
+  public java.lang.CharSequence getPageTitle(int);
+}
+Compiled from "PaymentFlowPagerEnum.java"
+final class com.stripe.android.view.PaymentFlowPagerEnum extends java.lang.Enum<com.stripe.android.view.PaymentFlowPagerEnum> {
+  public static final com.stripe.android.view.PaymentFlowPagerEnum SHIPPING_INFO;
+  public static final com.stripe.android.view.PaymentFlowPagerEnum SHIPPING_METHOD;
+  public static com.stripe.android.view.PaymentFlowPagerEnum[] values();
+  public static com.stripe.android.view.PaymentFlowPagerEnum valueOf(java.lang.String);
+  int getTitleResId();
+  int getLayoutResId();
+  static {};
+}
+Compiled from "PaymentMethodsActivity.java"
+class com.stripe.android.view.PaymentMethodsActivity$1 implements android.view.View$OnClickListener {
+  final com.stripe.android.view.PaymentMethodsActivity this$0;
+  com.stripe.android.view.PaymentMethodsActivity$1(com.stripe.android.view.PaymentMethodsActivity);
+  public void onClick(android.view.View);
+}
+Compiled from "PaymentMethodsActivity.java"
+class com.stripe.android.view.PaymentMethodsActivity$2 implements com.stripe.android.CustomerSession$CustomerRetrievalListener {
+  final com.stripe.android.view.PaymentMethodsActivity this$0;
+  com.stripe.android.view.PaymentMethodsActivity$2(com.stripe.android.view.PaymentMethodsActivity);
+  public void onCustomerRetrieved(com.stripe.android.model.Customer);
+  public void onError(int, java.lang.String);
+}
+Compiled from "PaymentMethodsActivity.java"
+class com.stripe.android.view.PaymentMethodsActivity$3 implements com.stripe.android.CustomerSession$CustomerRetrievalListener {
+  final com.stripe.android.view.PaymentMethodsActivity this$0;
+  com.stripe.android.view.PaymentMethodsActivity$3(com.stripe.android.view.PaymentMethodsActivity);
+  public void onCustomerRetrieved(com.stripe.android.model.Customer);
+  public void onError(int, java.lang.String);
+}
+Compiled from "PaymentMethodsActivity.java"
+class com.stripe.android.view.PaymentMethodsActivity$4 implements com.stripe.android.CustomerSession$CustomerRetrievalListener {
+  final com.stripe.android.view.PaymentMethodsActivity this$0;
+  com.stripe.android.view.PaymentMethodsActivity$4(com.stripe.android.view.PaymentMethodsActivity);
+  public void onCustomerRetrieved(com.stripe.android.model.Customer);
+  public void onError(int, java.lang.String);
+}
+Compiled from "PaymentMethodsActivity.java"
+class com.stripe.android.view.PaymentMethodsActivity$5 implements com.stripe.android.CustomerSession$CustomerRetrievalListener {
+  final com.stripe.android.view.PaymentMethodsActivity this$0;
+  com.stripe.android.view.PaymentMethodsActivity$5(com.stripe.android.view.PaymentMethodsActivity);
+  public void onCustomerRetrieved(com.stripe.android.model.Customer);
+  public void onError(int, java.lang.String);
+}
+Compiled from "PaymentMethodsActivity.java"
+class com.stripe.android.view.PaymentMethodsActivity$6 implements android.content.DialogInterface$OnClickListener {
+  final com.stripe.android.view.PaymentMethodsActivity this$0;
+  com.stripe.android.view.PaymentMethodsActivity$6(com.stripe.android.view.PaymentMethodsActivity);
+  public void onClick(android.content.DialogInterface, int);
+}
+Compiled from "PaymentMethodsActivity.java"
+interface com.stripe.android.view.PaymentMethodsActivity$CustomerSessionProxy {
+  public abstract void addProductUsageTokenIfValid(java.lang.String);
+  public abstract com.stripe.android.model.Customer getCachedCustomer();
+  public abstract void retrieveCurrentCustomer(com.stripe.android.CustomerSession$CustomerRetrievalListener);
+  public abstract void setCustomerDefaultSource(java.lang.String, java.lang.String, com.stripe.android.CustomerSession$CustomerRetrievalListener);
+  public abstract void updateCurrentCustomer(com.stripe.android.CustomerSession$CustomerRetrievalListener);
+}
+Compiled from "PaymentMethodsActivity.java"
+public class com.stripe.android.view.PaymentMethodsActivity extends android.support.v7.app.AppCompatActivity {
+  public static final java.lang.String EXTRA_SELECTED_PAYMENT;
+  static final java.lang.String EXTRA_PROXY_DELAY;
+  static final java.lang.String PAYMENT_METHODS_ACTIVITY;
+  static final int REQUEST_CODE_ADD_CARD;
+  public com.stripe.android.view.PaymentMethodsActivity();
+  public static android.content.Intent newIntent(android.content.Context);
+  protected void onCreate(android.os.Bundle);
+  protected void onActivityResult(int, int, android.content.Intent);
+  public boolean onPrepareOptionsMenu(android.view.Menu);
+  public boolean onCreateOptionsMenu(android.view.Menu);
+  public boolean onOptionsItemSelected(android.view.MenuItem);
+  void initializeCustomerSourceData();
+  void setCustomerSessionProxy(com.stripe.android.view.PaymentMethodsActivity$CustomerSessionProxy);
+  static boolean access$000(com.stripe.android.view.PaymentMethodsActivity);
+  static void access$100(com.stripe.android.view.PaymentMethodsActivity, com.stripe.android.model.Customer);
+  static void access$200(com.stripe.android.view.PaymentMethodsActivity, java.lang.String);
+  static void access$300(com.stripe.android.view.PaymentMethodsActivity, boolean);
+  static void access$400(com.stripe.android.view.PaymentMethodsActivity, com.stripe.android.model.Customer);
+  static com.stripe.android.model.Customer access$502(com.stripe.android.view.PaymentMethodsActivity, com.stripe.android.model.Customer);
+  static void access$600(com.stripe.android.view.PaymentMethodsActivity);
+  static void access$700(com.stripe.android.view.PaymentMethodsActivity, java.lang.String);
+}
+Compiled from "PaymentUtils.java"
+public class com.stripe.android.view.PaymentUtils {
+  public com.stripe.android.view.PaymentUtils();
+  static java.lang.String formatPriceStringUsingFree(long, java.util.Currency, java.lang.String);
+  static java.lang.String formatPriceString(double, java.util.Currency);
+}
+Compiled from "SelectShippingMethodWidget.java"
+public class com.stripe.android.view.SelectShippingMethodWidget extends android.widget.FrameLayout {
+  android.support.v7.widget.RecyclerView mShippingMethodRecyclerView;
+  com.stripe.android.view.ShippingMethodAdapter mShippingMethodAdapter;
+  public com.stripe.android.view.SelectShippingMethodWidget(android.content.Context);
+  public com.stripe.android.view.SelectShippingMethodWidget(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.SelectShippingMethodWidget(android.content.Context, android.util.AttributeSet, int);
+  public com.stripe.android.model.ShippingMethod getSelectedShippingMethod();
+  public void setShippingMethods(java.util.List<com.stripe.android.model.ShippingMethod>, com.stripe.android.model.ShippingMethod);
+}
+Compiled from "ShippingInfoWidget.java"
+class com.stripe.android.view.ShippingInfoWidget$1 implements com.stripe.android.view.CountryAutoCompleteTextView$CountryChangeListener {
+  final com.stripe.android.view.ShippingInfoWidget this$0;
+  com.stripe.android.view.ShippingInfoWidget$1(com.stripe.android.view.ShippingInfoWidget);
+  public void onCountryChanged(java.lang.String);
+}
+Compiled from "ShippingInfoWidget.java"
+public interface com.stripe.android.view.ShippingInfoWidget$CustomizableShippingField extends java.lang.annotation.Annotation {
+}
+Compiled from "ShippingInfoWidget.java"
+public class com.stripe.android.view.ShippingInfoWidget extends android.widget.LinearLayout {
+  public static final java.lang.String ADDRESS_LINE_ONE_FIELD;
+  public static final java.lang.String ADDRESS_LINE_TWO_FIELD;
+  public static final java.lang.String CITY_FIELD;
+  public static final java.lang.String POSTAL_CODE_FIELD;
+  public static final java.lang.String STATE_FIELD;
+  public static final java.lang.String PHONE_FIELD;
+  public com.stripe.android.view.ShippingInfoWidget(android.content.Context);
+  public com.stripe.android.view.ShippingInfoWidget(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.ShippingInfoWidget(android.content.Context, android.util.AttributeSet, int);
+  public void setOptionalFields(java.util.List<java.lang.String>);
+  public void setHiddenFields(java.util.List<java.lang.String>);
+  public com.stripe.android.model.ShippingInformation getShippingInformation();
+  public void populateShippingInfo(com.stripe.android.model.ShippingInformation);
+  public boolean validateAllFields();
+  static com.stripe.android.view.CountryAutoCompleteTextView access$000(com.stripe.android.view.ShippingInfoWidget);
+  static void access$100(com.stripe.android.view.ShippingInfoWidget, java.lang.String);
+}
+Compiled from "ShippingMethodAdapter.java"
+class com.stripe.android.view.ShippingMethodAdapter$ViewHolder$1 implements android.view.View$OnClickListener {
+  final com.stripe.android.view.ShippingMethodAdapter val$this$0;
+  final com.stripe.android.view.ShippingMethodAdapter$ViewHolder this$1;
+  com.stripe.android.view.ShippingMethodAdapter$ViewHolder$1(com.stripe.android.view.ShippingMethodAdapter$ViewHolder, com.stripe.android.view.ShippingMethodAdapter);
+  public void onClick(android.view.View);
+}
+Compiled from "ShippingMethodAdapter.java"
+class com.stripe.android.view.ShippingMethodAdapter$ViewHolder extends android.support.v7.widget.RecyclerView$ViewHolder {
+  com.stripe.android.view.ShippingMethodView shippingMethodView;
+  int index;
+  final com.stripe.android.view.ShippingMethodAdapter this$0;
+  com.stripe.android.view.ShippingMethodAdapter$ViewHolder(com.stripe.android.view.ShippingMethodAdapter, com.stripe.android.view.ShippingMethodView);
+  void setShippingMethod(com.stripe.android.model.ShippingMethod);
+  void setUIAsSelected(boolean);
+  void setIndex(int);
+}
+Compiled from "ShippingMethodAdapter.java"
+class com.stripe.android.view.ShippingMethodAdapter extends android.support.v7.widget.RecyclerView$Adapter<com.stripe.android.view.ShippingMethodAdapter$ViewHolder> {
+  com.stripe.android.view.ShippingMethodAdapter();
+  public int getItemCount();
+  public long getItemId(int);
+  public com.stripe.android.view.ShippingMethodAdapter$ViewHolder onCreateViewHolder(android.view.ViewGroup, int);
+  public void onBindViewHolder(com.stripe.android.view.ShippingMethodAdapter$ViewHolder, int);
+  com.stripe.android.model.ShippingMethod getSelectedShippingMethod();
+  void setShippingMethods(java.util.List<com.stripe.android.model.ShippingMethod>, com.stripe.android.model.ShippingMethod);
+  void setSelectedIndex(int);
+  public void onBindViewHolder(android.support.v7.widget.RecyclerView$ViewHolder, int);
+  public android.support.v7.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup, int);
+}
+Compiled from "ShippingMethodView.java"
+class com.stripe.android.view.ShippingMethodView extends android.widget.RelativeLayout {
+  int mSelectedColorInt;
+  int mUnselectedTextColorSecondaryInt;
+  int mUnselectedTextColorPrimaryInt;
+  com.stripe.android.view.ShippingMethodView(android.content.Context);
+  com.stripe.android.view.ShippingMethodView(android.content.Context, android.util.AttributeSet);
+  com.stripe.android.view.ShippingMethodView(android.content.Context, android.util.AttributeSet, int);
+  public void setSelected(boolean);
+  void setShippingMethod(com.stripe.android.model.ShippingMethod);
+}
+Compiled from "StripeActivity.java"
+class com.stripe.android.view.StripeActivity$1 extends android.content.BroadcastReceiver {
+  final com.stripe.android.view.StripeActivity this$0;
+  com.stripe.android.view.StripeActivity$1(com.stripe.android.view.StripeActivity);
+  public void onReceive(android.content.Context, android.content.Intent);
+}
+Compiled from "StripeActivity.java"
+class com.stripe.android.view.StripeActivity$2 implements android.content.DialogInterface$OnClickListener {
+  final com.stripe.android.view.StripeActivity this$0;
+  com.stripe.android.view.StripeActivity$2(com.stripe.android.view.StripeActivity);
+  public void onClick(android.content.DialogInterface, int);
+}
+Compiled from "StripeActivity.java"
+interface com.stripe.android.view.StripeActivity$AlertMessageListener {
+  public abstract void onAlertMessageDisplayed(java.lang.String);
+}
+Compiled from "StripeActivity.java"
+abstract class com.stripe.android.view.StripeActivity extends android.support.v7.app.AppCompatActivity {
+  android.content.BroadcastReceiver mAlertBroadcastReceiver;
+  com.stripe.android.view.StripeActivity$AlertMessageListener mAlertMessageListener;
+  boolean mCommunicating;
+  android.support.v7.widget.Toolbar mToolbar;
+  android.widget.ProgressBar mProgressBar;
+  android.view.ViewStub mViewStub;
+  com.stripe.android.view.StripeActivity();
+  protected void onCreate(android.os.Bundle);
+  protected void onPause();
+  protected void onResume();
+  public boolean onCreateOptionsMenu(android.view.Menu);
+  public boolean onOptionsItemSelected(android.view.MenuItem);
+  public boolean onPrepareOptionsMenu(android.view.Menu);
+  protected abstract void onActionSave();
+  protected void setCommunicatingProgress(boolean);
+  void setAlertMessageListener(com.stripe.android.view.StripeActivity$AlertMessageListener);
+  void showError(java.lang.String);
+}
+Compiled from "StripeEditText.java"
+class com.stripe.android.view.StripeEditText$1 implements java.lang.Runnable {
+  final int val$hintResource;
+  final com.stripe.android.view.StripeEditText this$0;
+  com.stripe.android.view.StripeEditText$1(com.stripe.android.view.StripeEditText, int);
+  public void run();
+}
+Compiled from "StripeEditText.java"
+class com.stripe.android.view.StripeEditText$2 implements android.text.TextWatcher {
+  final com.stripe.android.view.StripeEditText this$0;
+  com.stripe.android.view.StripeEditText$2(com.stripe.android.view.StripeEditText);
+  public void beforeTextChanged(java.lang.CharSequence, int, int, int);
+  public void onTextChanged(java.lang.CharSequence, int, int, int);
+  public void afterTextChanged(android.text.Editable);
+}
+Compiled from "StripeEditText.java"
+class com.stripe.android.view.StripeEditText$3 implements android.view.View$OnKeyListener {
+  final com.stripe.android.view.StripeEditText this$0;
+  com.stripe.android.view.StripeEditText$3(com.stripe.android.view.StripeEditText);
+  public boolean onKey(android.view.View, int, android.view.KeyEvent);
+}
+Compiled from "StripeEditText.java"
+interface com.stripe.android.view.StripeEditText$AfterTextChangedListener {
+  public abstract void onTextChanged(java.lang.String);
+}
+Compiled from "StripeEditText.java"
+interface com.stripe.android.view.StripeEditText$DeleteEmptyListener {
+  public abstract void onDeleteEmpty();
+}
+Compiled from "StripeEditText.java"
+interface com.stripe.android.view.StripeEditText$ErrorMessageListener {
+  public abstract void displayErrorMessage(java.lang.String);
+}
+Compiled from "StripeEditText.java"
+class com.stripe.android.view.StripeEditText$SoftDeleteInputConnection extends android.view.inputmethod.InputConnectionWrapper {
+  final com.stripe.android.view.StripeEditText this$0;
+  com.stripe.android.view.StripeEditText$SoftDeleteInputConnection(com.stripe.android.view.StripeEditText, android.view.inputmethod.InputConnection, boolean);
+  public boolean deleteSurroundingText(int, int);
+}
+Compiled from "StripeEditText.java"
+public class com.stripe.android.view.StripeEditText extends android.support.design.widget.TextInputEditText {
+  public com.stripe.android.view.StripeEditText(android.content.Context);
+  public com.stripe.android.view.StripeEditText(android.content.Context, android.util.AttributeSet);
+  public com.stripe.android.view.StripeEditText(android.content.Context, android.util.AttributeSet, int);
+  public android.content.res.ColorStateList getCachedColorStateList();
+  public boolean getShouldShowError();
+  public int getDefaultErrorColorInt();
+  public android.view.inputmethod.InputConnection onCreateInputConnection(android.view.inputmethod.EditorInfo);
+  void setAfterTextChangedListener(com.stripe.android.view.StripeEditText$AfterTextChangedListener);
+  void setDeleteEmptyListener(com.stripe.android.view.StripeEditText$DeleteEmptyListener);
+  void setErrorMessageListener(com.stripe.android.view.StripeEditText$ErrorMessageListener);
+  void setErrorMessage(java.lang.String);
+  public void setErrorColor(int);
+  public void setHintDelayed(int, long);
+  public void setShouldShowError(boolean);
+  protected void onDetachedFromWindow();
+  static com.stripe.android.view.StripeEditText$AfterTextChangedListener access$000(com.stripe.android.view.StripeEditText);
+  static com.stripe.android.view.StripeEditText$DeleteEmptyListener access$100(com.stripe.android.view.StripeEditText);
+}
+Compiled from "ViewUtils.java"
+class com.stripe.android.view.ViewUtils {
+  com.stripe.android.view.ViewUtils();
+  static android.util.TypedValue getThemeAccentColor(android.content.Context);
+  static android.util.TypedValue getThemeColorControlNormal(android.content.Context);
+  static android.util.TypedValue getThemeTextColorSecondary(android.content.Context);
+  static android.util.TypedValue getThemeTextColorPrimary(android.content.Context);
+  static android.graphics.drawable.Drawable getTintedIcon(android.content.Context, int, int);
+  static android.graphics.drawable.Drawable getTintedIconWithAttribute(android.content.Context, android.content.res.Resources$Theme, int, int);
+  static boolean isColorTransparent(int);
+  static boolean isColorDark(int);
+  static boolean isCvcMaximalLength(java.lang.String, java.lang.String);
+  static java.lang.String[] separateCardNumberGroups(java.lang.String, java.lang.String);
+  static int getPxFromDp(android.content.Context, int);
+}
